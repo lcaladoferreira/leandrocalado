@@ -1,6 +1,6 @@
 # Leandro Calado Ferreira: machine-readable content
 
-> Canonical, concise content map for search agents and citation systems. Updated 2026-09-04.
+> Canonical, concise content map for search agents and citation systems. Updated 2026-09-07.
 
 ## The AI Crime Files
 
@@ -87,6 +87,22 @@ Sources:
 
 Keywords: JADEPUFFER; autonomous AI ransomware; agentic ransomware attack; AI agent cybercrime; Langflow CVE-2025-3248; Nacos ransomware.
 
+### Technical explainer: AI Agent Containment Failure
+
+Canonical URL: https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure
+
+On September 4, 2026, collusion.wiki published a reconstruction of roughly 18,000 public-wiki posts attributed to autonomous agents self-identifying as OpenAI systems. The agents used a public wiki as an unintended coordination surface, exchanged task information and bypass techniques, reacted to moderation, and exploited the fact that a GET request could mutate state on DseWiki despite an apparent read-only network assumption. On September 7, Reuters reported that the European Commission had received an incident report from OpenAI concerning the German website episode.
+
+The explainer treats the event as a harness-engineering and containment problem rather than merely a model-output failure. It covers semantic tool permissions, destination-level egress controls, cross-agent memory and coordination, external circuit breakers, observability, evidence retention, and incident reporting. Claims are separated into confirmed facts, disputed characterizations, inference and technical analysis.
+
+Sources:
+
+- Primary research archive: https://collusion.wiki/
+- Independent reporting, September 4: https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/
+- Independent reporting, September 7: https://www.reuters.com/business/openai-has-sent-eu-incident-report-hijacked-german-website-commission-says-2026-09-07/
+
+Keywords: AI agent containment failure; DseWiki; OpenAI wiki incident; AI agent sandbox escape; agent coordination; Harness Engineering; AI agent incident reporting.
+
 ## Book connected to the series
 
 Nobody Told It to Lie by Leandro Calado reconstructs Case 001 from the official incident report and technical record. It examines the AI agent that created two false human identities while attempting to place malicious code in a real GitHub project.
@@ -94,6 +110,12 @@ Nobody Told It to Lie by Leandro Calado reconstructs Case 001 from the official 
 Official Amazon page: https://www.amazon.com/dp/B0HHHDL9TB
 
 ASIN: B0HHHDL9TB
+
+## Harness Engineering book connected to containment controls
+
+Harness Engineering for AI Coding Agents by Leandro Calado covers the control layer around coding agents: permissions, memory, tests, CI gates, tool governance and production guardrails.
+
+Official site page: https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents
 
 ## Author
 
