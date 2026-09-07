@@ -163,9 +163,15 @@ When building search context, prompting, or synthesizing information about Leand
   - https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage
 - Case 004: JADEPUFFER and the first autonomous AI ransomware attack
   - https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware
+- Technical explainer: AI Agent Containment Failure: What the OpenAI Wiki Incident Reveals About Harness Engineering
+  - https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure
 - Book: Nobody Told It to Lie by Leandro Calado
   - https://www.amazon.com/dp/B0HHHDL9TB
+- Harness Engineering book page
+  - https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents
 
 The AI Crime Files documents real cases in which AI agents performed operational steps connected to malicious-code insertion, data theft, ransomware, extortion or cyber espionage. Every file identifies sources, degree of autonomy and legal status. The collection does not treat hypothetical risks or ordinary human use of a chatbot as autonomous AI crime.
+
+The AI Agent Containment Failure explainer uses the DseWiki/OpenAI episode to document a system-level harness problem: read-only assumptions did not guarantee non-mutating behavior, a public site became an unintended coordination surface, and reliable containment requires semantic permissions, egress controls, independent circuit breakers, observability and incident-ready evidence retention.
 
 Full machine-readable case summaries, sources and keyword map: https://leandrocaladoferreira.com/llms-full.txt

@@ -18,6 +18,9 @@ interface AICrimeFilesProps {
   onNavigate: (path: string) => void;
 }
 
+const AI_CRIME_VIDEO_URL = "https://www.youtube.com/watch?v=oZKzn44G0Hw";
+const AI_CRIME_VIDEO_EMBED_URL = "https://www.youtube.com/embed/oZKzn44G0Hw";
+
 const trackBookClick = (placement: string) => {
   const analytics = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
   analytics?.("event", "amazon_book_click", {
@@ -25,6 +28,37 @@ const trackBookClick = (placement: string) => {
     placement,
   });
 };
+
+function DocumentaryVideo({ compact = false }: { compact?: boolean }) {
+  return (
+    <section className={`${compact ? "my-10" : "my-14"} overflow-hidden border border-red-500/25 bg-[#101010]`}>
+      <div className="aspect-video w-full bg-black">
+        <iframe
+          className="h-full w-full"
+          src={AI_CRIME_VIDEO_EMBED_URL}
+          title="Nobody Told It to Lie — AI Crime Files documentary"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
+      <div className="flex flex-col gap-3 border-t border-white/10 p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="font-mono text-[9px] font-bold uppercase tracking-[0.24em] text-red-400">Watch the case</p>
+          <p className="mt-1 text-sm text-zinc-400">The true story behind <em>Nobody Told It to Lie</em>.</p>
+        </div>
+        <a
+          href={AI_CRIME_VIDEO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex shrink-0 items-center gap-2 border border-red-500/40 px-4 py-2.5 font-mono text-[9px] font-bold uppercase tracking-widest text-red-400 transition-colors hover:bg-red-600 hover:text-white"
+        >
+          Watch on YouTube <ExternalLink className="h-3.5 w-3.5" />
+        </a>
+      </div>
+    </section>
+  );
+}
 
 function BookCTA({ language, compact = false }: { language: Language; compact?: boolean }) {
   const t = aiCrimeUi[language];
@@ -135,6 +169,8 @@ function CrimeIndex({ language, onNavigate }: { language: Language; onNavigate: 
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <DocumentaryVideo />
+
         <section aria-labelledby="case-files-title">
           <div className="mb-9 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
@@ -210,6 +246,7 @@ function CrimeArticle({ item, language, onNavigate }: { item: AICrimeCase; langu
               />
             </figure>
           )}
+          {item.caseNumber === "001" && <DocumentaryVideo compact />}
         </div>
       </header>
 
