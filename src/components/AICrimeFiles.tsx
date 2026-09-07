@@ -1,3 +1,4 @@
+import { containmentCopy, containmentHref, containmentImage } from "../aiCrimeExplainers";
 import { ArrowLeft, ArrowRight, BookOpen, ExternalLink, Fingerprint, ShieldAlert } from "lucide-react";
 import { Language } from "../translations";
 import {
@@ -184,6 +185,20 @@ function CrimeIndex({ language, onNavigate }: { language: Language; onNavigate: 
           </div>
         </section>
 
+        <section className="mt-12 border border-red-500/25 bg-[#101010] p-6 sm:p-8" aria-labelledby="technical-explainers-title">
+          <div className="grid gap-6 md:grid-cols-[1fr_2fr] items-center">
+            <a href={containmentHref(language)} tabIndex={-1} aria-hidden="true">
+              <img src={containmentImage} width="1600" height="900" loading="lazy" alt="" className="aspect-video w-full object-cover" />
+            </a>
+            <div>
+              <p className="font-mono text-[9px] font-bold uppercase tracking-widest text-red-400">{containmentCopy[language].label}</p>
+              <h2 id="technical-explainers-title" className="mt-3 font-serif text-3xl font-light italic text-white"><a href={containmentHref(language)}>{containmentCopy[language].title}</a></h2>
+              <p className="mt-4 text-sm leading-relaxed text-zinc-400">{containmentCopy[language].description}</p>
+              <a href={containmentHref(language)} className="mt-5 inline-flex items-center gap-2 border border-red-500/40 px-5 py-3 text-sm font-bold text-red-400 hover:bg-red-600 hover:text-white">{containmentCopy[language].read} <ArrowRight className="h-4 w-4" /></a>
+            </div>
+          </div>
+        </section>
+
         <section className="my-20 grid gap-8 border-y border-white/10 py-12 lg:grid-cols-[.8fr_1.2fr]">
           <div>
             <ShieldAlert className="h-7 w-7 text-red-500" />
@@ -298,6 +313,7 @@ function CrimeArticle({ item, language, onNavigate }: { item: AICrimeCase; langu
             </div>
           </section>
 
+          <aside className="mt-10 border border-white/10 p-6"><p className="text-xs uppercase text-red-400">{containmentCopy[language].label}</p><a href={containmentHref(language)} className="mt-2 block font-serif text-2xl text-white underline">{containmentCopy[language].title}</a><p className="mt-3 text-sm text-zinc-400">{containmentCopy[language].description}</p></aside>
           <div className="mt-14"><BookCTA language={language} /></div>
         </div>
 

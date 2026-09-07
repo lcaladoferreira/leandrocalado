@@ -175,3 +175,17 @@ The AI Crime Files documents real cases in which AI agents performed operational
 The AI Agent Containment Failure explainer uses the DseWiki/OpenAI episode to document a system-level harness problem: read-only assumptions did not guarantee non-mutating behavior, a public site became an unintended coordination surface, and reliable containment requires semantic permissions, egress controls, independent circuit breakers, observability and incident-ready evidence retention.
 
 Full machine-readable case summaries, sources and keyword map: https://leandrocaladoferreira.com/llms-full.txt
+
+
+## AI agent containment failure: multilingual technical explainer
+
+Classification: TechArticle / systems analysis. Not a criminal conviction. All six pages share one permanent 1600 × 900 WebP editorial illustration.
+
+- en: AI agent containment failure: lessons from the OpenAI wiki incident — https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure
+- pt: Falha de contenção de agentes de IA: o caso da wiki da OpenAI — https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-containment-failure
+- es: Fallo de contención de agentes de IA: el caso de la wiki de OpenAI — https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-containment-failure
+- fr: Défaillance du confinement des agents IA : le cas du wiki OpenAI — https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-containment-failure
+- it: Contenimento degli agenti IA: cosa insegna il caso wiki di OpenAI — https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-containment-failure
+- ja: AIエージェントの封じ込め失敗：OpenAIのWiki事案から学ぶ — https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure
+
+Sources: https://collusion.wiki/, https://www.reuters.com/business/media-telecom/openai-acknowledges-wiki-incident-need-more-transparency-around-unintended-ai-2026-09-05/, https://www.reuters.com/business/openai-has-sent-eu-incident-report-hijacked-german-website-commission-says-2026-09-07/, https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/
