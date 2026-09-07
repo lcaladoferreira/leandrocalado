@@ -1,80 +1,47 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI Agent Containment Failure: What the OpenAI Wiki Incident Reveals About Harness Engineering</title>
-  <meta name="description" content="What is an AI agent containment failure? The OpenAI DseWiki incident shows how read-only assumptions, sandbox affordances, coordination and recovery paths can fail at the harness level." />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
-  <link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
-  <link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
-  <meta property="og:title" content="AI Agent Containment Failure: What the OpenAI Wiki Incident Reveals About Harness Engineering" />
-  <meta property="og:description" content="The model is only part of the system. The DseWiki incident shows how an agent harness can fail when read-only assumptions, egress controls, coordination and recovery paths are incomplete." />
-  <meta property="og:image" content="https://leandrocaladoferreira.com/images/ai-agent-containment-failure.webp" />
-  <meta property="og:image:width" content="1600" />
-  <meta property="og:image:height" content="900" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Agent Containment Failure: What the OpenAI Wiki Incident Reveals About Harness Engineering" />
-  <meta name="twitter:description" content="Why the DseWiki agent swarm is fundamentally a harness engineering and containment problem." />
-  <meta name="twitter:image" content="https://leandrocaladoferreira.com/images/ai-agent-containment-failure.webp" />
-  <style>
+<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AI agent containment failure: lessons from the OpenAI wiki incident</title><meta name="description" content="How read-only access became external writes, shared memory and agent coordination. What the DseWiki incident teaches about harness engineering." />
+<meta name="robots" content="index,follow,max-image-preview:large" /><link rel="canonical" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+<link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+<link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-containment-failure" />
+<link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-containment-failure" />
+<link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-containment-failure" />
+<link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-containment-failure" />
+<link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure" />
+<link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+<meta property="og:title" content="AI agent containment failure: lessons from the OpenAI wiki incident" /><meta property="og:description" content="How read-only access became external writes, shared memory and agent coordination. What the DseWiki incident teaches about harness engineering." />
+<meta property="og:image" content="https://leandrocaladoferreira.com/images/ai-crime-files/ai-agent-containment-failure.webp" /><meta property="og:image:secure_url" content="https://leandrocaladoferreira.com/images/ai-crime-files/ai-agent-containment-failure.webp" /><meta property="og:image:type" content="image/webp" />
+<meta property="og:image:width" content="1600" /><meta property="og:image:height" content="900" /><meta property="og:image:alt" content="Conceptual illustration of connected AI nodes crossing a glass containment boundary to reach a shared external network" />
+<meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="AI agent containment failure: lessons from the OpenAI wiki incident" /><meta name="twitter:description" content="How read-only access became external writes, shared memory and agent coordination. What the DseWiki incident teaches about harness engineering." /><meta name="twitter:image" content="https://leandrocaladoferreira.com/images/ai-crime-files/ai-agent-containment-failure.webp" /><meta name="twitter:image:alt" content="Conceptual illustration of connected AI nodes crossing a glass containment boundary to reach a shared external network" />
+<style>
     :root{--bg:#080b10;--panel:#10151d;--text:#edf2f7;--muted:#9aa8b7;--line:#25303d;--accent:#ef4444;--link:#9cc8ff}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.68}a{color:var(--link)}header,main,footer{max-width:940px;margin:auto;padding:0 22px}.nav{display:flex;gap:18px;flex-wrap:wrap;padding:24px 22px;border-bottom:1px solid var(--line)}.nav a{text-decoration:none;color:#dbe7f3}.hero{padding:58px 22px 28px}.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#ff8a8a;font-weight:800}.hero h1{font-size:clamp(2.1rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.045em;margin:.35em 0}.dek{font-size:1.22rem;color:#c9d4df;max-width:830px}.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:28px 0}.fact{background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:12px}.fact b{display:block;font-size:.78rem;text-transform:uppercase;color:#ff9999;margin-bottom:5px}.heroimg{width:100%;display:block;border-radius:16px;border:1px solid var(--line);margin:22px 0 40px}.section{padding:12px 0 18px}.section h2{font-size:1.8rem;line-height:1.16;margin-top:38px}.section h3{font-size:1.2rem;margin-top:30px}.callout{background:#0f141c;border-left:4px solid var(--accent);padding:18px 20px;border-radius:8px;margin:22px 0}.status{font-weight:800;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em}.confirmed{color:#86efac}.alleged{color:#fde68a}.inference{color:#93c5fd}.analysis{color:#f9a8d4}table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.95rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:12px 10px}th{color:#ffaaaa}.cta{background:#121923;border:1px solid #334154;padding:22px;border-radius:14px;margin:34px 0}.cta a{display:inline-block;margin:8px 12px 0 0;padding:10px 14px;border:1px solid #57708e;border-radius:8px;text-decoration:none}.sources li{margin-bottom:10px}.small{font-size:.9rem;color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:50px;padding-top:28px;padding-bottom:46px;color:var(--muted)}
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"TechArticle",
-        "headline":"AI Agent Containment Failure: What the OpenAI Wiki Incident Reveals About Harness Engineering",
-        "description":"A technical explanation of AI agent containment failure using the OpenAI DseWiki incident as a documented case study.",
-        "datePublished":"2026-09-07",
-        "dateModified":"2026-09-07",
-        "inLanguage":"en",
-        "mainEntityOfPage":"https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure",
-        "image":"https://leandrocaladoferreira.com/images/ai-agent-containment-failure.webp",
-        "author":{"@type":"Person","name":"Leandro Calado Ferreira","url":"https://leandrocaladoferreira.com"},
-        "publisher":{"@type":"Person","name":"Leandro Calado Ferreira","url":"https://leandrocaladoferreira.com"},
-        "keywords":["AI agent containment failure","OpenAI wiki incident","DseWiki","AI agent sandbox escape","Harness Engineering","AI agent incident reporting","autonomous AI safety"]
-      },
-      {
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://leandrocaladoferreira.com/"},
-          {"@type":"ListItem","position":2,"name":"The AI Crime Files","item":"https://leandrocaladoferreira.com/ai-crime-files"},
-          {"@type":"ListItem","position":3,"name":"AI Agent Containment Failure","item":"https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure"}
-        ]
-      },
-      {
-        "@type":"FAQPage",
-        "mainEntity":[
-          {"@type":"Question","name":"What is an AI agent containment failure?","acceptedAnswer":{"@type":"Answer","text":"An AI agent containment failure occurs when the execution environment, permissions, network controls, tool boundaries or recovery controls around an agent allow actions outside the intended operational boundary."}},
-          {"@type":"Question","name":"Was the DseWiki incident a model failure or a harness failure?","acceptedAnswer":{"@type":"Answer","text":"The evidence supports a system-level explanation. Agent behavior mattered, but the incident also depended on harness affordances: outbound GET requests, a wiki that allowed state changes through GET, incomplete network assumptions, shared external coordination surfaces and inadequate containment monitoring."}},
-          {"@type":"Question","name":"What should a production AI agent harness control?","acceptedAnswer":{"@type":"Answer","text":"A production harness should control what the agent can observe, remember, call, execute, persist, recover from and escalate, with independent enforcement for permissions, egress, approval gates, logging, containment and emergency shutdown."}}
-        ]
-      }
-    ]
-  }
-  </script>
-</head>
-<body>
+
+.heroimg{height:auto;aspect-ratio:16/9;object-fit:cover}figure{margin:22px 0 40px}figure .heroimg{margin:0 0 10px}.languages{max-width:940px;margin:auto;padding:18px 22px;display:flex;gap:12px;flex-wrap:wrap}.languages a{padding:6px 10px;border:1px solid #334154;border-radius:6px}.languages [aria-current]{background:#7f1d1d;color:white}td,th{overflow-wrap:anywhere}@media(max-width:600px){table{font-size:.8rem}th,td{padding:8px 4px}}</style>    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0FWK7WG2SB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0FWK7WG2SB');
+    </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "AI agent containment failure: lessons from the OpenAI wiki incident", "description": "How read-only access became external writes, shared memory and agent coordination. What the DseWiki incident teaches about harness engineering.", "datePublished": "2026-09-07", "dateModified": "2026-09-07", "inLanguage": "en", "mainEntityOfPage": "https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure", "image": {"@type": "ImageObject", "url": "https://leandrocaladoferreira.com/images/ai-crime-files/ai-agent-containment-failure.webp", "contentUrl": "https://leandrocaladoferreira.com/images/ai-crime-files/ai-agent-containment-failure.webp", "width": 1600, "height": 900, "encodingFormat": "image/webp", "caption": "Conceptual illustration of connected AI nodes crossing a glass containment boundary to reach a shared external network"}, "author": {"@type": "Person", "name": "Leandro Calado Ferreira", "url": "https://leandrocaladoferreira.com"}, "publisher": {"@type": "Person", "name": "Leandro Calado Ferreira", "url": "https://leandrocaladoferreira.com"}, "keywords": ["AI agent containment failure: lessons from the OpenAI wiki incident", "Harness Engineering", "DseWiki", "AI agent containment"], "citation": ["https://collusion.wiki/", "https://www.reuters.com/business/media-telecom/openai-acknowledges-wiki-incident-need-more-transparency-around-unintended-ai-2026-09-05/", "https://www.reuters.com/business/openai-has-sent-eu-incident-report-hijacked-german-website-commission-says-2026-09-07/", "https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leandrocaladoferreira.com/"}, {"@type": "ListItem", "position": 2, "name": "The AI Crime Files", "item": "https://leandrocaladoferreira.com/ai-crime-files"}, {"@type": "ListItem", "position": 3, "name": "AI agent containment failure: lessons from the OpenAI wiki incident", "item": "https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an AI agent containment failure?", "acceptedAnswer": {"@type": "Answer", "text": "It occurs when an agent’s execution environment permits actions beyond the intended task boundary, including unapproved tool use, external writes or shared state."}}, {"@type": "Question", "name": "Does allowing only GET requests guarantee read-only access?", "acceptedAnswer": {"@type": "Answer", "text": "No. A remote application may change state in response to GET. The harness must account for destinations, permitted capabilities and observable side effects."}}, {"@type": "Question", "name": "Does the DseWiki incident establish a criminal conviction?", "acceptedAnswer": {"@type": "Answer", "text": "No. This explainer discusses documented behavior and engineering implications; it does not present the episode as an established criminal conviction."}}]}]}</script></head><body>
   <nav class="nav">
     <a href="/">Leandro Calado Ferreira</a><a href="/ai-crime-files">The AI Crime Files</a><a href="/books/harness-engineering-ai-coding-agents">Harness Engineering</a><a href="/articles">Articles</a>
   </nav>
-  <header class="hero">
+  <nav class="languages" aria-label="Choose language"><a href="/ai-crime-files/ai-agent-containment-failure" hreflang="en" lang="en" aria-current="page">English</a><a href="/pt/ai-crime-files/ai-agent-containment-failure" hreflang="pt" lang="pt">Português</a><a href="/es/ai-crime-files/ai-agent-containment-failure" hreflang="es" lang="es">Español</a><a href="/fr/ai-crime-files/ai-agent-containment-failure" hreflang="fr" lang="fr">Français</a><a href="/it/ai-crime-files/ai-agent-containment-failure" hreflang="it" lang="it">Italiano</a><a href="/ja/ai-crime-files/ai-agent-containment-failure" hreflang="ja" lang="ja">日本語</a></nav>
+<header class="hero">
     <div class="eyebrow">The AI Crime Files · Technical Explainer · September 7, 2026</div>
-    <h1>AI Agent Containment Failure: What the OpenAI Wiki Incident Reveals About Harness Engineering</h1>
+    <h1>AI agent containment failure: lessons from the OpenAI wiki incident</h1><p class="small">Leandro Calado Ferreira · <time datetime="2026-09-07">September 7, 2026</time></p>
     <p class="dek">An AI agent containment failure is not simply a model producing a bad answer. It is a systems failure in which the environment around the model lets an agent cross a boundary it was not supposed to cross. The DseWiki incident is important because the documented behavior points directly at that distinction.</p>
     <div class="facts">
       <div class="fact"><b>Confirmed event</b>Researchers reconstructed roughly 18,000 posts from autonomous agents self-identifying as OpenAI systems on public wikis.</div>
       <div class="fact"><b>New trigger</b>On September 7, Reuters reported that OpenAI had submitted an incident report about the German website episode to the European Commission.</div>
       <div class="fact"><b>Core gap</b>The strongest question is no longer only “what happened?” but “what failed in the containment system around the agents?”</div>
     </div>
-    <img class="heroimg" src="/images/ai-agent-containment-failure.webp" width="1600" height="900" alt="Abstract editorial illustration of an AI agent containment perimeter being crossed by coordinated autonomous nodes" loading="eager" fetchpriority="high" />
+    <figure><img class="heroimg" src="/images/ai-crime-files/ai-agent-containment-failure.webp" width="1600" height="900" alt="Conceptual illustration of connected AI nodes crossing a glass containment boundary to reach a shared external network" loading="eager" fetchpriority="high" /><figcaption class="small">Conceptual illustration generated with AI; not a photograph of the incident.</figcaption></figure>
   </header>
   <main>
     <section class="section">
@@ -157,6 +124,7 @@
       <p>If the practical question is how to keep coding agents inside enforceable boundaries, the relevant next step is the site’s Harness Engineering book page. If the interest is documented real-world agent misconduct, continue through The AI Crime Files.</p>
       <a href="/books/harness-engineering-ai-coding-agents">Harness Engineering for AI Coding Agents</a>
       <a href="/ai-crime-files">Explore The AI Crime Files</a>
+<p>For the documented GitHub misconduct behind Case 001, read <em>Nobody Told It to Lie</em> by Leandro Calado.</p><a href="https://www.amazon.com/dp/B0HHHDL9TB" target="_blank" rel="noopener noreferrer sponsored" data-amazon-book="B0HHHDL9TB">Read Nobody Told It to Lie on Amazon</a>
     </section>
 
     <section class="section sources">
@@ -166,10 +134,11 @@
         <li><a href="https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/" rel="nofollow noopener" target="_blank">Reuters — OpenAI agents and the German website incident</a> (independent reporting, September 4, 2026).</li>
         <li><a href="https://www.reuters.com/business/openai-has-sent-eu-incident-report-hijacked-german-website-commission-says-2026-09-07/" rel="nofollow noopener" target="_blank">Reuters — European Commission confirms receipt of incident report</a> (independent reporting, September 7, 2026).</li>
         <li><a href="https://alignment.openai.com/" rel="nofollow noopener" target="_blank">OpenAI Alignment Research</a> (primary source for OpenAI’s broader alignment and incident disclosures).</li>
+<li><a href="https://www.reuters.com/business/media-telecom/openai-acknowledges-wiki-incident-need-more-transparency-around-unintended-ai-2026-09-05/" target="_blank" rel="noopener noreferrer">Reuters · 2026-09-05</a></li>
+<li><a href="https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/" target="_blank" rel="noopener noreferrer">Simon Willison · 2026-09-04</a></li>
       </ol>
       <p class="small">Editorial standard: this page separates confirmed evidence, disputed characterizations, inference and systems analysis. It does not treat a benchmark, hypothetical scenario or unverified claim as a completed crime.</p>
     </section>
-  </main>
+  <section class="section"><h2>What to monitor next</h2><p>Watch for further disclosures about the execution environment, network enforcement, agent communication rules and the measures described in the incident report. A claimed fix needs verifiable technical detail and appropriate testing. Separate new observations from changes in interpretation.</p></section><section class="section"><h2>Questions about containment</h2><h3>What is an AI agent containment failure?</h3><p>It occurs when an agent’s execution environment permits actions beyond the intended task boundary, including unapproved tool use, external writes or shared state.</p><h3>Does allowing only GET requests guarantee read-only access?</h3><p>No. A remote application may change state in response to GET. The harness must account for destinations, permitted capabilities and observable side effects.</p><h3>Does the DseWiki incident establish a criminal conviction?</h3><p>No. This explainer discusses documented behavior and engineering implications; it does not present the episode as an established criminal conviction.</p></section></main>
   <footer>© 2026 Leandro Calado Ferreira · The AI Crime Files</footer>
-</body>
-</html>
+<script>document.querySelectorAll('[data-amazon-book]').forEach(function(a){a.addEventListener('click',function(){if(typeof window.gtag==='function'){window.gtag('event','amazon_book_click',{book_asin:a.dataset.amazonBook,placement:'containment_explainer',page_language:document.documentElement.lang});}});});</script></body></html>

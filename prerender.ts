@@ -1,3 +1,4 @@
+import { containmentCopy, containmentHref, containmentImage } from "./src/aiCrimeExplainers";
 import * as fs from "fs";
 import * as path from "path";
 import { booksData } from "./src/data";
@@ -30,6 +31,17 @@ const renderCrimeBookCTA = (language: AICrimeLanguage) => {
 `;
 };
 
+const renderContainmentLink = (language: AICrimeLanguage, showImage = false) => {
+  const copy = containmentCopy[language];
+  return `<aside class="border border-red-500/25 p-6 mt-12 bg-[#101010]">
+    ${showImage ? `<img src="${containmentImage}" width="1600" height="900" loading="lazy" alt="${escapeHtml(copy.alt)}" class="aspect-video w-full max-w-lg object-cover mb-6" />` : ''}
+    <p class="text-xs text-red-400">${escapeHtml(copy.label)}</p>
+    <h2 class="font-serif text-3xl text-white mt-3"><a href="${containmentHref(language)}">${escapeHtml(copy.title)}</a></h2>
+    <p class="text-sm text-gray-400 mt-3">${escapeHtml(copy.description)}</p>
+    <a href="${containmentHref(language)}" class="inline-block text-red-400 mt-5">${escapeHtml(copy.read)} &rarr;</a>
+  </aside>`;
+};
+
 const crimeIndexRoutes = crimeLanguages.map((language) => {
   const t = aiCrimeUi[language];
   const cases = localizeAICrimeCases(aiCrimeCases, language);
@@ -58,6 +70,7 @@ const crimeIndexRoutes = crimeLanguages.map((language) => {
             </article>
           `).join("")}
         </div>
+        ${renderContainmentLink(language, true)}
         <section class="border-y border-white/10 py-12 mt-16">
           <h2 class="font-serif text-3xl font-light italic text-white">${escapeHtml(t.archiveCriteria)}</h2>
           <ol class="grid md:grid-cols-2 gap-4 mt-6">${t.criteria.map((criterion) => `<li class="border border-white/10 p-4 text-sm text-gray-400">${escapeHtml(criterion)}</li>`).join("")}</ol>
@@ -124,6 +137,7 @@ const crimeArticleRoutes = crimeLanguages.flatMap((language) => aiCrimeCases.map
             ${item.sources.map((source) => `<a href="${source.url}" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-sm text-gray-300">${escapeHtml(source.label)} <span class="text-red-400">• ${escapeHtml(source.publisher)} • ${source.kind} source</span></a>`).join("")}
           </div>
         </section>
+        ${renderContainmentLink(language)}
         ${renderCrimeBookCTA(language)}
       </div>
     </article>

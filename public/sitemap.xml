@@ -1,45 +1,527 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://leandrocaladoferreira.com/</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/about</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/start-here</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/books</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/articles</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/consulting</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ai-agents</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/data-engineering</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/safe-ai</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/automation</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents</loc><lastmod>2026-06-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ai-crime-files</loc><lastmod>2026-09-07</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure</loc><lastmod>2026-09-07</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/pt/ai-crime-files</loc><lastmod>2026-09-04</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/pt/ai-crime-files/agent-invented-humans-malware-github</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/pt/ai-crime-files/vibe-hacking-data-extortion</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/pt/ai-crime-files/ai-orchestrated-cyber-espionage</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/pt/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/es/ai-crime-files</loc><lastmod>2026-09-04</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/es/ai-crime-files/agent-invented-humans-malware-github</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/es/ai-crime-files/vibe-hacking-data-extortion</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/es/ai-crime-files/ai-orchestrated-cyber-espionage</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/es/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/fr/ai-crime-files</loc><lastmod>2026-09-04</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/fr/ai-crime-files/agent-invented-humans-malware-github</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/fr/ai-crime-files/vibe-hacking-data-extortion</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/fr/ai-crime-files/ai-orchestrated-cyber-espionage</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/fr/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/it/ai-crime-files</loc><lastmod>2026-09-04</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/it/ai-crime-files/agent-invented-humans-malware-github</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/it/ai-crime-files/vibe-hacking-data-extortion</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/it/ai-crime-files/ai-orchestrated-cyber-espionage</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/it/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ja/ai-crime-files</loc><lastmod>2026-09-04</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ja/ai-crime-files/agent-invented-humans-malware-github</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ja/ai-crime-files/vibe-hacking-data-extortion</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ja/ai-crime-files/ai-orchestrated-cyber-espionage</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leandrocaladoferreira.com/ja/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://leandrocaladoferreira.com/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/about</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/start-here</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/books</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/articles</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/consulting</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ai-agents</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/data-engineering</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/safe-ai</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/automation</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ai-crime-files</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/pt/ai-crime-files</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/pt/ai-crime-files/agent-invented-humans-malware-github</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/pt/ai-crime-files/vibe-hacking-data-extortion</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/pt/ai-crime-files/ai-orchestrated-cyber-espionage</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/pt/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/es/ai-crime-files</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/es/ai-crime-files/agent-invented-humans-malware-github</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/es/ai-crime-files/vibe-hacking-data-extortion</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/es/ai-crime-files/ai-orchestrated-cyber-espionage</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/es/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/fr/ai-crime-files</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/fr/ai-crime-files/agent-invented-humans-malware-github</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/fr/ai-crime-files/vibe-hacking-data-extortion</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/fr/ai-crime-files/ai-orchestrated-cyber-espionage</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/fr/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/it/ai-crime-files</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/it/ai-crime-files/agent-invented-humans-malware-github</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/it/ai-crime-files/vibe-hacking-data-extortion</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/it/ai-crime-files/ai-orchestrated-cyber-espionage</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/it/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ja/ai-crime-files</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ja/ai-crime-files/agent-invented-humans-malware-github</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/agent-invented-humans-malware-github" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/agent-invented-humans-malware-github" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ja/ai-crime-files/vibe-hacking-data-extortion</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/vibe-hacking-data-extortion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/vibe-hacking-data-extortion" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ja/ai-crime-files/ai-orchestrated-cyber-espionage</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-orchestrated-cyber-espionage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-orchestrated-cyber-espionage" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ja/ai-crime-files/jadepuffer-autonomous-ai-ransomware</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/jadepuffer-autonomous-ai-ransomware" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-containment-failure</loc>
+    <lastmod>2026-09-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-containment-failure</loc>
+    <lastmod>2026-09-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-containment-failure</loc>
+    <lastmod>2026-09-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-containment-failure</loc>
+    <lastmod>2026-09-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+  </url>
+  <url>
+    <loc>https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure</loc>
+    <lastmod>2026-09-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leandrocaladoferreira.com/ai-crime-files/ai-agent-containment-failure" />
+  </url>
 </urlset>
