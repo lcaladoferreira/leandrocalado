@@ -184,25 +184,6 @@ function CrimeIndex({ language, onNavigate }: { language: Language; onNavigate: 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {cases.map((item) => <CaseCard key={item.slug} item={item} language={language} onNavigate={onNavigate} />)}
           </div>
-        </section>
-
-        <section className="mt-12" aria-labelledby="technical-explainers-title">
-          <h2 id="technical-explainers-title" className="mb-6 font-serif text-3xl font-light italic text-white">Harness Engineering</h2>
-          <div className="grid gap-6 lg:grid-cols-2">
-            {[
-              { copy: containmentCopy[language], href: containmentHref(language), image: containmentImage },
-              { copy: whistleblowingCopy[language], href: whistleblowingHref(language), image: whistleblowingImage },
-            ].map((entry) => (
-              <article key={entry.href} className="border border-red-500/25 bg-[#101010] p-6">
-                <a href={entry.href} tabIndex={-1} aria-hidden="true"><img src={entry.image} width="1600" height="900" loading="lazy" alt="" className="aspect-video w-full object-cover" /></a>
-                <p className="mt-5 font-mono text-[9px] font-bold uppercase tracking-widest text-red-400">{entry.copy.label}</p>
-                <h3 className="mt-3 font-serif text-2xl font-light italic text-white"><a href={entry.href}>{entry.copy.title}</a></h3>
-                <p className="mt-4 text-sm leading-relaxed text-zinc-400">{entry.copy.description}</p>
-                <a href={entry.href} className="mt-5 inline-flex items-center gap-2 border border-red-500/40 px-5 py-3 text-sm font-bold text-red-400 hover:bg-red-600 hover:text-white">{entry.copy.read} <ArrowRight className="h-4 w-4" /></a>
-              </article>
-            ))}
-          </div>
-        </section>
 
         <section className="my-20 grid gap-8 border-y border-white/10 py-12 lg:grid-cols-[.8fr_1.2fr]">
           <div>
