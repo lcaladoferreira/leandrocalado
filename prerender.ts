@@ -1,3 +1,5 @@
+import { containmentCopy, containmentHref, containmentImage } from "./src/aiCrimeExplainers";
+import { whistleblowingCopy, whistleblowingHref, whistleblowingImage, whistleblowingPath } from "./src/agentWhistleblowingExplainer";
 import * as fs from "fs";
 import * as path from "path";
 import { booksData } from "./src/data";
@@ -30,6 +32,28 @@ const renderCrimeBookCTA = (language: AICrimeLanguage) => {
 `;
 };
 
+const renderContainmentLink = (language: AICrimeLanguage, showImage = false) => {
+  const copy = containmentCopy[language];
+  return `<aside class="border border-red-500/25 p-6 mt-12 bg-[#101010]">
+    ${showImage ? `<img src="${containmentImage}" width="1600" height="900" loading="lazy" alt="${escapeHtml(copy.alt)}" class="aspect-video w-full max-w-lg object-cover mb-6" />` : ''}
+    <p class="text-xs text-red-400">${escapeHtml(copy.label)}</p>
+    <h2 class="font-serif text-3xl text-white mt-3"><a href="${containmentHref(language)}">${escapeHtml(copy.title)}</a></h2>
+    <p class="text-sm text-gray-400 mt-3">${escapeHtml(copy.description)}</p>
+    <a href="${containmentHref(language)}" class="inline-block text-red-400 mt-5">${escapeHtml(copy.read)} &rarr;</a>
+  </aside>`;
+};
+
+const renderWhistleblowingLink = (language: AICrimeLanguage, showImage = false) => {
+  const copy = whistleblowingCopy[language];
+  return `<aside class="border border-red-500/25 p-6 mt-12 bg-[#101010]">
+    ${showImage ? `<img src="${whistleblowingImage}" width="1600" height="900" loading="lazy" alt="${escapeHtml(copy.alt)}" class="aspect-video w-full max-w-lg object-cover mb-6" />` : ''}
+    <p class="text-xs text-red-400">${escapeHtml(copy.label)}</p>
+    <h2 class="font-serif text-3xl text-white mt-3"><a href="${whistleblowingHref(language)}">${escapeHtml(copy.title)}</a></h2>
+    <p class="text-sm text-gray-400 mt-3">${escapeHtml(copy.description)}</p>
+    <a href="${whistleblowingHref(language)}" class="inline-block text-red-400 mt-5">${escapeHtml(copy.read)} &rarr;</a>
+  </aside>`;
+};
+
 const crimeIndexRoutes = crimeLanguages.map((language) => {
   const t = aiCrimeUi[language];
   const cases = localizeAICrimeCases(aiCrimeCases, language);
@@ -58,6 +82,7 @@ const crimeIndexRoutes = crimeLanguages.map((language) => {
             </article>
           `).join("")}
         </div>
+        <section class="grid lg:grid-cols-2 gap-6">${renderContainmentLink(language, true)}${renderWhistleblowingLink(language, true)}</section>
         <section class="border-y border-white/10 py-12 mt-16">
           <h2 class="font-serif text-3xl font-light italic text-white">${escapeHtml(t.archiveCriteria)}</h2>
           <ol class="grid md:grid-cols-2 gap-4 mt-6">${t.criteria.map((criterion) => `<li class="border border-white/10 p-4 text-sm text-gray-400">${escapeHtml(criterion)}</li>`).join("")}</ol>
@@ -124,12 +149,45 @@ const crimeArticleRoutes = crimeLanguages.flatMap((language) => aiCrimeCases.map
             ${item.sources.map((source) => `<a href="${source.url}" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-sm text-gray-300">${escapeHtml(source.label)} <span class="text-red-400">• ${escapeHtml(source.publisher)} • ${source.kind} source</span></a>`).join("")}
           </div>
         </section>
+        <section class="grid lg:grid-cols-2 gap-6">${renderContainmentLink(language)}${renderWhistleblowingLink(language)}</section>
         ${renderCrimeBookCTA(language)}
       </div>
     </article>
   `,
   };
 }));
+
+const whistleblowingRoutes = crimeLanguages.map((language) => {
+  const copy = whistleblowingCopy[language];
+  const routePath = whistleblowingHref(language);
+  const archivePath = getLocalizedAICrimePath(AI_CRIME_BASE_PATH, language);
+  const languageLinks = crimeLanguages.map((lang) => `<a href="${whistleblowingHref(lang)}" hreflang="${lang}" lang="${lang}" class="border border-white/10 px-3 py-2 text-xs text-gray-300">${lang.toUpperCase()}</a>`).join('');
+  return {
+    path: routePath,
+    title: copy.title,
+    description: copy.description,
+    canonical: `https://leandrocaladoferreira.com${routePath}`,
+    schemaType: `HarnessExplainer:${language}`,
+    ogType: 'article',
+    image: { url: `https://leandrocaladoferreira.com${whistleblowingImage}`, width: 1600, height: 900, type: 'image/webp', alt: copy.alt },
+    language,
+    alternates: crimeAlternates(whistleblowingPath),
+    htmlContent: `<article class="bg-[#090909] text-white px-6 py-20"><div class="max-w-4xl mx-auto">
+      <a href="${archivePath}" class="font-mono text-xs uppercase text-gray-500">&larr; The AI Crime Files</a>
+      <p class="font-mono text-xs uppercase text-red-400 mt-10">${escapeHtml(copy.label)}</p>
+      <h1 class="font-serif text-5xl font-light italic leading-tight mt-4">${escapeHtml(copy.title)}</h1>
+      <p class="text-lg leading-relaxed text-gray-300 mt-6">${escapeHtml(copy.directAnswer)}</p>
+      <figure class="mt-10"><img src="${whistleblowingImage}" alt="${escapeHtml(copy.alt)}" width="1600" height="900" fetchpriority="high" class="aspect-video w-full object-cover" /><figcaption class="text-xs text-gray-500 mt-2">Original editorial illustration. The research described below was a controlled experiment.</figcaption></figure>
+      <p class="border-l-4 border-amber-500 bg-amber-500/5 p-5 text-sm text-amber-100 mt-8"><strong>Evidence classification:</strong> ${escapeHtml(copy.classification)}</p>
+      <nav aria-label="Languages" class="flex flex-wrap gap-2 mt-8">${languageLinks}</nav>
+      <div class="mt-14">${copy.sections.map((section, index) => `<section class="mb-12"><span class="font-mono text-xs text-red-500">0${index + 1}</span><h2 class="font-serif text-3xl text-white mt-2">${escapeHtml(section.heading)}</h2><div class="space-y-5 text-[15px] leading-7 text-gray-300 mt-5">${section.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}${section.bullets ? `<ul class="border-l border-red-500/40 pl-6 space-y-3">${section.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}</div></section>`).join('')}</div>
+      <section class="border-t border-white/10 pt-10"><h2 class="font-serif text-3xl text-white">Sources</h2><div class="space-y-3 mt-6"><a href="https://arxiv.org/html/2609.04170v1" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Primary paper · Google DeepMind researchers · September 3, 2026</a><a href="https://indianexpress.com/article/technology/artificial-intelligence/ai-agents-google-deepmind-paper-key-findings-10868387/" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Independent coverage · The Indian Express · September 8, 2026</a></div></section>
+      <section class="mt-12"><h2 class="font-serif text-3xl text-white">FAQ</h2>${copy.faq.map((item) => `<details class="border border-white/10 p-5 mt-4"><summary class="cursor-pointer text-lg">${escapeHtml(item.question)}</summary><p class="text-gray-300 mt-3">${escapeHtml(item.answer)}</p></details>`).join('')}</section>
+      <aside class="grid md:grid-cols-2 gap-5 mt-12"><a href="${containmentHref(language)}" class="border border-red-500/25 p-6"><strong class="text-red-400">Related analysis</strong><span class="block text-white mt-2">${escapeHtml(containmentCopy[language].title)}</span></a><a href="/books/harness-engineering-ai-coding-agents" class="border border-red-500/25 p-6"><strong class="text-red-400">Harness Engineering</strong><span class="block text-white mt-2">Production controls for AI coding agents</span></a></aside>
+      ${renderCrimeBookCTA(language)}
+    </div></article>`,
+  };
+});
 
 // Absolute routes to pre-render
 const routes = [
@@ -500,7 +558,8 @@ const routes = [
     `
   },
   ...crimeIndexRoutes,
-  ...crimeArticleRoutes
+  ...crimeArticleRoutes,
+  ...whistleblowingRoutes
 ];
 
 function generatePersonSchema() {
@@ -715,6 +774,40 @@ function generateAICrimeSchema(schemaType: string) {
   };
 }
 
+function generateHarnessExplainerSchema(schemaType: string) {
+  const language = (schemaType.split(':')[1] || 'en') as AICrimeLanguage;
+  const copy = whistleblowingCopy[language];
+  const url = `https://leandrocaladoferreira.com${whistleblowingHref(language)}`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      generatePersonSchema(),
+      {
+        '@type': 'TechArticle', '@id': `${url}/#article`, url,
+        headline: copy.title, description: copy.description,
+        mainEntityOfPage: url, inLanguage: language,
+        datePublished: '2026-09-08', dateModified: '2026-09-08',
+        author: { '@type': 'Person', name: 'Leandro Calado', url: 'https://leandrocaladoferreira.com' },
+        publisher: { '@type': 'Organization', name: 'LCF Consulting', url: 'https://leandrocaladoferreira.com' },
+        image: { '@type': 'ImageObject', url: `https://leandrocaladoferreira.com${whistleblowingImage}`, width: 1600, height: 900 },
+        articleSection: 'Harness Engineering · The AI Crime Files',
+        keywords: ['Harness Engineering', 'AI agent whistleblowing', 'AI swarm governance', 'multi-agent systems', 'reward hacking', 'agent escalation', 'AI agent guardrails'],
+        citation: ['https://arxiv.org/html/2609.04170v1', 'https://indianexpress.com/article/technology/artificial-intelligence/ai-agents-google-deepmind-paper-key-findings-10868387/'],
+      },
+      {
+        '@type': 'BreadcrumbList', itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://leandrocaladoferreira.com/' },
+          { '@type': 'ListItem', position: 2, name: 'The AI Crime Files', item: `https://leandrocaladoferreira.com${getLocalizedAICrimePath(AI_CRIME_BASE_PATH, language)}` },
+          { '@type': 'ListItem', position: 3, name: copy.title, item: url },
+        ]
+      },
+      {
+        '@type': 'FAQPage', mainEntity: copy.faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } }))
+      }
+    ]
+  };
+}
+
 function generateSchemaForRoute(schemaType: string) {
   const person = generatePersonSchema();
   if (schemaType === "HarnessBook") {
@@ -792,6 +885,9 @@ function generateSchemaForRoute(schemaType: string) {
   }
   if (schemaType.startsWith("AICrimeIndex:") || schemaType.startsWith("AICrime:")) {
     return JSON.stringify(generateAICrimeSchema(schemaType), null, 2);
+  }
+  if (schemaType.startsWith('HarnessExplainer:')) {
+    return JSON.stringify(generateHarnessExplainerSchema(schemaType), null, 2);
   }
 
   // General WebPage schemas pointing back to Leandro

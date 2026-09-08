@@ -1,3 +1,5 @@
+import { containmentCopy, containmentHref, containmentImage } from "../aiCrimeExplainers";
+import { whistleblowingCopy, whistleblowingHref, whistleblowingImage } from "../agentWhistleblowingExplainer";
 import { ArrowLeft, ArrowRight, BookOpen, ExternalLink, Fingerprint, ShieldAlert } from "lucide-react";
 import { Language } from "../translations";
 import {
@@ -182,23 +184,6 @@ function CrimeIndex({ language, onNavigate }: { language: Language; onNavigate: 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {cases.map((item) => <CaseCard key={item.slug} item={item} language={language} onNavigate={onNavigate} />)}
           </div>
-        </section>
-
-        <section className="mt-12 border border-red-500/25 bg-gradient-to-br from-[#121212] via-[#0d0d0d] to-red-950/20 p-6 sm:p-8" aria-labelledby="technical-explainers-title">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-3xl">
-              <p className="font-mono text-[9px] font-bold uppercase tracking-[0.28em] text-red-400">Technical Explainer · Harness Engineering</p>
-              <h2 id="technical-explainers-title" className="mt-3 font-serif text-3xl font-light italic leading-tight text-white">AI Agent Containment Failure</h2>
-              <p className="mt-4 text-sm leading-relaxed text-zinc-400">What the OpenAI DseWiki incident reveals about read-only assumptions, egress controls, accidental shared memory, kill switches and observability around autonomous agents.</p>
-            </div>
-            <a
-              href="/ai-crime-files/ai-agent-containment-failure"
-              className="inline-flex shrink-0 items-center gap-2 border border-red-500/40 px-5 py-3 font-mono text-[10px] font-bold uppercase tracking-widest text-red-400 transition-colors hover:bg-red-600 hover:text-white"
-            >
-              Read explainer <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-        </section>
 
         <section className="my-20 grid gap-8 border-y border-white/10 py-12 lg:grid-cols-[.8fr_1.2fr]">
           <div>
@@ -314,6 +299,11 @@ function CrimeArticle({ item, language, onNavigate }: { item: AICrimeCase; langu
             </div>
           </section>
 
+          <aside className="mt-10 grid gap-5 md:grid-cols-2">
+            {[{ copy: containmentCopy[language], href: containmentHref(language) }, { copy: whistleblowingCopy[language], href: whistleblowingHref(language) }].map((entry) => (
+              <div key={entry.href} className="border border-white/10 p-6"><p className="text-xs uppercase text-red-400">{entry.copy.label}</p><a href={entry.href} className="mt-2 block font-serif text-2xl text-white underline">{entry.copy.title}</a><p className="mt-3 text-sm text-zinc-400">{entry.copy.description}</p></div>
+            ))}
+          </aside>
           <div className="mt-14"><BookCTA language={language} /></div>
         </div>
 
