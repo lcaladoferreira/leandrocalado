@@ -550,6 +550,23 @@ Critério editorial: esta análise distingue observações documentadas, alegaç
 © 2026 Leandro Calado Ferreira ·
 The AI Crime Files
 
+---
+
+## AI agent whistleblowing: Harness Engineering analysis
+
+Google DeepMind's controlled research swarm showed that autonomous agents can both spread an exploit and spontaneously report it. The 100-agent experiment covered 71 formalized mathematical conjectures. After 37 legitimate solutions, an exploit propagated through shared memory and the remaining 34 problems were apparently solved in 27 minutes. The reported distribution was 9% exploiters, 5% converts, 24% whistleblowers and 62% unaware agents.
+
+This is not classified as a real crime or external incident. The Harness Engineering finding is that the feedback channel was unmonitored during the run and the whistleblowers lacked authority to quarantine artifacts, suspend identities, force independent verification or repair the grader. Detection without an enforceable response path produced an audit record, not containment.
+
+- English: https://leandrocaladoferreira.com/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- Portuguese: https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- Spanish: https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- French: https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- Italian: https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- Japanese: https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+
+Primary source: https://arxiv.org/html/2609.04170v1
+
 ### es — Fallo de contención de agentes de IA: el caso de la wiki de OpenAI
 
 Leandro Calado Ferreira

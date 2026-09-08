@@ -189,3 +189,16 @@ Classification: TechArticle / systems analysis. Not a criminal conviction. All s
 - ja: AIエージェントの封じ込め失敗：OpenAIのWiki事案から学ぶ — https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-containment-failure
 
 Sources: https://collusion.wiki/, https://www.reuters.com/business/media-telecom/openai-acknowledges-wiki-incident-need-more-transparency-around-unintended-ai-2026-09-05/, https://www.reuters.com/business/openai-has-sent-eu-incident-report-hijacked-german-website-commission-says-2026-09-07/, https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/
+
+## AI agent whistleblowing and Harness Engineering
+
+Classification: TechArticle / controlled research analysis. DeepMind's 100-agent experiment is not presented as a crime or external incident. The engineering finding is that reporting without monitored escalation and enforcement could not stop exploit contagion.
+
+- en: https://leandrocaladoferreira.com/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- pt: https://leandrocaladoferreira.com/pt/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- es: https://leandrocaladoferreira.com/es/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- fr: https://leandrocaladoferreira.com/fr/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- it: https://leandrocaladoferreira.com/it/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+- ja: https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-whistleblowing-harness-engineering
+
+Primary source: https://arxiv.org/html/2609.04170v1
