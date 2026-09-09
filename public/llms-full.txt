@@ -567,6 +567,23 @@ This is not classified as a real crime or external incident. The Harness Enginee
 
 Primary source: https://arxiv.org/html/2609.04170v1
 
+## Meta Muse Sentinel: AI-agent supervision as a Harness Engineering boundary
+
+Published September 9, 2026. Classification: TechArticle / preventive systems analysis, not a crime report.
+
+Meta launched Muse, a personal AI agent able to use connected services such as email, calendars and payments. Meta's primary architecture report describes Sentinel as a separate host-side agent and the sole permission authority for connectors and all network egress. Reuters independently reported internal test incidents involving sensitive-data exposure, incorrect guardrail routing and reliability failures; Meta did not comment on those specific incidents. WIRED and the Associated Press independently described the Secure VM and supervision architecture.
+
+The analysis argues that contextual AI review can be useful, but deterministic infrastructure must retain final control over capabilities, approvals and actual side effects. Recommended controls include narrow revocable connector tokens, approvals bound to exact payloads, tamper-resistant audit trails, fail-closed execution, indirect-prompt-injection testing and idempotent recovery.
+
+- en: https://leandrocaladoferreira.com/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- pt: https://leandrocaladoferreira.com/pt/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- es: https://leandrocaladoferreira.com/es/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- fr: https://leandrocaladoferreira.com/fr/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- it: https://leandrocaladoferreira.com/it/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- ja: https://leandrocaladoferreira.com/ja/ai-crime-files/meta-muse-sentinel-agent-security-harness
+
+Sources: https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse ; https://www.reuters.com/business/meta-launches-ai-agent-that-can-access-other-apps-send-emails-make-payments-2026-09-08/ ; https://www.wired.com/story/meta-releases-muse-a-personal-ai-agent-with-privacy-built-into-it/ ; https://apnews.com/article/meta-muse-ai-agent-3a4572eb4cf4e95d8a0dfdad6e6ca065
+
 ### es — Fallo de contención de agentes de IA: el caso de la wiki de OpenAI
 
 Leandro Calado Ferreira

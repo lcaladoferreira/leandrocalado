@@ -176,6 +176,17 @@ The AI Agent Containment Failure explainer uses the DseWiki/OpenAI episode to do
 
 Full machine-readable case summaries, sources and keyword map: https://leandrocaladoferreira.com/llms-full.txt
 
+## Meta Muse Sentinel and AI-agent supervision
+
+Technical Harness Engineering analysis of Meta's September 8, 2026 Muse launch. Meta says a separate host-side Sentinel agent is the sole permission authority for connector actions and network egress. The article distinguishes Meta's architectural claims, independently reported test failures, and design analysis; it does not claim that a crime occurred.
+
+- en: https://leandrocaladoferreira.com/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- pt: https://leandrocaladoferreira.com/pt/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- es: https://leandrocaladoferreira.com/es/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- fr: https://leandrocaladoferreira.com/fr/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- it: https://leandrocaladoferreira.com/it/ai-crime-files/meta-muse-sentinel-agent-security-harness
+- ja: https://leandrocaladoferreira.com/ja/ai-crime-files/meta-muse-sentinel-agent-security-harness
+
 
 ## AI agent containment failure: multilingual technical explainer
 

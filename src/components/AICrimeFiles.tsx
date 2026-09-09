@@ -1,5 +1,6 @@
 import { containmentCopy, containmentHref, containmentImage } from "../aiCrimeExplainers";
 import { whistleblowingCopy, whistleblowingHref, whistleblowingImage } from "../agentWhistleblowingExplainer";
+import { museSentinelCopy, museSentinelHref, museSentinelImage } from "../metaMuseSentinelExplainer";
 import { ArrowLeft, ArrowRight, BookOpen, ExternalLink, Fingerprint, ShieldAlert } from "lucide-react";
 import { Language } from "../translations";
 import {
@@ -184,6 +185,20 @@ function CrimeIndex({ language, onNavigate }: { language: Language; onNavigate: 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {cases.map((item) => <CaseCard key={item.slug} item={item} language={language} onNavigate={onNavigate} />)}
           </div>
+        </section>
+
+        <section className="mt-16" aria-labelledby="harness-analysis-title">
+          <p className="font-mono text-[9px] font-bold uppercase tracking-[0.28em] text-amber-400">Harness Engineering</p>
+          <h2 id="harness-analysis-title" className="mt-2 font-serif text-3xl font-light italic text-white">Technical analysis and prevention</h2>
+          <div className="mt-7 grid gap-5 lg:grid-cols-3">
+            {[{ copy: museSentinelCopy[language], href: museSentinelHref(language), image: museSentinelImage }, { copy: containmentCopy[language], href: containmentHref(language), image: containmentImage }, { copy: whistleblowingCopy[language], href: whistleblowingHref(language), image: whistleblowingImage }].map((entry) => (
+              <a key={entry.href} href={entry.href} className="group overflow-hidden border border-white/10 bg-[#101010] transition-colors hover:border-amber-500/40">
+                <img src={entry.image} width="1600" height="900" loading="lazy" alt={entry.copy.alt} className="aspect-video w-full object-cover" />
+                <div className="p-6"><p className="text-xs text-amber-400">{entry.copy.label}</p><h3 className="mt-3 font-serif text-2xl text-white group-hover:text-amber-300">{entry.copy.title}</h3><p className="mt-3 text-sm leading-relaxed text-zinc-400">{entry.copy.description}</p></div>
+              </a>
+            ))}
+          </div>
+        </section>
 
         <section className="my-20 grid gap-8 border-y border-white/10 py-12 lg:grid-cols-[.8fr_1.2fr]">
           <div>
@@ -300,7 +315,7 @@ function CrimeArticle({ item, language, onNavigate }: { item: AICrimeCase; langu
           </section>
 
           <aside className="mt-10 grid gap-5 md:grid-cols-2">
-            {[{ copy: containmentCopy[language], href: containmentHref(language) }, { copy: whistleblowingCopy[language], href: whistleblowingHref(language) }].map((entry) => (
+            {[{ copy: museSentinelCopy[language], href: museSentinelHref(language), image: museSentinelImage }, { copy: containmentCopy[language], href: containmentHref(language), image: containmentImage }, { copy: whistleblowingCopy[language], href: whistleblowingHref(language), image: whistleblowingImage }].map((entry) => (
               <div key={entry.href} className="border border-white/10 p-6"><p className="text-xs uppercase text-red-400">{entry.copy.label}</p><a href={entry.href} className="mt-2 block font-serif text-2xl text-white underline">{entry.copy.title}</a><p className="mt-3 text-sm text-zinc-400">{entry.copy.description}</p></div>
             ))}
           </aside>
