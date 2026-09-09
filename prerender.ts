@@ -1,5 +1,6 @@
 import { containmentCopy, containmentHref, containmentImage } from "./src/aiCrimeExplainers";
 import { whistleblowingCopy, whistleblowingHref, whistleblowingImage, whistleblowingPath } from "./src/agentWhistleblowingExplainer";
+import { museSentinelCopy, museSentinelHref, museSentinelImage, museSentinelPath } from "./src/metaMuseSentinelExplainer";
 import * as fs from "fs";
 import * as path from "path";
 import { booksData } from "./src/data";
@@ -54,6 +55,17 @@ const renderWhistleblowingLink = (language: AICrimeLanguage, showImage = false) 
   </aside>`;
 };
 
+const renderMuseSentinelLink = (language: AICrimeLanguage, showImage = false) => {
+  const copy = museSentinelCopy[language];
+  return `<aside class="border border-amber-500/25 p-6 mt-12 bg-[#101010]">
+    ${showImage ? `<img src="${museSentinelImage}" width="1600" height="900" loading="lazy" alt="${escapeHtml(copy.alt)}" class="aspect-video w-full max-w-lg object-cover mb-6" />` : ''}
+    <p class="text-xs text-amber-400">${escapeHtml(copy.label)}</p>
+    <h2 class="font-serif text-3xl text-white mt-3"><a href="${museSentinelHref(language)}">${escapeHtml(copy.title)}</a></h2>
+    <p class="text-sm text-gray-400 mt-3">${escapeHtml(copy.description)}</p>
+    <a href="${museSentinelHref(language)}" class="inline-block text-amber-400 mt-5">${escapeHtml(copy.read)} &rarr;</a>
+  </aside>`;
+};
+
 const crimeIndexRoutes = crimeLanguages.map((language) => {
   const t = aiCrimeUi[language];
   const cases = localizeAICrimeCases(aiCrimeCases, language);
@@ -82,7 +94,7 @@ const crimeIndexRoutes = crimeLanguages.map((language) => {
             </article>
           `).join("")}
         </div>
-        <section class="grid lg:grid-cols-2 gap-6">${renderContainmentLink(language, true)}${renderWhistleblowingLink(language, true)}</section>
+        <section class="grid lg:grid-cols-3 gap-6">${renderMuseSentinelLink(language, true)}${renderWhistleblowingLink(language, true)}${renderContainmentLink(language, true)}</section>
         <section class="border-y border-white/10 py-12 mt-16">
           <h2 class="font-serif text-3xl font-light italic text-white">${escapeHtml(t.archiveCriteria)}</h2>
           <ol class="grid md:grid-cols-2 gap-4 mt-6">${t.criteria.map((criterion) => `<li class="border border-white/10 p-4 text-sm text-gray-400">${escapeHtml(criterion)}</li>`).join("")}</ol>
@@ -149,7 +161,7 @@ const crimeArticleRoutes = crimeLanguages.flatMap((language) => aiCrimeCases.map
             ${item.sources.map((source) => `<a href="${source.url}" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-sm text-gray-300">${escapeHtml(source.label)} <span class="text-red-400">• ${escapeHtml(source.publisher)} • ${source.kind} source</span></a>`).join("")}
           </div>
         </section>
-        <section class="grid lg:grid-cols-2 gap-6">${renderContainmentLink(language)}${renderWhistleblowingLink(language)}</section>
+        <section class="grid lg:grid-cols-3 gap-6">${renderMuseSentinelLink(language)}${renderContainmentLink(language)}${renderWhistleblowingLink(language)}</section>
         ${renderCrimeBookCTA(language)}
       </div>
     </article>
@@ -184,6 +196,34 @@ const whistleblowingRoutes = crimeLanguages.map((language) => {
       <section class="border-t border-white/10 pt-10"><h2 class="font-serif text-3xl text-white">Sources</h2><div class="space-y-3 mt-6"><a href="https://arxiv.org/html/2609.04170v1" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Primary paper · Google DeepMind researchers · September 3, 2026</a><a href="https://indianexpress.com/article/technology/artificial-intelligence/ai-agents-google-deepmind-paper-key-findings-10868387/" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Independent coverage · The Indian Express · September 8, 2026</a></div></section>
       <section class="mt-12"><h2 class="font-serif text-3xl text-white">FAQ</h2>${copy.faq.map((item) => `<details class="border border-white/10 p-5 mt-4"><summary class="cursor-pointer text-lg">${escapeHtml(item.question)}</summary><p class="text-gray-300 mt-3">${escapeHtml(item.answer)}</p></details>`).join('')}</section>
       <aside class="grid md:grid-cols-2 gap-5 mt-12"><a href="${containmentHref(language)}" class="border border-red-500/25 p-6"><strong class="text-red-400">Related analysis</strong><span class="block text-white mt-2">${escapeHtml(containmentCopy[language].title)}</span></a><a href="/books/harness-engineering-ai-coding-agents" class="border border-red-500/25 p-6"><strong class="text-red-400">Harness Engineering</strong><span class="block text-white mt-2">Production controls for AI coding agents</span></a></aside>
+      ${renderCrimeBookCTA(language)}
+    </div></article>`,
+  };
+});
+
+const museSentinelRoutes = crimeLanguages.map((language) => {
+  const copy = museSentinelCopy[language];
+  const routePath = museSentinelHref(language);
+  const archivePath = getLocalizedAICrimePath(AI_CRIME_BASE_PATH, language);
+  const languageLinks = crimeLanguages.map((lang) => `<a href="${museSentinelHref(lang)}" hreflang="${lang}" lang="${lang}" class="border border-white/10 px-3 py-2 text-xs text-gray-300">${lang.toUpperCase()}</a>`).join('');
+  return {
+    path: routePath, title: copy.title, description: copy.description,
+    canonical: `https://leandrocaladoferreira.com${routePath}`,
+    schemaType: `MuseSentinel:${language}`, ogType: 'article', language,
+    image: { url: `https://leandrocaladoferreira.com${museSentinelImage}`, width: 1600, height: 900, type: 'image/webp', alt: copy.alt },
+    alternates: crimeAlternates(museSentinelPath),
+    htmlContent: `<article class="bg-[#090909] text-white px-6 py-20"><div class="max-w-4xl mx-auto">
+      <a href="${archivePath}" class="font-mono text-xs uppercase text-gray-500">&larr; The AI Crime Files</a>
+      <p class="font-mono text-xs uppercase text-amber-400 mt-10">${escapeHtml(copy.label)}</p>
+      <h1 class="font-serif text-5xl font-light italic leading-tight mt-4">${escapeHtml(copy.title)}</h1>
+      <p class="text-lg leading-relaxed text-gray-300 mt-6">${escapeHtml(copy.directAnswer)}</p>
+      <figure class="mt-10"><img src="${museSentinelImage}" alt="${escapeHtml(copy.alt)}" width="1600" height="900" fetchpriority="high" class="aspect-video w-full object-cover" /><figcaption class="text-xs text-gray-500 mt-2">Original editorial illustration · September 9, 2026</figcaption></figure>
+      <p class="border-l-4 border-amber-500 bg-amber-500/5 p-5 text-sm text-amber-100 mt-8"><strong>Evidence classification:</strong> ${escapeHtml(copy.classification)}</p>
+      <nav aria-label="Languages" class="flex flex-wrap gap-2 mt-8">${languageLinks}</nav>
+      <div class="mt-14">${copy.sections.map((section, index) => `<section class="mb-12"><span class="font-mono text-xs text-amber-500">0${index + 1}</span><h2 class="font-serif text-3xl text-white mt-2">${escapeHtml(section.heading)}</h2><div class="space-y-5 text-[15px] leading-7 text-gray-300 mt-5">${section.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}${section.bullets ? `<ul class="border-l border-amber-500/40 pl-6 space-y-3">${section.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}</div></section>`).join('')}</div>
+      <section class="border-t border-white/10 pt-10"><h2 class="font-serif text-3xl text-white">Sources</h2><div class="space-y-3 mt-6"><a href="https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Primary architecture report · Meta AI Research · September 8, 2026</a><a href="https://www.reuters.com/business/meta-launches-ai-agent-that-can-access-other-apps-send-emails-make-payments-2026-09-08/" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Independent reporting · Reuters · September 8, 2026</a><a href="https://www.wired.com/story/meta-releases-muse-a-personal-ai-agent-with-privacy-built-into-it/" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Independent technical coverage · WIRED · September 8, 2026</a><a href="https://apnews.com/article/meta-muse-ai-agent-3a4572eb4cf4e95d8a0dfdad6e6ca065" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Independent launch coverage · Associated Press · September 8, 2026</a></div></section>
+      <section class="mt-12"><h2 class="font-serif text-3xl text-white">FAQ</h2>${copy.faq.map((item) => `<details class="border border-white/10 p-5 mt-4"><summary class="cursor-pointer text-lg">${escapeHtml(item.question)}</summary><p class="text-gray-300 mt-3">${escapeHtml(item.answer)}</p></details>`).join('')}</section>
+      <aside class="grid md:grid-cols-2 gap-5 mt-12"><a href="${containmentHref(language)}" class="border border-red-500/25 p-6"><strong class="text-red-400">Related analysis</strong><span class="block text-white mt-2">${escapeHtml(containmentCopy[language].title)}</span></a><a href="/books/harness-engineering-ai-coding-agents" class="border border-amber-500/25 p-6"><strong class="text-amber-400">Harness Engineering book</strong><span class="block text-white mt-2">Permissions, sandboxes, approval gates and production controls</span></a></aside>
       ${renderCrimeBookCTA(language)}
     </div></article>`,
   };
@@ -559,7 +599,8 @@ const routes = [
   },
   ...crimeIndexRoutes,
   ...crimeArticleRoutes,
-  ...whistleblowingRoutes
+  ...whistleblowingRoutes,
+  ...museSentinelRoutes
 ];
 
 function generatePersonSchema() {
@@ -808,6 +849,26 @@ function generateHarnessExplainerSchema(schemaType: string) {
   };
 }
 
+function generateMuseSentinelSchema(schemaType: string) {
+  const language = (schemaType.split(':')[1] || 'en') as AICrimeLanguage;
+  const copy = museSentinelCopy[language];
+  const url = `https://leandrocaladoferreira.com${museSentinelHref(language)}`;
+  return { '@context': 'https://schema.org', '@graph': [generatePersonSchema(), {
+    '@type': 'TechArticle', '@id': `${url}/#article`, url, headline: copy.title, description: copy.description,
+    mainEntityOfPage: url, inLanguage: language, datePublished: '2026-09-09', dateModified: '2026-09-09',
+    author: { '@type': 'Person', name: 'Leandro Calado', url: 'https://leandrocaladoferreira.com' },
+    publisher: { '@type': 'Organization', name: 'LCF Consulting', url: 'https://leandrocaladoferreira.com' },
+    image: { '@type': 'ImageObject', url: `https://leandrocaladoferreira.com${museSentinelImage}`, width: 1600, height: 900 },
+    articleSection: 'Harness Engineering · The AI Crime Files',
+    keywords: ['Meta Muse Sentinel', 'AI agent supervision', 'Harness Engineering', 'AI agent permission authority', 'Secure VM', 'prompt injection protection', 'AI agent guardrails', 'human-in-the-loop approval'],
+    citation: ['https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse','https://www.reuters.com/business/meta-launches-ai-agent-that-can-access-other-apps-send-emails-make-payments-2026-09-08/','https://www.wired.com/story/meta-releases-muse-a-personal-ai-agent-with-privacy-built-into-it/','https://apnews.com/article/meta-muse-ai-agent-3a4572eb4cf4e95d8a0dfdad6e6ca065']
+  }, { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://leandrocaladoferreira.com/' },
+    { '@type': 'ListItem', position: 2, name: 'The AI Crime Files', item: `https://leandrocaladoferreira.com${getLocalizedAICrimePath(AI_CRIME_BASE_PATH, language)}` },
+    { '@type': 'ListItem', position: 3, name: copy.title, item: url }
+  ] }, { '@type': 'FAQPage', mainEntity: copy.faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] };
+}
+
 function generateSchemaForRoute(schemaType: string) {
   const person = generatePersonSchema();
   if (schemaType === "HarnessBook") {
@@ -888,6 +949,9 @@ function generateSchemaForRoute(schemaType: string) {
   }
   if (schemaType.startsWith('HarnessExplainer:')) {
     return JSON.stringify(generateHarnessExplainerSchema(schemaType), null, 2);
+  }
+  if (schemaType.startsWith('MuseSentinel:')) {
+    return JSON.stringify(generateMuseSentinelSchema(schemaType), null, 2);
   }
 
   // General WebPage schemas pointing back to Leandro
