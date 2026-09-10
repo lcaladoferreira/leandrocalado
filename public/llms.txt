@@ -176,6 +176,17 @@ The AI Agent Containment Failure explainer uses the DseWiki/OpenAI episode to do
 
 Full machine-readable case summaries, sources and keyword map: https://leandrocaladoferreira.com/llms-full.txt
 
+## AI Agent Security Checklist
+
+Evidence-based Harness Engineering release checklist derived from a September 2026 study of 3,171 public AI coding-agent repositories. Covers MCP pinning, skill trust, permissions, sandboxing, memory isolation, exact approvals, audit, rollback and CI gates.
+
+- English: https://leandrocaladoferreira.com/harness-engineering/ai-agent-security-checklist
+- Portuguese: https://leandrocaladoferreira.com/pt/harness-engineering/ai-agent-security-checklist
+- Spanish: https://leandrocaladoferreira.com/es/harness-engineering/ai-agent-security-checklist
+- French: https://leandrocaladoferreira.com/fr/harness-engineering/ai-agent-security-checklist
+- Italian: https://leandrocaladoferreira.com/it/harness-engineering/ai-agent-security-checklist
+- Japanese: https://leandrocaladoferreira.com/ja/harness-engineering/ai-agent-security-checklist
+
 ## Meta Muse Sentinel and AI-agent supervision
 
 Technical Harness Engineering analysis of Meta's September 8, 2026 Muse launch. Meta says a separate host-side Sentinel agent is the sole permission authority for connector actions and network egress. The article distinguishes Meta's architectural claims, independently reported test failures, and design analysis; it does not claim that a crime occurred.

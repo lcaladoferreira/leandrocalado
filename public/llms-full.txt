@@ -567,6 +567,23 @@ This is not classified as a real crime or external incident. The Harness Enginee
 
 Primary source: https://arxiv.org/html/2609.04170v1
 
+## AI Agent Security Checklist: 10 Harness Engineering Checks
+
+Published 2026-09-10. A practical TechArticle based on “Scanning the Harness,” a primary empirical study of 3,171 public repositories. The paper confirmed security defects in 16.0% of 2,660 assembled setups: 9.8% contained an unpinned MCP package, 3.1% an arbitrary-execution grant hidden behind scoped-looking syntax, and 3.8% a skill pre-approving shell access. The categories overlap. The study did not confirm a credential-exfiltration path.
+
+The ten checks cover exact MCP version/digest pinning, permission expansion, skill provenance, deterministic tool authority, sandboxing, approval binding, memory and secret isolation, tamper-resistant audit, idempotent recovery and assembled-harness CI gates.
+
+- en: https://leandrocaladoferreira.com/harness-engineering/ai-agent-security-checklist
+- pt: https://leandrocaladoferreira.com/pt/harness-engineering/ai-agent-security-checklist
+- es: https://leandrocaladoferreira.com/es/harness-engineering/ai-agent-security-checklist
+- fr: https://leandrocaladoferreira.com/fr/harness-engineering/ai-agent-security-checklist
+- it: https://leandrocaladoferreira.com/it/harness-engineering/ai-agent-security-checklist
+- ja: https://leandrocaladoferreira.com/ja/harness-engineering/ai-agent-security-checklist
+
+Primary paper: https://arxiv.org/html/2609.07360
+Scanner: https://github.com/redhat-community-ai-tools/harness-eval
+Reproducibility artifact: https://github.com/Benkapner/harness-eval-experiments
+
 ## Meta Muse Sentinel: AI-agent supervision as a Harness Engineering boundary
 
 Published September 9, 2026. Classification: TechArticle / preventive systems analysis, not a crime report.

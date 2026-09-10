@@ -1,6 +1,7 @@
 import { containmentCopy, containmentHref, containmentImage } from "./src/aiCrimeExplainers";
 import { whistleblowingCopy, whistleblowingHref, whistleblowingImage, whistleblowingPath } from "./src/agentWhistleblowingExplainer";
 import { museSentinelCopy, museSentinelHref, museSentinelImage, museSentinelPath } from "./src/metaMuseSentinelExplainer";
+import { harnessChecklistCopy, harnessChecklistHref, harnessChecklistImage, harnessChecklistPath } from "./src/harnessSecurityChecklist";
 import * as fs from "fs";
 import * as path from "path";
 import { booksData } from "./src/data";
@@ -16,9 +17,14 @@ const escapeHtml = (value: string) => value
 
 const crimeLanguages: AICrimeLanguage[] = ["en", "pt", "es", "fr", "it", "ja"];
 
+const localizedPagePath = (pagePath: string, language: AICrimeLanguage) => {
+  if (pagePath.startsWith(AI_CRIME_BASE_PATH)) return getLocalizedAICrimePath(pagePath, language);
+  return language === "en" ? pagePath : `/${language}${pagePath}`;
+};
+
 const crimeAlternates = (path: string) => [
-  ...crimeLanguages.map((language) => ({ language, href: `https://leandrocaladoferreira.com${getLocalizedAICrimePath(path, language)}` })),
-  { language: "x-default", href: `https://leandrocaladoferreira.com${getLocalizedAICrimePath(path, "en")}` },
+  ...crimeLanguages.map((language) => ({ language, href: `https://leandrocaladoferreira.com${localizedPagePath(path, language)}` })),
+  { language: "x-default", href: `https://leandrocaladoferreira.com${localizedPagePath(path, "en")}` },
 ];
 
 const renderCrimeBookCTA = (language: AICrimeLanguage) => {
@@ -66,6 +72,17 @@ const renderMuseSentinelLink = (language: AICrimeLanguage, showImage = false) =>
   </aside>`;
 };
 
+const renderHarnessChecklistLink = (language: AICrimeLanguage, showImage = false) => {
+  const copy = harnessChecklistCopy[language];
+  return `<aside class="border border-[#F27D26]/30 p-6 mt-12 bg-[#101010]">
+    ${showImage ? `<img src="${harnessChecklistImage}" width="1600" height="900" loading="lazy" alt="${escapeHtml(copy.alt)}" class="aspect-video w-full object-cover mb-6" />` : ''}
+    <p class="text-xs text-[#F27D26]">${escapeHtml(copy.eyebrow)}</p>
+    <h2 class="font-serif text-3xl text-white mt-3"><a href="${harnessChecklistHref(language)}">${escapeHtml(copy.title)}</a></h2>
+    <p class="text-sm text-gray-400 mt-3">${escapeHtml(copy.description)}</p>
+    <a href="${harnessChecklistHref(language)}" class="inline-block text-[#F27D26] mt-5">Open the checklist &rarr;</a>
+  </aside>`;
+};
+
 const crimeIndexRoutes = crimeLanguages.map((language) => {
   const t = aiCrimeUi[language];
   const cases = localizeAICrimeCases(aiCrimeCases, language);
@@ -94,7 +111,7 @@ const crimeIndexRoutes = crimeLanguages.map((language) => {
             </article>
           `).join("")}
         </div>
-        <section class="grid lg:grid-cols-3 gap-6">${renderMuseSentinelLink(language, true)}${renderWhistleblowingLink(language, true)}${renderContainmentLink(language, true)}</section>
+        <section class="grid lg:grid-cols-2 gap-6">${renderHarnessChecklistLink(language, true)}${renderMuseSentinelLink(language, true)}${renderWhistleblowingLink(language, true)}${renderContainmentLink(language, true)}</section>
         <section class="border-y border-white/10 py-12 mt-16">
           <h2 class="font-serif text-3xl font-light italic text-white">${escapeHtml(t.archiveCriteria)}</h2>
           <ol class="grid md:grid-cols-2 gap-4 mt-6">${t.criteria.map((criterion) => `<li class="border border-white/10 p-4 text-sm text-gray-400">${escapeHtml(criterion)}</li>`).join("")}</ol>
@@ -161,7 +178,7 @@ const crimeArticleRoutes = crimeLanguages.flatMap((language) => aiCrimeCases.map
             ${item.sources.map((source) => `<a href="${source.url}" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-sm text-gray-300">${escapeHtml(source.label)} <span class="text-red-400">• ${escapeHtml(source.publisher)} • ${source.kind} source</span></a>`).join("")}
           </div>
         </section>
-        <section class="grid lg:grid-cols-3 gap-6">${renderMuseSentinelLink(language)}${renderContainmentLink(language)}${renderWhistleblowingLink(language)}</section>
+        <section class="grid lg:grid-cols-2 gap-6">${renderHarnessChecklistLink(language)}${renderMuseSentinelLink(language)}${renderContainmentLink(language)}${renderWhistleblowingLink(language)}</section>
         ${renderCrimeBookCTA(language)}
       </div>
     </article>
@@ -195,7 +212,7 @@ const whistleblowingRoutes = crimeLanguages.map((language) => {
       <div class="mt-14">${copy.sections.map((section, index) => `<section class="mb-12"><span class="font-mono text-xs text-red-500">0${index + 1}</span><h2 class="font-serif text-3xl text-white mt-2">${escapeHtml(section.heading)}</h2><div class="space-y-5 text-[15px] leading-7 text-gray-300 mt-5">${section.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}${section.bullets ? `<ul class="border-l border-red-500/40 pl-6 space-y-3">${section.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}</div></section>`).join('')}</div>
       <section class="border-t border-white/10 pt-10"><h2 class="font-serif text-3xl text-white">Sources</h2><div class="space-y-3 mt-6"><a href="https://arxiv.org/html/2609.04170v1" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Primary paper · Google DeepMind researchers · September 3, 2026</a><a href="https://indianexpress.com/article/technology/artificial-intelligence/ai-agents-google-deepmind-paper-key-findings-10868387/" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Independent coverage · The Indian Express · September 8, 2026</a></div></section>
       <section class="mt-12"><h2 class="font-serif text-3xl text-white">FAQ</h2>${copy.faq.map((item) => `<details class="border border-white/10 p-5 mt-4"><summary class="cursor-pointer text-lg">${escapeHtml(item.question)}</summary><p class="text-gray-300 mt-3">${escapeHtml(item.answer)}</p></details>`).join('')}</section>
-      <aside class="grid md:grid-cols-2 gap-5 mt-12"><a href="${containmentHref(language)}" class="border border-red-500/25 p-6"><strong class="text-red-400">Related analysis</strong><span class="block text-white mt-2">${escapeHtml(containmentCopy[language].title)}</span></a><a href="/books/harness-engineering-ai-coding-agents" class="border border-red-500/25 p-6"><strong class="text-red-400">Harness Engineering</strong><span class="block text-white mt-2">Production controls for AI coding agents</span></a></aside>
+      <aside class="grid md:grid-cols-3 gap-5 mt-12"><a href="${harnessChecklistHref(language)}" class="border border-[#F27D26]/30 p-6"><strong class="text-[#F27D26]">Security checklist</strong><span class="block text-white mt-2">10 Harness Engineering checks before production</span></a><a href="${containmentHref(language)}" class="border border-red-500/25 p-6"><strong class="text-red-400">Related analysis</strong><span class="block text-white mt-2">${escapeHtml(containmentCopy[language].title)}</span></a><a href="/books/harness-engineering-ai-coding-agents" class="border border-red-500/25 p-6"><strong class="text-red-400">Harness Engineering</strong><span class="block text-white mt-2">Production controls for AI coding agents</span></a></aside>
       ${renderCrimeBookCTA(language)}
     </div></article>`,
   };
@@ -223,9 +240,37 @@ const museSentinelRoutes = crimeLanguages.map((language) => {
       <div class="mt-14">${copy.sections.map((section, index) => `<section class="mb-12"><span class="font-mono text-xs text-amber-500">0${index + 1}</span><h2 class="font-serif text-3xl text-white mt-2">${escapeHtml(section.heading)}</h2><div class="space-y-5 text-[15px] leading-7 text-gray-300 mt-5">${section.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}${section.bullets ? `<ul class="border-l border-amber-500/40 pl-6 space-y-3">${section.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}</div></section>`).join('')}</div>
       <section class="border-t border-white/10 pt-10"><h2 class="font-serif text-3xl text-white">Sources</h2><div class="space-y-3 mt-6"><a href="https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Primary architecture report · Meta AI Research · September 8, 2026</a><a href="https://www.reuters.com/business/meta-launches-ai-agent-that-can-access-other-apps-send-emails-make-payments-2026-09-08/" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Independent reporting · Reuters · September 8, 2026</a><a href="https://www.wired.com/story/meta-releases-muse-a-personal-ai-agent-with-privacy-built-into-it/" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Independent technical coverage · WIRED · September 8, 2026</a><a href="https://apnews.com/article/meta-muse-ai-agent-3a4572eb4cf4e95d8a0dfdad6e6ca065" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Independent launch coverage · Associated Press · September 8, 2026</a></div></section>
       <section class="mt-12"><h2 class="font-serif text-3xl text-white">FAQ</h2>${copy.faq.map((item) => `<details class="border border-white/10 p-5 mt-4"><summary class="cursor-pointer text-lg">${escapeHtml(item.question)}</summary><p class="text-gray-300 mt-3">${escapeHtml(item.answer)}</p></details>`).join('')}</section>
-      <aside class="grid md:grid-cols-2 gap-5 mt-12"><a href="${containmentHref(language)}" class="border border-red-500/25 p-6"><strong class="text-red-400">Related analysis</strong><span class="block text-white mt-2">${escapeHtml(containmentCopy[language].title)}</span></a><a href="/books/harness-engineering-ai-coding-agents" class="border border-amber-500/25 p-6"><strong class="text-amber-400">Harness Engineering book</strong><span class="block text-white mt-2">Permissions, sandboxes, approval gates and production controls</span></a></aside>
+      <aside class="grid md:grid-cols-3 gap-5 mt-12"><a href="${harnessChecklistHref(language)}" class="border border-[#F27D26]/30 p-6"><strong class="text-[#F27D26]">Security checklist</strong><span class="block text-white mt-2">10 Harness Engineering checks before production</span></a><a href="${containmentHref(language)}" class="border border-red-500/25 p-6"><strong class="text-red-400">Related analysis</strong><span class="block text-white mt-2">${escapeHtml(containmentCopy[language].title)}</span></a><a href="/books/harness-engineering-ai-coding-agents" class="border border-amber-500/25 p-6"><strong class="text-amber-400">Harness Engineering book</strong><span class="block text-white mt-2">Permissions, sandboxes, approval gates and production controls</span></a></aside>
       ${renderCrimeBookCTA(language)}
     </div></article>`,
+  };
+});
+
+const harnessChecklistRoutes = crimeLanguages.map((language) => {
+  const copy = harnessChecklistCopy[language];
+  const routePath = harnessChecklistHref(language);
+  const languageLinks = crimeLanguages.map((lang) => `<a href="${harnessChecklistHref(lang)}" hreflang="${lang}" lang="${lang}" class="border border-white/10 px-3 py-2 text-xs text-gray-300">${lang.toUpperCase()}</a>`).join('');
+  return {
+    path: routePath, title: copy.title, description: copy.description,
+    canonical: `https://leandrocaladoferreira.com${routePath}`,
+    schemaType: `HarnessChecklist:${language}`, ogType: 'article', language,
+    image: { url: `https://leandrocaladoferreira.com${harnessChecklistImage}`, width: 1600, height: 900, type: 'image/webp', alt: copy.alt },
+    alternates: crimeAlternates(harnessChecklistPath),
+    htmlContent: `<article class="bg-[#090909] text-white px-6 py-20"><div class="max-w-5xl mx-auto">
+      <a href="/books/harness-engineering-ai-coding-agents" class="font-mono text-xs uppercase text-gray-500">Harness Engineering book &larr;</a>
+      <p class="font-mono text-xs uppercase text-[#F27D26] mt-10">${escapeHtml(copy.eyebrow)}</p>
+      <h1 class="font-serif text-5xl font-light italic leading-tight mt-4">${escapeHtml(copy.title)}</h1>
+      <p class="text-lg leading-relaxed text-gray-300 mt-6">${escapeHtml(copy.intro)}</p>
+      <figure class="mt-10"><img src="${harnessChecklistImage}" alt="${escapeHtml(copy.alt)}" width="1600" height="900" fetchpriority="high" class="aspect-video w-full object-cover" /><figcaption class="text-xs text-gray-500 mt-2">Original editorial illustration · September 10, 2026</figcaption></figure>
+      <p class="border-l-4 border-amber-500 bg-amber-500/5 p-5 text-sm text-amber-100 mt-8"><strong>Evidence classification:</strong> ${escapeHtml(copy.classification)}</p>
+      <nav aria-label="Languages" class="flex flex-wrap gap-2 mt-8">${languageLinks}</nav>
+      <section class="mt-14 border border-white/10 bg-[#101010] p-7"><h2 class="font-serif text-3xl">What the study measured</h2><p class="text-gray-300 leading-7 mt-4">${escapeHtml(copy.findings)}</p><div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-7"><div class="border border-white/10 p-4"><strong class="text-2xl text-[#F27D26]">3,171</strong><span class="block text-xs text-gray-500 mt-1">repositories</span></div><div class="border border-white/10 p-4"><strong class="text-2xl text-[#F27D26]">16.0%</strong><span class="block text-xs text-gray-500 mt-1">security defect</span></div><div class="border border-white/10 p-4"><strong class="text-2xl text-[#F27D26]">9.8%</strong><span class="block text-xs text-gray-500 mt-1">unpinned MCP</span></div><div class="border border-white/10 p-4"><strong class="text-2xl text-[#F27D26]">3.8%</strong><span class="block text-xs text-gray-500 mt-1">skill pre-approved shell</span></div></div></section>
+      <section class="mt-14"><h2 class="font-serif text-4xl">The 10 production checks</h2><ol class="mt-8 space-y-5">${copy.checks.map((check, i) => `<li class="border border-white/10 p-6"><div class="flex gap-5"><strong class="font-mono text-[#F27D26]">${String(i + 1).padStart(2, '0')}</strong><div><h3 class="text-xl text-white">${escapeHtml(check.title)}</h3><p class="text-gray-300 mt-3 leading-7"><strong>Test:</strong> ${escapeHtml(check.test)}</p><p class="text-sm text-gray-500 mt-2"><strong>Evidence:</strong> ${escapeHtml(check.evidence)}</p></div></div></li>`).join('')}</ol></section>
+      <section class="mt-14"><h2 class="font-serif text-3xl">Threat path: from installation to side effect</h2><div class="grid md:grid-cols-5 gap-3 mt-6 text-center text-sm"><div class="border border-white/10 p-4">Marketplace artifact</div><div class="border border-white/10 p-4">Harness configuration</div><div class="border border-white/10 p-4">Agent context</div><div class="border border-white/10 p-4">Tool authority</div><div class="border border-red-500/30 p-4 text-red-300">External side effect</div></div><p class="text-gray-400 mt-5 leading-7">A secure harness places independent checks between every step. Reviewing the model alone cannot detect a package that changes later, a skill that carries shell permission, or an approval that authorizes more than the user saw.</p></section>
+      <section class="mt-14 border-t border-white/10 pt-10"><h2 class="font-serif text-3xl">Primary evidence and reproducibility</h2><div class="space-y-3 mt-6"><a href="https://arxiv.org/html/2609.07360" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Primary paper · Scanning the Harness · September 7, 2026</a><a href="https://github.com/redhat-community-ai-tools/harness-eval" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Released scanner · harness-eval</a><a href="https://github.com/Benkapner/harness-eval-experiments" target="_blank" rel="noopener noreferrer" class="block border border-white/10 p-4 text-gray-300">Study artifact · corpus, verdicts and regeneration scripts</a></div></section>
+      <section class="mt-14"><h2 class="font-serif text-3xl">FAQ</h2>${copy.faq.map((item) => `<details class="border border-white/10 p-5 mt-4"><summary class="cursor-pointer text-lg">${escapeHtml(item.question)}</summary><p class="text-gray-300 mt-3">${escapeHtml(item.answer)}</p></details>`).join('')}</section>
+      <aside class="mt-14 border border-[#F27D26]/30 bg-[#101010] p-8"><p class="font-mono text-xs uppercase text-[#F27D26]">From checklist to production system</p><h2 class="font-serif text-3xl mt-3">Harness Engineering for AI Coding Agents</h2><p class="text-gray-300 mt-4 max-w-2xl">Use the free checklist now. For the complete system—task contracts, permission boundaries, validators, CI gates, memory control and recovery—continue with Leandro Calado's practical book.</p><a href="/books/harness-engineering-ai-coding-agents" data-mcp-action="open-harness-engineering-book" class="inline-block bg-[#F27D26] px-5 py-3 mt-6 text-xs font-bold uppercase">See the Harness Engineering book</a></aside>
+    </div></article>`
   };
 });
 
@@ -513,8 +558,8 @@ const routes = [
   },
   {
     path: "/books/harness-engineering-ai-coding-agents",
-    title: "Harness Engineering Book by Leandro Calado | AI Coding Agents, Claude Code, Cursor & Guardrails",
-    description: "Read Harness Engineering for AI Coding Agents by Leandro Calado, a practical harness engineering book about Claude Code, Cursor, Codex, multi-agent coding workflows, guardrails, tests, CI gates, memory control, tool permissions, and production-ready AI agent systems.",
+    title: "Harness Engineering Book for AI Agents | Leandro Calado",
+    description: "Looking for a practical Harness Engineering book? Build reliable AI coding agents with permissions, sandboxes, memory control, tests, CI gates and rollback.",
     canonical: "https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents",
     schemaType: "HarnessBook",
     htmlContent: `
@@ -526,6 +571,7 @@ const routes = [
         </p>
         <div class="flex gap-4">
           <a href="https://www.amazon.com.br/dp/B0GYG3WG4Q" target="_blank" rel="noopener noreferrer" class="px-6 py-4 bg-[#F27D26] text-white text-xs font-mono uppercase tracking-widest font-bold hover:bg-[#d96613] transition-colors rounded-sm">Harness Engineering Book on Amazon Kindle</a>
+          <a href="/harness-engineering/ai-agent-security-checklist" class="px-6 py-4 border border-[#F27D26]/50 text-[#F27D26] text-xs font-mono uppercase tracking-widest font-bold rounded-sm">Free AI Agent Security Checklist</a>
         </div>
       </section>
 
@@ -600,7 +646,8 @@ const routes = [
   ...crimeIndexRoutes,
   ...crimeArticleRoutes,
   ...whistleblowingRoutes,
-  ...museSentinelRoutes
+  ...museSentinelRoutes,
+  ...harnessChecklistRoutes
 ];
 
 function generatePersonSchema() {
@@ -869,6 +916,26 @@ function generateMuseSentinelSchema(schemaType: string) {
   ] }, { '@type': 'FAQPage', mainEntity: copy.faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] };
 }
 
+function generateHarnessChecklistSchema(schemaType: string) {
+  const language = (schemaType.split(':')[1] || 'en') as AICrimeLanguage;
+  const copy = harnessChecklistCopy[language];
+  const url = `https://leandrocaladoferreira.com${harnessChecklistHref(language)}`;
+  return { '@context': 'https://schema.org', '@graph': [generatePersonSchema(), {
+    '@type': 'TechArticle', '@id': `${url}/#article`, url, headline: copy.title, description: copy.description,
+    mainEntityOfPage: url, inLanguage: language, datePublished: '2026-09-10', dateModified: '2026-09-10',
+    author: { '@type': 'Person', name: 'Leandro Calado', url: 'https://leandrocaladoferreira.com' },
+    publisher: { '@type': 'Organization', name: 'LCF Consulting', url: 'https://leandrocaladoferreira.com' },
+    image: { '@type': 'ImageObject', url: `https://leandrocaladoferreira.com${harnessChecklistImage}`, width: 1600, height: 900 },
+    articleSection: 'Harness Engineering · AI Agent Security',
+    keywords: ['AI agent security checklist','Harness Engineering','AI coding agent security','MCP security','agent skills security','AI agent permissions','sandboxing','memory isolation','approval gates','rollback'],
+    citation: ['https://arxiv.org/html/2609.07360','https://github.com/redhat-community-ai-tools/harness-eval','https://github.com/Benkapner/harness-eval-experiments']
+  }, { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://leandrocaladoferreira.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Harness Engineering Book', item: 'https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents' },
+    { '@type': 'ListItem', position: 3, name: copy.title, item: url }
+  ] }, { '@type': 'FAQPage', mainEntity: copy.faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] };
+}
+
 function generateSchemaForRoute(schemaType: string) {
   const person = generatePersonSchema();
   if (schemaType === "HarnessBook") {
@@ -952,6 +1019,9 @@ function generateSchemaForRoute(schemaType: string) {
   }
   if (schemaType.startsWith('MuseSentinel:')) {
     return JSON.stringify(generateMuseSentinelSchema(schemaType), null, 2);
+  }
+  if (schemaType.startsWith('HarnessChecklist:')) {
+    return JSON.stringify(generateHarnessChecklistSchema(schemaType), null, 2);
   }
 
   // General WebPage schemas pointing back to Leandro
