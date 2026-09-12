@@ -26,6 +26,11 @@ export default function Navbar({ isDark, toggleTheme, language, setLanguage, cur
   }, []);
 
   const t = translations[language].navbar;
+  const consultingLabel = language === "pt" ? "Consultoria" :
+                          language === "es" ? "Consultoría" :
+                          language === "fr" ? "Conseil" :
+                          language === "it" ? "Consulenza" :
+                          language === "ja" ? "コンサルティング" : "Consulting";
 
   const navLinks = [
     { label: t.about, href: "/about", path: "/about" },
@@ -33,7 +38,7 @@ export default function Navbar({ isDark, toggleTheme, language, setLanguage, cur
     { label: t.books, href: "/books", path: "/books" },
     { label: aiCrimeUi[language].seriesLabel, href: getLocalizedAICrimePath(AI_CRIME_BASE_PATH, language), path: getLocalizedAICrimePath(AI_CRIME_BASE_PATH, language) },
     { label: t.articles, href: "/articles", path: "/articles" },
-    { label: language === "pt" ? "Consultoria" : "Consulting", href: "/consulting", path: "/consulting" },
+    { label: consultingLabel, href: "/consulting", path: "/consulting" },
   ];
 
   return (
@@ -51,7 +56,6 @@ export default function Navbar({ isDark, toggleTheme, language, setLanguage, cur
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Logo / Name styling matched to premium Elena style */}
         <a
           href="/"
           id="logo-brand"
@@ -71,7 +75,6 @@ export default function Navbar({ isDark, toggleTheme, language, setLanguage, cur
           </span>
         </a>
 
-        {/* Desktop Navigation inline with custom font styling */}
         <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
@@ -93,9 +96,7 @@ export default function Navbar({ isDark, toggleTheme, language, setLanguage, cur
           ))}
         </nav>
 
-        {/* Action Controls */}
         <div className="flex items-center gap-3">
-          {/* Language Selector dropdown with border layout */}
           <select
             value={language}
             onChange={(e) => setLanguage(e.target.value as Language)}
@@ -115,7 +116,6 @@ export default function Navbar({ isDark, toggleTheme, language, setLanguage, cur
             <option value="ja" className={isDark ? "bg-[#151515] text-[#F5F5F0]" : "bg-white text-[#0A0A0A]"}>JA</option>
           </select>
 
-          {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
             id="theme-toggle-btn"
@@ -129,7 +129,6 @@ export default function Navbar({ isDark, toggleTheme, language, setLanguage, cur
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
-          {/* Social Links */}
           <a
             href="https://www.linkedin.com/in/lcaladoferreira/"
             target="_blank"
@@ -159,7 +158,6 @@ export default function Navbar({ isDark, toggleTheme, language, setLanguage, cur
             <Github className="w-3.5 h-3.5" />
           </a>
 
-          {/* Premium Elena style CTA Button */}
           <a
             href="/consulting"
             id="nav-consult-cta"
@@ -173,7 +171,7 @@ export default function Navbar({ isDark, toggleTheme, language, setLanguage, cur
                 : "border-[#0A0A0A] text-[#0A0A0A] hover:bg-black hover:text-white"
             }`}
           >
-            {language === "pt" ? "Consultoria" : "Consulting"}
+            {consultingLabel}
           </a>
         </div>
       </div>
