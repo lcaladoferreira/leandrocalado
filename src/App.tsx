@@ -116,7 +116,7 @@ export default function App() {
             <Contact isDark={isDark} language={language} />
           </>
         ) : isBooksRoute ? (
-          <BooksCatalog isDark={isDark} language={language} onNavigate={navigate} />
+          <BooksCatalog isDark={isDark} language={language} onNavigate={navigate} onLanguageChange={changeLanguage} />
         ) : (
           <Hubs 
             isDark={isDark} 
