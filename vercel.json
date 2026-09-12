@@ -9,14 +9,6 @@
       "destination": "/images/harness-data-agents-databricks-cover.jpg"
     },
     {
-      "source": "/books",
-      "destination": "/books.html"
-    },
-    {
-      "source": "/livros",
-      "destination": "/books.html"
-    },
-    {
       "source": "/books/harness-engineering-ai-coding-agents",
       "destination": "/books/harness-engineering-ai-coding-agents.html"
     },
