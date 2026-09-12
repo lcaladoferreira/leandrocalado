@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" role="img" aria-labelledby="title desc">
+  <title id="title">Harness Engineering for Data Agents on Databricks</title>
+  <desc id="desc">Book cover by Leandro Calado</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0c0e"/><stop offset="1" stop-color="#111214"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#232426"/><stop offset="1" stop-color="#090909"/></linearGradient>
+  </defs>
+  <rect width="1024" height="1536" fill="url(#bg)"/>
+  <g font-family="Arial,Helvetica,sans-serif" font-weight="900" fill="#fff">
+    <text x="88" y="350" font-size="150">Harness</text>
+    <text x="75" y="500" font-size="145">Engineering</text>
+    <text x="78" y="615" font-size="88" fill="#c9ced4">for</text>
+    <text x="245" y="615" font-size="105" fill="#ff2028">Data Agents</text>
+    <text x="76" y="730" font-size="86" fill="#c9ced4">on</text>
+    <text x="220" y="730" font-size="112">Databricks</text>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" text-anchor="middle" font-size="34" letter-spacing="3">
+    <text x="512" y="805">Building Reliable Agentic Data Platforms</text>
+    <text x="512" y="852">with MCP, Databricks, Data Contracts,</text>
+    <text x="512" y="899">Governance, and Multi-Agent Workflows</text>
+  </g>
+  <g filter="url(#blur)" opacity=".9">
+    <rect x="120" y="1000" width="150" height="240" rx="14" fill="#2b2b2d"/>
+    <rect x="298" y="1050" width="118" height="178" rx="14" fill="#3b3b3e"/>
+    <rect x="440" y="970" width="140" height="275" rx="14" fill="#222326"/>
+    <rect x="615" y="1040" width="120" height="190" rx="14" fill="#303033"/>
+    <rect x="760" y="1015" width="122" height="220" rx="14" fill="#29292c"/>
+    <rect x="200" y="1095" width="74" height="86" fill="#ff2028"/>
+    <rect x="350" y="1125" width="62" height="72" fill="#ff2028"/>
+    <rect x="475" y="1038" width="65" height="100" fill="#ff2028"/>
+    <rect x="650" y="1112" width="70" height="92" fill="#ff2028"/>
+    <rect x="792" y="1070" width="60" height="98" fill="#ff2028"/>
+  </g>
+  <rect x="0" y="1260" width="1024" height="276" fill="url(#floor)" opacity=".9"/>
+  <g transform="translate(162 1365)">
+    <g fill="#161719" stroke="#444" stroke-width="2">
+      <rect x="0" y="0" width="78" height="58" rx="6"/><rect x="82" y="0" width="78" height="58" rx="6" fill="#ff2028"/>
+      <rect x="164" y="0" width="78" height="58" rx="6"/><rect x="246" y="0" width="78" height="58" rx="6"/>
+      <rect x="328" y="0" width="78" height="58" rx="6"/><rect x="410" y="0" width="78" height="58" rx="6" fill="#ff2028"/>
+      <rect x="492" y="0" width="78" height="58" rx="6"/><rect x="574" y="0" width="78" height="58" rx="6"/>
+      <rect x="656" y="0" width="78" height="58" rx="6" fill="#ff2028"/>
+    </g>
+  </g>
+  <text x="512" y="1480" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="48" letter-spacing="16" fill="#fff">LEANDRO CALADO</text>
+</svg>
