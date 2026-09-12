@@ -14,6 +14,16 @@ export const booksData: Book[] = [
     link: "/books/harness-engineering-ai-coding-agents"
   },
   {
+    id: "harness-engineering-data-agents-databricks",
+    title: "Harness Engineering for Data Agents on Databricks",
+    category: "dados",
+    asin: "B0HHZXPJV1",
+    description: "Build reliable agentic data platforms with MCP, Databricks, data contracts, governance, production controls, and multi-agent workflows.",
+    lang: "Inglês",
+    coverEmoji: "🧱",
+    link: "/books/harness-engineering-data-agents-databricks"
+  },
+  {
     id: "ia-mcp",
     title: "Agentes de IA MCP",
     category: "ia",
