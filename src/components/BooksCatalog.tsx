@@ -95,7 +95,7 @@ const COPY: Record<Language, Copy> = {
     featured: "In evidenza",
     aiCrime: "AI Crime Files",
     count: (n) => `${n} libri mostrati`,
-    categories: { all: "Tutti", ia: "IA & Agenti", dados: "Dati & Cloud", automacao: "Automazione", diritto: "Diritto & Governo", internazionale: "Internazionale" } as Record<Category,string>,
+    categories: { all: "Tutti", ia: "IA & Agenti", dados: "Dati & Cloud", automacao: "Automazione", direito: "Diritto & Governo", internacional: "Internazionale" },
     languages: { Português: "Portoghese", Inglês: "Inglese", Espanhol: "Spagnolo" },
   },
   ja: {
