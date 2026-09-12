@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Ecosystem from "./components/Ecosystem";
 import Books from "./components/Books";
+import BooksCatalog from "./components/BooksCatalog";
 import Articles from "./components/Articles";
 import Timeline from "./components/Timeline";
 import Honors from "./components/Honors";
@@ -20,7 +21,6 @@ export default function App() {
   const [language, setLanguage] = useState<Language>(() => typeof window === "undefined" ? "en" : (getAICrimeLanguageFromPath(window.location.pathname) ?? "en"));
   const [currentPath, setCurrentPath] = useState<string>(() => typeof window === "undefined" ? "/" : window.location.pathname);
 
-  // Sync path status on mount and listen to window path
   useEffect(() => {
     const updatePath = () => {
       setCurrentPath(window.location.pathname);
@@ -32,8 +32,6 @@ export default function App() {
     };
 
     updatePath();
-
-    // Attach dynamic state listener for back/forward buttons
     window.addEventListener("popstate", updatePath);
     return () => window.removeEventListener("popstate", updatePath);
   }, []);
@@ -72,7 +70,22 @@ export default function App() {
                        language === "es" ? "Todos los derechos reservados." :
                        language === "fr" ? "Tous droits réservés." :
                        language === "it" ? "Tutti i diritti riservati." :
-                       "All rights reserved.";
+                       "無断転載を禁じます。";
+
+  const consultingLabel = language === "pt" ? "Consultoria" :
+                          language === "es" ? "Consultoría" :
+                          language === "fr" ? "Conseil" :
+                          language === "it" ? "Consulenza" :
+                          language === "ja" ? "コンサルティング" : "Consulting";
+
+  const startHereLabel = language === "pt" ? "Comece Por Aqui" :
+                         language === "es" ? "Empieza Aquí" :
+                         language === "fr" ? "Commencer Ici" :
+                         language === "it" ? "Inizia Qui" :
+                         language === "ja" ? "ここから始める" : "Start Here";
+
+  const normalizedPath = currentPath.toLowerCase().replace(/\/$/, "") || "/";
+  const isBooksRoute = normalizedPath === "/books" || normalizedPath === "/livros";
 
   return (
     <div
@@ -80,7 +93,6 @@ export default function App() {
         isDark ? "bg-[#0A0A0A] text-[#F5F5F0]" : "bg-[#F5F5F0] text-[#0A0A0A]"
       }`}
     >
-      {/* Navbar with smooth routing capabilities */}
       <Navbar 
         isDark={isDark} 
         toggleTheme={toggleTheme} 
@@ -90,7 +102,6 @@ export default function App() {
         onNavigate={navigate}
       />
 
-      {/* Main Layout contents */}
       <main className="relative pt-20">
         {currentPath === "/" || currentPath === "" ? (
           <>
@@ -104,6 +115,8 @@ export default function App() {
             <Honors isDark={isDark} language={language} />
             <Contact isDark={isDark} language={language} />
           </>
+        ) : isBooksRoute ? (
+          <BooksCatalog isDark={isDark} language={language} onNavigate={navigate} />
         ) : (
           <Hubs 
             isDark={isDark} 
@@ -114,7 +127,6 @@ export default function App() {
         )}
       </main>
 
-      {/* Structured Footer element */}
       <footer
         className={`py-16 border-t ${
           isDark ? "bg-[#0F0F0F] border-[#2A2A2A]" : "bg-white border-[#E5E5DF]"
@@ -134,7 +146,6 @@ export default function App() {
               </p>
             </div>
 
-            {/* Nav Footer Links shortcuts using client routing */}
             <nav className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] uppercase tracking-widest font-mono font-bold">
               <button 
                 onClick={() => navigate("/about")} 
@@ -170,13 +181,13 @@ export default function App() {
                 onClick={() => navigate("/consulting")} 
                 className="hover:text-[#F27D26] transition-colors cursor-pointer focus:outline-none"
               >
-                {language === "pt" ? "Consultoria" : "Consulting"}
+                {consultingLabel}
               </button>
               <button 
                 onClick={() => navigate("/start-here")} 
                 className="hover:text-[#F27D26] transition-colors cursor-pointer focus:outline-none"
               >
-                {language === "pt" ? "Comece Por Aqui" : "Start Here"}
+                {startHereLabel}
               </button>
             </nav>
           </div>
