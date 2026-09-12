@@ -5,6 +5,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/images/harness-data-agents-databricks-cover.webp",
+      "destination": "/images/harness-data-agents-databricks-cover.svg"
+    },
+    {
       "source": "/books/harness-engineering-ai-coding-agents",
       "destination": "/books/harness-engineering-ai-coding-agents.html"
     },
