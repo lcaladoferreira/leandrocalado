@@ -9,6 +9,10 @@
       "destination": "/books/harness-engineering-ai-coding-agents.html"
     },
     {
+      "source": "/books/harness-engineering-data-agents-databricks",
+      "destination": "/books/harness-engineering-data-agents-databricks.html"
+    },
+    {
       "source": "/ai-crime-files",
       "destination": "/ai-crime-files.html"
     },
