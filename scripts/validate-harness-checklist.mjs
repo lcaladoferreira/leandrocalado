@@ -35,7 +35,21 @@ const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
 assert.equal(new Set(sitemapUrls).size, sitemapUrls.length, 'Duplicate sitemap URLs');
 
+// A generated article is insufficient when the public URL hits the SPA fallback.
+const { rewrites } = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
+const resolveRewrite = (url) => {
+  for (const rule of rewrites) {
+    const pattern = rule.source.replace(/:slug/g, '([^/]+)');
+    const match = url.match(new RegExp(`^${pattern}$`));
+    if (match) return rule.destination.replace(':slug', match[1] || '');
+  }
+  return url;
+};
+
 for (const lang of langs) {
+  const destination = resolveRewrite(route(lang));
+  assert.equal(destination, `${route(lang)}.html`, `${lang}: public URL must serve its article before the SPA fallback`);
+  assert(fs.existsSync(path.join(root, destination)), `${lang}: rewrite target must exist in the build`);
   const html = read(route(lang));
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${lang}: expected one H1`);
   assert(html.includes(`<link rel="canonical" href="${site + route(lang)}"`));

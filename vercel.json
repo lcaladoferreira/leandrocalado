@@ -69,6 +69,30 @@
       "destination": "/ja/ai-crime-files/:slug.html"
     },
     {
+      "source": "/harness-engineering/:slug",
+      "destination": "/harness-engineering/:slug.html"
+    },
+    {
+      "source": "/pt/harness-engineering/:slug",
+      "destination": "/pt/harness-engineering/:slug.html"
+    },
+    {
+      "source": "/es/harness-engineering/:slug",
+      "destination": "/es/harness-engineering/:slug.html"
+    },
+    {
+      "source": "/fr/harness-engineering/:slug",
+      "destination": "/fr/harness-engineering/:slug.html"
+    },
+    {
+      "source": "/it/harness-engineering/:slug",
+      "destination": "/it/harness-engineering/:slug.html"
+    },
+    {
+      "source": "/ja/harness-engineering/:slug",
+      "destination": "/ja/harness-engineering/:slug.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
