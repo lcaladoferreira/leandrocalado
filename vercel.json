@@ -21,6 +21,10 @@
       "destination": "/books/harness-engineering-data-agents-databricks-funnel.html"
     },
     {
+      "source": "/books/nobody-told-it-to-lie",
+      "destination": "/books/nobody-told-it-to-lie.html"
+    },
+    {
       "source": "/ai-crime-files",
       "destination": "/ai-crime-files.html"
     },
