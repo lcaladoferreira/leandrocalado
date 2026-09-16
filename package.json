@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && node --import tsx prerender.ts && node scripts/patch-ai-crime-funnel.mjs && npm run validate:containment && npm run validate:whistleblowing && npm run validate:muse-sentinel && npm run validate:harness-checklist",
+    "build": "vite build && node --import tsx prerender.ts && npm run validate:containment && npm run validate:whistleblowing && npm run validate:muse-sentinel && npm run validate:harness-checklist && node scripts/patch-ai-crime-funnel.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
