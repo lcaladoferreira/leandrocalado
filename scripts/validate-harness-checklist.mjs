@@ -69,6 +69,20 @@ for (const lang of langs) {
 const book = read('/books/harness-engineering-ai-coding-agents');
 assert(book.includes('href="/harness-engineering/ai-agent-security-checklist"'));
 assert(book.includes('https://www.amazon.com.br/dp/B0GYG3WG4Q'));
-assert(book.includes('<title>Harness Engineering Book for AI Agents | Leandro Calado</title>'));
+assert(book.includes('<title>Harness Engineering Book: Which One Fits Production AI Agents?</title>'));
+assert(book.includes('<h1 class="text-4xl sm:text-5xl font-light italic mt-3 mb-6 font-serif text-white leading-tight">Which Harness Engineering Book Fits Production AI Agents?</h1>'));
+assert(book.includes('id="book-comparison"'));
+assert(book.includes('https://www.oreilly.com/library/view/harness-engineering/0642572422783/'));
+assert(book.includes('Early Release; publication listed for December 2027.'));
+assert(!book.includes('100% stable'));
+assert(book.includes("amazon_book_click"));
+const bookGraph = JSON.parse(book.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
+assert(bookGraph.some((node) => node['@type'] === 'Book' && node.sameAs === 'https://www.amazon.com.br/dp/B0GYG3WG4Q'));
+assert(bookGraph.some((node) => node['@type'] === 'FAQPage'));
+assert(sitemap.includes('<lastmod>2026-09-16</lastmod>'));
+for (const corpus of ['llms.txt', 'llms-full.txt']) {
+  const text = fs.readFileSync(path.join(root, corpus), 'utf8');
+  assert(text.includes('https://www.oreilly.com/library/view/harness-engineering/0642572422783/'));
+}
 
 console.log(`Validated ${langs.length} AI agent security checklists, ten gates each, book cluster, hreflang, sitemap, schemas and WebP (${dimensions.join('x')}, ${bytes.length} bytes).`);
