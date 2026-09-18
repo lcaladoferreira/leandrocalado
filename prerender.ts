@@ -558,21 +558,45 @@ const routes = [
   },
   {
     path: "/books/harness-engineering-ai-coding-agents",
-    title: "Harness Engineering Book for AI Agents | Leandro Calado",
-    description: "Looking for a practical Harness Engineering book? Build reliable AI coding agents with permissions, sandboxes, memory control, tests, CI gates and rollback.",
+    title: "Harness Engineering Book: Which One Fits Production AI Agents?",
+    description: "Compare Leandro Calado's practical AI coding-agent manual with O'Reilly's forthcoming Harness Engineering book. Choose by scope, availability and production controls.",
     canonical: "https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents",
     schemaType: "HarnessBook",
     htmlContent: `
       <section class="py-20 px-6 max-w-4xl mx-auto text-left">
         <span class="text-[#F27D26] uppercase font-bold text-xs tracking-widest font-mono">NEW RELEASE TECHNICAL MANUAL</span>
-        <h1 class="text-4xl sm:text-5xl font-light italic mt-3 mb-6 font-serif text-white leading-tight">Harness Engineering Book for AI Coding Agents</h1>
+        <h1 class="text-4xl sm:text-5xl font-light italic mt-3 mb-6 font-serif text-white leading-tight">Which Harness Engineering Book Fits Production AI Agents?</h1>
         <p class="text-gray-300 text-lg leading-relaxed mb-8">
-          Harness Engineering for AI Coding Agents is a practical harness engineering book by Leandro Calado for developers building reliable Claude Code, Cursor, Codex, and multi-agent coding workflows with guardrails, automated tests, CI gates, memory control, tool permissions, and production-ready software delivery.
+          You need a harness engineering book because an agent changed the wrong file, bypassed a gate, or shipped an unverified diff. This page separates the available implementation manual from O'Reilly's broader forthcoming architecture title.
         </p>
         <div class="flex gap-4">
-          <a href="https://www.amazon.com.br/dp/B0GYG3WG4Q" target="_blank" rel="noopener noreferrer" class="px-6 py-4 bg-[#F27D26] text-white text-xs font-mono uppercase tracking-widest font-bold hover:bg-[#d96613] transition-colors rounded-sm">Harness Engineering Book on Amazon Kindle</a>
+          <a href="https://www.amazon.com.br/dp/B0GYG3WG4Q" target="_blank" rel="noopener noreferrer" onclick="window.gtag &amp;&amp; window.gtag('event','amazon_book_click',{book_asin:'B0GYG3WG4Q',placement:'harness_book_choice_hero'})" class="px-6 py-4 bg-[#F27D26] text-white text-xs font-mono uppercase tracking-widest font-bold hover:bg-[#d96613] transition-colors rounded-sm">Harness Engineering Book on Amazon Kindle</a>
           <a href="/harness-engineering/ai-agent-security-checklist" class="px-6 py-4 border border-[#F27D26]/50 text-[#F27D26] text-xs font-mono uppercase tracking-widest font-bold rounded-sm">Free AI Agent Security Checklist</a>
         </div>
+      </section>
+
+      <section class="py-16 border-t border-white/5 px-6 max-w-5xl mx-auto text-left" id="book-comparison">
+        <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest font-mono">DECISION SUPPORT · REVIEWED 16 SEPTEMBER 2026</span>
+        <h2 class="text-3xl font-light italic font-serif text-white mt-3 mb-5">Choose by the system you need to control</h2>
+        <p class="text-gray-300 text-sm leading-relaxed mb-8">
+          Choose Leandro Calado's book when your immediate problem is an AI coding agent inside a repository. Track Nicole Koenigstein's O'Reilly title when your scope is the broader stateful agent substrate. O'Reilly currently lists December 2027 and labels its table of contents as not yet final.
+        </p>
+        <div class="overflow-x-auto border border-white/10">
+          <table class="w-full min-w-[720px] text-sm text-left">
+            <thead class="bg-white/5 text-white font-mono text-[10px] uppercase tracking-widest">
+              <tr><th class="p-4">Decision</th><th class="p-4">Leandro Calado</th><th class="p-4">O'Reilly / Nicole Koenigstein</th></tr>
+            </thead>
+            <tbody class="divide-y divide-white/10 text-gray-300">
+              <tr><th class="p-4 text-white">Availability</th><td class="p-4">Published now on Amazon Kindle.</td><td class="p-4">Early Release; publication listed for December 2027.</td></tr>
+              <tr><th class="p-4 text-white">Core scope</th><td class="p-4">AI coding agents, repository rules, task specs, tests, CI gates and tool permissions.</td><td class="p-4">Broader agent architecture, state, long-running tasks, multi-agent handoffs and adaptive harnesses.</td></tr>
+              <tr><th class="p-4 text-white">Working artifact</th><td class="p-4">VaultAPI reference implementation with concrete controls.</td><td class="p-4">Early Release chapters; O'Reilly says the GitHub repository will be activated later.</td></tr>
+              <tr><th class="p-4 text-white">Best fit</th><td class="p-4">You need repository-level controls and verification now.</td><td class="p-4">You are designing a wider stateful agent platform.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-500 text-xs leading-relaxed mt-5">
+          Source for the forthcoming title: <a class="text-[#F27D26] hover:underline" href="https://www.oreilly.com/library/view/harness-engineering/0642572422783/" target="_blank" rel="noopener noreferrer">O'Reilly's official Early Release page</a>. The comparison uses only currently published product information.
+        </p>
       </section>
 
       <section class="py-16 border-t border-white/5 px-6 max-w-4xl mx-auto text-left">
@@ -624,7 +648,19 @@ const routes = [
           <div>
             <h3 class="text-lg font-bold text-[#F27D26] mb-2 font-mono">Does the book cover Claude Code and Cursor AI?</h3>
             <p class="text-gray-300 text-sm leading-relaxed">
-              Absolutely. The book addresses modern AI coding tools like Claude Code, Cursor AI, and other LLM interfaces, showing how to build automated gates, prompt harnesses, and verification routines to keep their output 100% stable.
+              Yes. It addresses Claude Code, Cursor AI, Codex, and other coding-agent interfaces. The controls detect and block defined failure modes; they do not promise perfectly stable model output.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-[#F27D26] mb-2 font-mono">Is Leandro Calado's book the same as O'Reilly's Harness Engineering?</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              No. Calado's published manual focuses on repository-level controls for AI coding agents. O'Reilly's forthcoming title covers a broader stateful agent-system substrate and currently remains an Early Release.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-[#F27D26] mb-2 font-mono">Which harness engineering book is available now?</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Harness Engineering for AI Coding Agents by Leandro Calado is available now on Amazon Kindle. O'Reilly currently lists Nicole Koenigstein's book for December 2027.
             </p>
           </div>
           <div>
@@ -956,12 +992,14 @@ function generateSchemaForRoute(schemaType: string) {
           "description": "Read Harness Engineering for AI Coding Agents by Leandro Calado, a practical harness engineering book about Claude Code, Cursor, Codex, multi-agent coding workflows, guardrails, tests, CI gates, memory control, tool permissions, and production-ready AI agent systems.",
           "inLanguage": "en",
           "bookFormat": "EBook",
+          "dateModified": "2026-09-16",
           "publisher": {
             "@type": "Organization",
             "name": "LCF Consulting",
             "url": "https://leandrocaladoferreira.com"
           },
           "url": "https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents",
+          "sameAs": "https://www.amazon.com.br/dp/B0GYG3WG4Q",
           "keywords": [
             "Harness Engineering Book",
             "AI Coding Agents",
@@ -999,6 +1037,36 @@ function generateSchemaForRoute(schemaType: string) {
               "position": 3,
               "name": "Harness Engineering Book",
               "item": "https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is Leandro Calado's book the same as O'Reilly's Harness Engineering?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Calado's published manual focuses on repository-level controls for AI coding agents. O'Reilly's forthcoming title covers a broader stateful agent-system substrate and currently remains an Early Release."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which harness engineering book is available now?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Harness Engineering for AI Coding Agents by Leandro Calado is available now on Amazon Kindle. O'Reilly currently lists Nicole Koenigstein's book for December 2027."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the book cover Claude Code and Cursor AI?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. It addresses Claude Code, Cursor AI, Codex, and other coding-agent interfaces. The controls detect and block defined failure modes; they do not promise perfectly stable model output."
+              }
             }
           ]
         }

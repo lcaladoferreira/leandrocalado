@@ -32,7 +32,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
   // Update page title, meta description, and open graph tags on mount
   useEffect(() => {
     const originalTitle = document.title;
-    document.title = "Harness Engineering Book by Leandro Calado | AI Coding Agents, Claude Code, Cursor & Guardrails";
+    document.title = "Harness Engineering Book: Which One Fits Production AI Agents?";
 
     const updateOrCreateMeta = (nameOrProperty: string, value: string, isProperty = false) => {
       const selector = isProperty ? `meta[property="${nameOrProperty}"]` : `meta[name="${nameOrProperty}"]`;
@@ -49,14 +49,14 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
       element.content = value;
     };
 
-    updateOrCreateMeta("description", "Read Harness Engineering for AI Coding Agents by Leandro Calado, a practical harness engineering book about Claude Code, Cursor, Codex, multi-agent coding workflows, guardrails, tests, CI gates, memory control, tool permissions, and production-ready AI agent systems.");
-    updateOrCreateMeta("og:title", "Harness Engineering Book by Leandro Calado", true);
-    updateOrCreateMeta("og:description", "A practical harness engineering book for AI coding agents, Claude Code, Cursor, Codex, multi-agent workflows, guardrails, tests, CI gates, and production-ready AI systems.", true);
+    updateOrCreateMeta("description", "Compare Leandro Calado's practical AI coding-agent manual with O'Reilly's forthcoming Harness Engineering book. Choose by scope, availability and production controls.");
+    updateOrCreateMeta("og:title", "Harness Engineering Book: Which One Fits Production AI Agents?", true);
+    updateOrCreateMeta("og:description", "Compare two harness engineering books by availability, scope, working artifacts and production-agent controls.", true);
     updateOrCreateMeta("og:type", "book", true);
     updateOrCreateMeta("og:url", "https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents", true);
     updateOrCreateMeta("twitter:card", "summary_large_image");
-    updateOrCreateMeta("twitter:title", "Harness Engineering Book by Leandro Calado");
-    updateOrCreateMeta("twitter:description", "A practical harness engineering book for AI coding agents, Claude Code, Cursor, Codex, guardrails, CI gates, and production-ready multi-agent workflows.");
+    updateOrCreateMeta("twitter:title", "Harness Engineering Book: Which One Fits Production AI Agents?");
+    updateOrCreateMeta("twitter:description", "Compare two harness engineering books by scope, availability and production-agent controls.");
 
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) {
@@ -86,16 +86,23 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
   const subTitleClass = isDark ? "text-gray-400" : "text-gray-600";
 
   const amazonUrl = "https://www.amazon.com.br/dp/B0GYG3WG4Q"; // Real Amazon link.
+  const trackBookClick = (placement: string) => {
+    const analytics = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
+    analytics?.("event", "amazon_book_click", {
+      book_asin: "B0GYG3WG4Q",
+      placement,
+    });
+  };
 
   // Multi-language translation catalog
   const isPt = language === "pt";
   const t = {
     badge: isPt ? "★ NOVO LANÇAMENTO: MANUAL TÉCNICO" : "★ NEW RELEASE TECHNICAL MANUAL",
-    titleHarness: "Harness Engineering Book",
-    titleFor: "for AI Coding Agents",
+    titleHarness: "Which Harness Engineering Book",
+    titleFor: "Fits Production AI Agents?",
     subtitle: isPt 
-      ? "Harness Engineering for AI Coding Agents is a practical harness engineering book by Leandro Calado for developers building reliable Claude Code, Cursor, Codex, and multi-agent coding workflows with guardrails, automated tests, CI gates, memory control, tool permissions, and production-ready software delivery."
-      : "Harness Engineering for AI Coding Agents is a practical harness engineering book by Leandro Calado for developers building reliable Claude Code, Cursor, Codex, and multi-agent coding workflows with guardrails, automated tests, CI gates, memory control, tool permissions, and production-ready software delivery.",
+      ? "Você precisa de um livro de Harness Engineering porque o agente alterou o arquivo errado, ignorou uma barreira ou entregou um diff sem verificação. Esta página separa o manual disponível da arquitetura mais ampla prometida pela O'Reilly."
+      : "You need a harness engineering book because an agent changed the wrong file, bypassed a gate, or shipped an unverified diff. This page separates the available implementation manual from O'Reilly's broader forthcoming architecture title.",
     ctaHero: isPt ? "Comprar na Amazon Kindle" : "Get the book on Amazon Kindle",
     microcopy: isPt 
       ? "Pare com o vibe coding. Comece a entregar alterações reais que sua CI realmente confia."
@@ -400,8 +407,24 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
         ? "Does the book cover Claude Code and Cursor AI?" 
         : "Does the book cover Claude Code and Cursor AI?",
       a: isPt 
-        ? "Absolutely. The book addresses modern AI coding tools like Claude Code, Cursor AI, and other LLM interfaces, showing how to build automated gates, prompt harnesses, and verification routines to keep their output 100% stable." 
-        : "Absolutely. The book addresses modern AI coding tools like Claude Code, Cursor AI, and other LLM interfaces, showing how to build automated gates, prompt harnesses, and verification routines to keep their output 100% stable."
+        ? "Sim. Ele aborda Claude Code, Cursor AI, Codex e outras interfaces de agentes. Os controles detectam e bloqueiam falhas definidas; não prometem saída perfeitamente estável."
+        : "Yes. It addresses Claude Code, Cursor AI, Codex, and other coding-agent interfaces. The controls detect and block defined failure modes; they do not promise perfectly stable model output."
+    },
+    {
+      q: isPt
+        ? "O livro de Leandro Calado é o mesmo livro de Harness Engineering da O'Reilly?"
+        : "Is Leandro Calado's book the same as O'Reilly's Harness Engineering?",
+      a: isPt
+        ? "Não. O manual publicado de Calado foca controles de repositório para agentes de código. O próximo título da O'Reilly cobre uma base mais ampla de agentes com estado e permanece em Early Release."
+        : "No. Calado's published manual focuses on repository-level controls for AI coding agents. O'Reilly's forthcoming title covers a broader stateful agent-system substrate and currently remains an Early Release."
+    },
+    {
+      q: isPt
+        ? "Qual livro de Harness Engineering está disponível agora?"
+        : "Which harness engineering book is available now?",
+      a: isPt
+        ? "Harness Engineering for AI Coding Agents, de Leandro Calado, está disponível na Amazon Kindle. A O'Reilly lista o livro de Nicole Koenigstein para dezembro de 2027."
+        : "Harness Engineering for AI Coding Agents by Leandro Calado is available now on Amazon Kindle. O'Reilly currently lists Nicole Koenigstein's book for December 2027."
     },
     {
       q: isPt 
@@ -436,7 +459,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
               {t.badge}
             </span>
             <h1 id="hero-h1" className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight leading-tight italic font-serif text-white">
-              Harness Engineering Book for AI Coding Agents
+              {t.titleHarness} {t.titleFor}
             </h1>
             <p id="hero-subheadline" className="text-lg md:text-xl leading-relaxed opacity-90 max-w-2xl font-light">
               {t.subtitle}
@@ -449,6 +472,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
                 href={amazonUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackBookClick("harness_book_choice_hero")}
                 className="px-8 py-4 bg-[#F27D26] hover:bg-[#d96613] text-white font-bold uppercase tracking-widest text-xs transition-colors rounded-sm text-center font-mono shadow-md"
               >
                 {t.ctaHero}
@@ -515,6 +539,45 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
         </div>
       </section>
 
+      <section id="book-comparison" aria-label="Harness engineering book comparison" className="py-20 border-t border-gray-500/10">
+        <div className="max-w-5xl mx-auto px-6 text-left">
+          <span className="text-[#F27D26] font-bold text-[10px] uppercase tracking-widest font-mono">
+            {isPt ? "APOIO À DECISÃO · REVISADO EM 16 DE SETEMBRO DE 2026" : "DECISION SUPPORT · REVIEWED 16 SEPTEMBER 2026"}
+          </span>
+          <h2 className="text-3xl sm:text-4xl leading-tight font-light italic mt-3 mb-5 font-serif text-white">
+            {isPt ? "Escolha pelo sistema que você precisa controlar" : "Choose by the system you need to control"}
+          </h2>
+          <p className={`text-sm leading-relaxed mb-8 ${subTitleClass}`}>
+            {isPt
+              ? "Escolha o livro de Leandro Calado quando o problema imediato é um agente dentro do repositório. Acompanhe o título da O'Reilly quando o escopo for uma plataforma ampla de agentes com estado. A O'Reilly lista dezembro de 2027 e informa que o sumário ainda não é final."
+              : "Choose Leandro Calado's book when your immediate problem is an AI coding agent inside a repository. Track Nicole Koenigstein's O'Reilly title when your scope is the broader stateful agent substrate. O'Reilly currently lists December 2027 and labels its table of contents as not yet final."}
+          </p>
+          <div className="overflow-x-auto border border-gray-500/20">
+            <table className="w-full min-w-[720px] text-sm text-left">
+              <thead className="bg-white/5 text-white font-mono text-[10px] uppercase tracking-widest">
+                <tr>
+                  <th className="p-4">{isPt ? "Decisão" : "Decision"}</th>
+                  <th className="p-4">Leandro Calado</th>
+                  <th className="p-4">O'Reilly / Nicole Koenigstein</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-500/20">
+                <tr><th className="p-4 text-white">{isPt ? "Disponibilidade" : "Availability"}</th><td className="p-4">{isPt ? "Publicado na Amazon Kindle." : "Published now on Amazon Kindle."}</td><td className="p-4">{isPt ? "Early Release; publicação listada para dezembro de 2027." : "Early Release; publication listed for December 2027."}</td></tr>
+                <tr><th className="p-4 text-white">{isPt ? "Escopo" : "Core scope"}</th><td className="p-4">{isPt ? "Agentes de código, regras do repositório, testes, CI e permissões." : "AI coding agents, repository rules, task specs, tests, CI gates and tool permissions."}</td><td className="p-4">{isPt ? "Arquitetura ampla, estado, tarefas longas, handoffs e harnesses adaptativos." : "Broader agent architecture, state, long-running tasks, multi-agent handoffs and adaptive harnesses."}</td></tr>
+                <tr><th className="p-4 text-white">{isPt ? "Artefato" : "Working artifact"}</th><td className="p-4">{isPt ? "Implementação VaultAPI com controles concretos." : "VaultAPI reference implementation with concrete controls."}</td><td className="p-4">{isPt ? "Capítulos Early Release; o repositório será ativado depois." : "Early Release chapters; O'Reilly says the GitHub repository will be activated later."}</td></tr>
+                <tr><th className="p-4 text-white">{isPt ? "Melhor uso" : "Best fit"}</th><td className="p-4">{isPt ? "Você precisa de controles no repositório agora." : "You need repository-level controls and verification now."}</td><td className="p-4">{isPt ? "Você desenha uma plataforma ampla de agentes com estado." : "You are designing a wider stateful agent platform."}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className={`text-xs leading-relaxed mt-5 ${subTitleClass}`}>
+            {isPt ? "Fonte do título futuro: " : "Source for the forthcoming title: "}
+            <a className="text-[#F27D26] hover:underline" href="https://www.oreilly.com/library/view/harness-engineering/0642572422783/" target="_blank" rel="noopener noreferrer">
+              {isPt ? "página oficial do Early Release da O'Reilly" : "O'Reilly's official Early Release page"}
+            </a>.
+          </p>
+        </div>
+      </section>
+
       {/* 2. PROBLEM SECTION */}
       <section id="problem-section" aria-label="The Cost of Vibe Coding" className="py-24 border-t border-gray-500/10">
         <div className="max-w-4xl mx-auto px-6">
@@ -538,6 +601,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
                   href={amazonUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackBookClick("harness_book_problem")}
                   className="font-mono text-xs uppercase text-[#F27D26] font-bold hover:underline inline-flex items-center gap-2 group cursor-pointer"
                 >
                   {t.problemLink} <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -674,6 +738,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
               href={amazonUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackBookClick("harness_book_build")}
               className="px-6 py-4 bg-[#F27D26] hover:bg-[#d96613] text-white font-bold uppercase tracking-widest text-xs transition-colors rounded-sm inline-block font-mono"
             >
               {t.buildCta}
@@ -957,6 +1022,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
               href={amazonUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackBookClick("harness_book_final")}
               className="px-8 py-4 bg-[#F27D26] hover:bg-[#d96613] text-white font-bold uppercase tracking-widest text-xs transition-colors rounded-sm inline-block font-mono shadow-md"
             >
               {t.finalCtaBtn}

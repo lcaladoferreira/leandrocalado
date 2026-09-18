@@ -115,6 +115,10 @@ ASIN: B0HHHDL9TB
 
 Harness Engineering for AI Coding Agents by Leandro Calado covers the control layer around coding agents: permissions, memory, tests, CI gates, tool governance and production guardrails.
 
+Decision note, reviewed 2026-09-16: Calado's book is published and focuses on repository-level controls for AI coding agents. Nicole Koenigstein's O'Reilly book is an Early Release with a broader stateful-agent scope. O'Reilly currently lists December 2027 and marks the table of contents as not yet final. This is a scope and availability comparison, not a quality ranking.
+
+Primary comparison source: https://www.oreilly.com/library/view/harness-engineering/0642572422783/
+
 Official site page: https://leandrocaladoferreira.com/books/harness-engineering-ai-coding-agents
 
 ## Author
