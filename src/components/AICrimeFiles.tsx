@@ -249,7 +249,7 @@ function CrimeArticle({ item, language, onNavigate }: { item: AICrimeCase; langu
           <h1 className="font-serif text-4xl font-light italic leading-[1.02] text-white sm:text-6xl">{item.title}</h1>
           <p className="mt-7 max-w-3xl text-base leading-relaxed text-zinc-400">{item.excerpt}</p>
           <div className="mt-9 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[9px] uppercase tracking-wider text-zinc-600">
-            <span>{t.by} Leandro Calado</span>
+            <span>{t.by} <a href="/" rel="author" className="underline">Leandro Calado Ferreira</a></span>
             <span>{t.published} {item.published}</span>
             <span>{t.incident} {item.eventDate}</span>
           </div>

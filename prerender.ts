@@ -134,7 +134,7 @@ const crimeArticleRoutes = crimeLanguages.flatMap((language) => aiCrimeCases.map
   const archivePath = getLocalizedAICrimePath(AI_CRIME_BASE_PATH, language);
   return {
   path: routePath,
-  title: `${item.title} | ${t.archiveName}`,
+  title: `${item.title} | Leandro Calado`,
   description: item.excerpt,
   canonical: `https://leandrocaladoferreira.com${routePath}`,
   schemaType: `AICrime:${language}:${item.slug}`,
@@ -155,6 +155,7 @@ const crimeArticleRoutes = crimeLanguages.flatMap((language) => aiCrimeCases.map
         <div class="mt-10"><span class="bg-red-600 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-widest">${escapeHtml(t.caseLabel)} ${item.caseNumber}</span></div>
         <p class="font-mono text-xs uppercase tracking-widest text-gray-500 mt-7">${escapeHtml(item.kicker)}</p>
         <h1 class="font-serif text-5xl font-light italic leading-tight mt-4">${escapeHtml(item.title)}</h1>
+        <p class="mt-4 text-sm text-gray-400">${escapeHtml(t.by)} <a href="/" rel="author" class="underline">Leandro Calado Ferreira</a> · ${escapeHtml(t.published)} ${escapeHtml(item.published)}</p>
         <p class="text-lg leading-relaxed text-gray-400 mt-6">${escapeHtml(item.excerpt)}</p>
         ${item.caseNumber === "001" ? renderCrimeBookCTA(language) : ""}
         ${item.featuredImage ? `<figure class="mt-10 overflow-hidden border border-white/10 bg-[#101010]"><img src="${item.featuredImage.url}" alt="${escapeHtml(item.title)}" width="${item.featuredImage.width}" height="${item.featuredImage.height}" fetchpriority="high" class="aspect-video w-full object-cover" /></figure>` : ""}
@@ -846,7 +847,7 @@ function generateAICrimeSchema(schemaType: string) {
         "datePublished": articlePublishedIso,
         "dateModified": articlePublishedIso,
         "inLanguage": language,
-        "author": { "@type": "Person", "name": "Leandro Calado", "url": "https://leandrocaladoferreira.com" },
+        "author": { "@type": "Person", "name": "Leandro Calado Ferreira", "alternateName": "Leandro Calado", "url": "https://leandrocaladoferreira.com/" },
         "publisher": { "@type": "Organization", "name": "LCF Consulting", "url": "https://leandrocaladoferreira.com" },
         "articleSection": "The AI Crime Files",
         "keywords": article.keywords.join(", "),

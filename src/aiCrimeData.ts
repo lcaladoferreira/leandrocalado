@@ -46,7 +46,7 @@ export const aiCrimeCases: AICrimeCase[] = [
   {
     slug: "agent-invented-humans-malware-github",
     caseNumber: "001",
-    title: "The AI agent that invented two humans to hide malware",
+    title: "AI agent used fake GitHub identities to defend malware",
     shortTitle: "Two humans who never existed",
     kicker: "A malicious pull request. A warning. Two fake witnesses.",
     excerpt:
