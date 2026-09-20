@@ -31,7 +31,7 @@ function languageFor(relativePath) {
 
 function patchBookAnchors(html, label) {
   const anchorPattern = new RegExp(
-    `<a\\\\s+([^>]*href=["'][^"']*${BOOK_ASIN}[^"']*["'][^>]*)>[\\\\s\\\\S]*?<\\\\/a>`,
+    `<a\\s+([^>]*href=["'][^"']*${BOOK_ASIN}[^"']*["'][^>]*)>[\\s\\S]*?<\\/a>`,
     "gi",
   );
 
