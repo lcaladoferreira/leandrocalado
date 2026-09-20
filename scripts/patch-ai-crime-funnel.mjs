@@ -31,23 +31,15 @@ function languageFor(relativePath) {
 
 function patchBookAnchors(html, label) {
   const anchorPattern = new RegExp(
-    `<a\\s+([^>]*href=["'][^"']*${BOOK_ASIN}[^"']*["'][^>]*)>[\\s\\S]*?<\\/a>`,
+    `<a\\\\s+([^>]*href=["'][^"']*${BOOK_ASIN}[^"']*["'][^>]*)>[\\\\s\\\\S]*?<\\\\/a>`,
     "gi",
   );
 
-  return html.replace(anchorPattern, (_match, attributes) => {
-    let next = attributes
-      .replace(/\s*target=["']_blank["']/gi, "")
-      .replace(/\s*rel=["'][^"']*["']/gi, "")
-      .replace(/\s*data-mcp-action=["'][^"']*["']/gi, "")
-      .replace(/\s*data-mcp-description=["'][^"']*["']/gi, "");
-
-    next = next.replace(
-      new RegExp(`href=["'][^"']*${BOOK_ASIN}[^"']*["']`, "i"),
-      `href="${FUNNEL_PATH}"`,
-    );
-
-    return `<a ${next} data-ai-funnel="liability" data-mcp-action="open-ai-liability-case" data-mcp-description="Open the AI liability case and free chapter before Kindle">${label}</a>`;
+  // Keep the original Amazon purchase CTA. Offer the free case as an
+  // additional route, never as a replacement for the purchase link.
+  return html.replace(anchorPattern, (original) => {
+    const freeCase = `<a href="${FUNNEL_PATH}" data-ai-funnel="liability" data-mcp-action="open-ai-liability-case" data-mcp-description="Read the AI liability case and free chapter">${label}</a>`;
+    return `${original} ${freeCase}`;
   });
 }
 
