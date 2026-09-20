@@ -224,3 +224,8 @@ Classification: TechArticle / controlled research analysis. DeepMind's 100-agent
 - ja: https://leandrocaladoferreira.com/ja/ai-crime-files/ai-agent-whistleblowing-harness-engineering
 
 Primary source: https://arxiv.org/html/2609.04170v1
+
+
+## Nobody Told It to Lie — official book page
+- https://leandrocaladoferreira.com/books/nobody-told-it-to-lie
+- By Leandro Calado Ferreira (Leandro Calado), The AI Crime Files — Case 001. Book details, direct Amazon purchase link and optional free chapter.

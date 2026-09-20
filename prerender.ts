@@ -35,6 +35,7 @@ const renderCrimeBookCTA = (language: AICrimeLanguage) => {
     <h2 class="font-serif text-3xl font-light italic text-white mt-2">Nobody Told It to Lie</h2>
     <p class="text-sm leading-relaxed text-gray-400 mt-3 max-w-2xl">${escapeHtml(t.bookDescription)}</p>
     <a href="${AI_CRIME_BOOK_URL}" target="_blank" rel="noopener noreferrer sponsored" data-mcp-action="buy-ai-crime-files-book" data-mcp-description="Open the official Amazon page for Nobody Told It to Lie by Leandro Calado" class="inline-block bg-red-600 px-5 py-3 mt-5 font-mono text-[10px] font-bold uppercase tracking-widest text-white">${escapeHtml(t.readAmazon)}</a>
+    <a href="/books/nobody-told-it-to-lie" class="inline-block text-red-400 underline px-5 py-3">Nobody Told It to Lie — ${language === "pt" ? "sobre o livro" : "book details"}</a>
   </aside>
 `;
 };
@@ -101,6 +102,7 @@ const crimeIndexRoutes = crimeLanguages.map((language) => {
         <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-red-400">${escapeHtml(t.heroEyebrow)}</span>
         <h1 class="font-serif text-6xl font-light italic leading-tight mt-5">${escapeHtml(t.archiveName)}</h1>
         <p class="text-lg leading-relaxed text-gray-400 mt-6 max-w-2xl">${escapeHtml(t.heroDescription)}</p>
+        ${renderCrimeBookCTA(language)}
         <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-14">
           ${cases.map((item) => `
             <article class="border border-white/10 bg-[#101010] p-6">
@@ -154,6 +156,7 @@ const crimeArticleRoutes = crimeLanguages.flatMap((language) => aiCrimeCases.map
         <p class="font-mono text-xs uppercase tracking-widest text-gray-500 mt-7">${escapeHtml(item.kicker)}</p>
         <h1 class="font-serif text-5xl font-light italic leading-tight mt-4">${escapeHtml(item.title)}</h1>
         <p class="text-lg leading-relaxed text-gray-400 mt-6">${escapeHtml(item.excerpt)}</p>
+        ${item.caseNumber === "001" ? renderCrimeBookCTA(language) : ""}
         ${item.featuredImage ? `<figure class="mt-10 overflow-hidden border border-white/10 bg-[#101010]"><img src="${item.featuredImage.url}" alt="${escapeHtml(item.title)}" width="${item.featuredImage.width}" height="${item.featuredImage.height}" fetchpriority="high" class="aspect-video w-full object-cover" /></figure>` : ""}
         <dl class="grid sm:grid-cols-3 border border-white/10 mt-10">
           <div class="p-5 border-r border-white/10"><dt class="font-mono text-[8px] uppercase text-gray-600">${escapeHtml(t.criminalConduct)}</dt><dd class="text-xs text-gray-300 mt-2">${escapeHtml(item.criminalConduct)}</dd></div>

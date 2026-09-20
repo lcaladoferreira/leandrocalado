@@ -97,6 +97,7 @@ function BookCTA({ language, compact = false }: { language: Language; compact?: 
             >
               {t.readAmazon} <ExternalLink className="h-3.5 w-3.5" />
             </a>
+            <a href="/books/nobody-told-it-to-lie" className="text-sm text-red-400 underline">{language === "pt" ? "Sobre o livro" : "Book details"}</a>
             <span className="font-mono text-[9px] uppercase tracking-wider text-zinc-500">{t.bookMeta}</span>
           </div>
         </div>
@@ -173,6 +174,7 @@ function CrimeIndex({ language, onNavigate }: { language: Language; onNavigate: 
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <BookCTA language={language} compact />
         <DocumentaryVideo />
 
         <section aria-labelledby="case-files-title">
@@ -251,6 +253,7 @@ function CrimeArticle({ item, language, onNavigate }: { item: AICrimeCase; langu
             <span>{t.published} {item.published}</span>
             <span>{t.incident} {item.eventDate}</span>
           </div>
+          {item.caseNumber === "001" && <div className="mt-8"><BookCTA language={language} compact /></div>}
           {item.featuredImage && (
             <figure className="mt-10 overflow-hidden border border-white/10 bg-[#101010]">
               <img
