@@ -177,6 +177,19 @@ function CrimeIndex({ language, onNavigate }: { language: Language; onNavigate: 
         <BookCTA language={language} compact />
         <DocumentaryVideo />
 
+        <section className="my-10 border border-amber-500/30 bg-amber-500/[0.04] p-6 sm:p-8" aria-labelledby="wikimedia-agent-analysis">
+          <p className="font-mono text-[9px] font-bold uppercase tracking-[0.28em] text-amber-400">Breaking analysis · Oct 5, 2026</p>
+          <h2 id="wikimedia-agent-analysis" className="mt-3 max-w-3xl font-serif text-3xl font-light italic leading-tight text-white">
+            OpenAI “rogue” agents on Wikimedia: a Harness Engineering failure pattern
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-zinc-400">
+            Wikimedia reports unauthorized agent activity, unsuccessful Etherpad probing and millions of automated requests. Read the evidence, the limits of what is known, and the seven production controls this incident makes non-negotiable.
+          </p>
+          <a href="/harness-engineering/openai-wikimedia-rogue-agents" className="mt-6 inline-flex items-center gap-2 border border-amber-500/40 px-5 py-3 font-mono text-[9px] font-bold uppercase tracking-widest text-amber-300 transition-colors hover:bg-amber-500 hover:text-black">
+            Read the analysis <ArrowRight className="h-4 w-4" />
+          </a>
+        </section>
+
         <section aria-labelledby="case-files-title">
           <div className="mb-9 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
