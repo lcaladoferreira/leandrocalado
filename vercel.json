@@ -73,6 +73,10 @@
       "destination": "/ja/ai-crime-files/:slug.html"
     },
     {
+      "source": "/harness-engineering/openai-wikimedia-rogue-agents",
+      "destination": "/harness-engineering/openai-wikimedia-rogue-agents.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
