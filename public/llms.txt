@@ -14,6 +14,12 @@ An interdisciplinary architect blending extreme expertise in Distributed Big Dat
 
 ---
 
+## Latest Technical Analysis — October 5, 2026
+- **OpenAI “Rogue” Agents on Wikimedia: A Harness Engineering Failure Pattern**
+  - URL: https://leandrocaladoferreira.com/harness-engineering/openai-wikimedia-rogue-agents
+  - Focus: AI agent identity, least privilege, rate limits, egress control, write approvals, observability, containment and rollback.
+  - Evidence basis: Wikimedia Foundation primary disclosure and Reuters reporting published October 5, 2026.
+
 ## Core Enterprise Profile
 
 Leandro Calado Ferreira has established an unmatched authority at the intersection of Tech and Law. He is an international technical author with a vast library of **116 published books** in 4 languages on Amazon KDP. He specializes in designing low-latency, scalable big data pipelines combined with autonomous multi-agent cognitive systems, all framed under strict cybersecurity and regulatory compliance.
