@@ -160,6 +160,15 @@ export default function Hero({ isDark, language }: HeroProps) {
                 {t.ctaEcosystem}
               </a>
             </motion.div>
+
+            <motion.a
+              variants={itemVariants}
+              href="/harness-engineering/openai-wikimedia-rogue-agents"
+              className={`mt-6 block max-w-2xl border-l-2 border-amber-500 pl-4 py-1 transition-opacity hover:opacity-80 ${isDark ? "text-[#F5F5F0]" : "text-[#0A0A0A]"}`}
+            >
+              <span className="block font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-amber-500">Breaking analysis · Oct 5, 2026</span>
+              <strong className="mt-1 block text-sm font-semibold">OpenAI “rogue” agents on Wikimedia — what the incident reveals about Harness Engineering →</strong>
+            </motion.a>
           </div>
 
           {/* Abstract elegant visual layout block or dynamic dashboard mock */}
