@@ -302,6 +302,10 @@ const routes = [
             <a href="/start-here" class="px-6 py-4 border border-[#F5F5F0] text-[#F5F5F0] hover:bg-white hover:text-black font-semibold uppercase tracking-widest text-xs transition-colors rounded-sm">Comece por aqui</a>
             <a href="/books" class="px-6 py-4 border border-rose-500/20 text-[#F27D26] hover:border-[#F27D26]/40 font-semibold uppercase tracking-widest text-xs transition-colors rounded-sm">Ver Biblioteca</a>
           </div>
+          <a href="/harness-engineering/openai-wikimedia-rogue-agents" class="block mt-7 max-w-2xl border-l-2 border-amber-500 pl-4 py-1">
+            <span class="block font-mono text-[9px] font-bold uppercase tracking-widest text-amber-400">Breaking analysis · Oct 5, 2026</span>
+            <strong class="block mt-1 text-sm text-white">OpenAI “rogue” agents on Wikimedia — what the incident reveals about Harness Engineering &rarr;</strong>
+          </a>
         </div>
       </section>
     `
