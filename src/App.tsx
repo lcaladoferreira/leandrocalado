@@ -106,7 +106,7 @@ export default function App() {
         {currentPath === "/" || currentPath === "" ? (
           <>
             <Hero isDark={isDark} language={language} />
-            <section class="border-y border-[#F27D26]/30 bg-[#111] py-8 px-6"><div class="max-w-7xl mx-auto"><p class="text-[#F27D26] text-xs uppercase tracking-widest">New free Python incident lab</p><h2 class="text-2xl text-white mt-2">AI Agent Reliability Engineering</h2><p class="text-gray-400 mt-2">Reproduce duplicate actions after a timeout. Test contracts, restart recovery and concurrent delivery.</p><a href="/books/ai-agent-reliability-engineering" class="inline-block mt-4 text-[#F27D26] underline">Run the free lab and read the opening chapters →</a></div></section>
+            <section className="border-y border-[#F27D26]/30 bg-[#111] py-8 px-6"><div className="max-w-7xl mx-auto"><p className="text-[#F27D26] text-xs uppercase tracking-widest">New free Python incident lab</p><h2 className="text-2xl text-white mt-2">AI Agent Reliability Engineering</h2><p className="text-gray-400 mt-2">Reproduce duplicate actions after a timeout. Test contracts, restart recovery and concurrent delivery.</p><a href="/books/ai-agent-reliability-engineering" className="inline-block mt-4 text-[#F27D26] underline">Run the free lab and read the opening chapters →</a></div></section>
             <About isDark={isDark} language={language} />
             <Ecosystem isDark={isDark} language={language} onNavigate={navigate} />
             <Books isDark={isDark} language={language} onNavigate={navigate} />
