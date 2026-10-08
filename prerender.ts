@@ -355,7 +355,7 @@ const routes = [
               <a href="/ai-agents" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">Explore topic &rarr;</a>
             </div>
             <div class="p-8 bg-[#0F0F0F] border border-[#2A2A2A] rounded-sm hover:border-[#F27D26]/40 transition-colors">
-              <h3 class="text-lg italic font-serif text-white mb-2">Data Engineering em Nuvem</h3>
+              <h3 class="text-lg italic font-serif text-white mb-2">Cloud Data Engineering</h3>
               <p class="text-gray-400 text-xs mb-4">Data pipelines using AWS Glue, PySpark and Athena, with governance practices across Databricks and Azure.</p>
               <a href="/data-engineering" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">Explore topic &rarr;</a>
             </div>
@@ -367,7 +367,7 @@ const routes = [
   {
     path: "/books",
     title: "International Technical Library — Leandro Calado Ferreira",
-    description: "Explore os manuais publicados por Leandro Calado Ferreira na Amazon KDP sobre IA Agente, Data Engineering, AWS, Databricks, Big Data e Conformidade Legal de Negócios. Todos com links de compra direta.",
+    description: "Explore technical books by Leandro Calado Ferreira on AI agents, data engineering, AWS, Databricks, automation and technology governance, with Amazon listing links.",
     canonical: "https://leandrocaladoferreira.com/books",
     schemaType: "Books",
     htmlContent: `
@@ -376,7 +376,7 @@ const routes = [
           <div class="text-center mb-16">
             <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Amazon Kindle KDP</span>
             <h1 class="text-4xl font-light italic mt-3 mb-4 font-serif">International Technical Library</h1>
-            <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">Padrões de projeto pragmáticos e manuais em 4 idiomas que pavimentam o entendimento de Data Engineering de Alto Performance e Automações de Tecnologia.</p>
+            <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">Practical guides on data engineering, AI agents, cloud platforms and automation, published in several languages.</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             ${booksData.map((book, idx) => `
@@ -476,20 +476,20 @@ const routes = [
   },
   {
     path: "/ai-agents",
-    title: "Applied AI in Production — Hub Semântico — Leandro Calado Ferreira",
-    description: "Análise analítica e implementações de Model Context Protocol (MCP), orquestrações avançadas com n8n, engenharia de prompts estruturada e governança de agentes autônomos sob controles rigorosos.",
+    title: "Applied AI in Production — Technical Resources — Leandro Calado Ferreira",
+    description: "Practical resources on Model Context Protocol (MCP), agent orchestration with n8n, prompt engineering and governance of autonomous AI systems.",
     canonical: "https://leandrocaladoferreira.com/ai-agents",
     schemaType: "SemanticHub",
     htmlContent: `
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-3xl mx-auto">
-          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Hub Semântico de Produção</span>
+          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Production Systems Hub</span>
           <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">Applied AI in Production</h1>
           <div class="prose prose-invert text-gray-300 text-sm leading-relaxed space-y-6">
-            <p>O <strong>Model Context Protocol (MCP)</strong> surge como o padrão tecnológico de maior relevância recente para descentralizar o processamento cognitivo de IA, conectando modelos generativos sofisticados de linguagem a bases locais e remotas sem complexidades.</p>
-            <p>Ao integrar servidores de contexto em sandboxes restritas, evitamos vulnerabilidades graves inerentes ao tráfego de dados sensíveis e mitigamos as perdas operacionais.</p>
-            <h3 class="text-lg italic font-serif text-white mt-8 mb-3">Modelando Sistemas Multi-Agentes com Segurança</h3>
-            <p>Por meio de orquestradores flexíveis como <strong>n8n</strong>, modelamos fluxos estruturados que dispensam o desenvolvimento exaustivo base de APIs em Python. A arquitetura multi-agente robusta requer testes exaustivos de engenharia preventiva de inputs e controle absoluto sobre transações delegadas.</p>
+            <p>The <strong>Model Context Protocol (MCP)</strong> provides a standard interface for connecting language-model applications to tools and external data sources, helping separate model reasoning from the systems that execute operations.</p>
+            <p>Context servers should run within controlled trust boundaries. Sandboxing, authorization and careful data handling help reduce exposure without eliminating security risk.</p>
+            <h3 class="text-lg italic font-serif text-white mt-8 mb-3">Engineering Safer Multi-Agent Systems</h3>
+            <p>Tools such as <strong>n8n</strong> can coordinate workflows and external APIs. Reliable multi-agent systems require authorization checks, explicit contracts, tests and careful handling of delegated actions.</p>
           </div>
           <div class="mt-12 text-left">
             <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Back to home</a>
@@ -500,20 +500,20 @@ const routes = [
   },
   {
     path: "/data-engineering",
-    title: "Data Engineering em Nuvem — Hub Semântico — Leandro Calado Ferreira",
-    description: "Arquitetura distribuída de Big Data. Implementação de pipelines ETL/ELT otimizados usando Apache Spark, Databricks Lakehouses (Delta Lake), AWS Glue PySpark jobs e centralização estatística de dados.",
+    title: "Cloud Data Engineering — Technical Resources — Leandro Calado Ferreira",
+    description: "Distributed data architecture and ETL/ELT pipelines using Apache Spark, Databricks, Delta Lake, AWS Glue and PySpark.",
     canonical: "https://leandrocaladoferreira.com/data-engineering",
     schemaType: "SemanticHub",
     htmlContent: `
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-3xl mx-auto">
-          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Hub Semântico de Engenharia</span>
-          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">Data Engineering em Nuvem</h1>
+          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Engineering Resources</span>
+          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">Cloud Data Engineering</h1>
           <div class="prose prose-invert text-gray-300 text-sm leading-relaxed space-y-6">
-            <p>A engenharia analítica em grande escala ampara-se no processamento paralelo sobre frameworks de altíssima eficiência operacional como o <strong>Apache Spark</strong> e nas arquiteturas robustas do <strong>Databricks</strong>.</p>
-            <p>No desenvolvimento de pipelines empresariais, consolidamos o conceito de <strong>Lakehouse</strong>, organizando o ciclo de vida dos dados em partições estanques (Bronze, Silver e Gold) em buckets dedicados no Amazon S3 ou no ADLS Gen2 da Azure, estruturados com o formato Delta Lake.</p>
-            <h3 class="text-lg italic font-serif text-white mt-8 mb-3">Otimização Operacional e FinOps em Big Data</h3>
-            <p>No Itaú Unibanco, a consolidação estrutural de Glue PySpark Jobs permitiu otimizações expressivas que reduziram os custos de instâncias Athena e clusters, provando que o redesenho preventivo possui maior impacto orçamentário do que o mero escalonamento vertical.</p>
+            <p>Large-scale data engineering uses parallel processing frameworks such as <strong>Apache Spark</strong> and managed data platforms such as <strong>Databricks</strong>.</p>
+            <p>Enterprise pipelines can adopt a <strong>Lakehouse</strong> design, organizing data into Bronze, Silver and Gold layers on Amazon S3 or Azure Data Lake Storage, with Delta Lake for managed tables.</p>
+            <h3 class="text-lg italic font-serif text-white mt-8 mb-3">Data Platform Optimization and FinOps</h3>
+            <p>Engineering work for Itaú Unibanco included Glue and PySpark data workloads. Query design, execution planning and resource selection are key concerns when controlling data-platform costs.</p>
           </div>
           <div class="mt-12 text-left">
             <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Back to home</a>
@@ -524,18 +524,18 @@ const routes = [
   },
   {
     path: "/safe-ai",
-    title: "Segurança de Sistemas com IA — Hub Semântico — Leandro Calado Ferreira",
-    description: "Análise técnica de vulnerabilidades em modelos de linguagem grande (LLM), perigos de Prompt Injection indireto e a fabricação de guardrails dedicados de segurança e harnesses de testes analíticos.",
+    title: "AI Systems Security — Technical Resources — Leandro Calado Ferreira",
+    description: "Technical analysis of LLM vulnerabilities, indirect prompt injection, security guardrails and test harnesses for AI systems.",
     canonical: "https://leandrocaladoferreira.com/safe-ai",
     schemaType: "SemanticHub",
     htmlContent: `
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-3xl mx-auto">
-          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Hub Semântico de Cibersegurança</span>
-          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">Segurança de Sistemas com IA</h1>
+          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">AI Security Resources</span>
+          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">AI Systems Security</h1>
           <div class="prose prose-invert text-gray-300 text-sm leading-relaxed space-y-6">
-            <p>O advento de agentes inteligentes que interpretam conteúdos livres e páginas externas cria rotas propícias para o vetor de ameaça moderno denominado <strong>Prompt Injection indireto</strong>.</p>
-            <p>Para mitigar riscos, a engenharia de segurança desenvolve <strong>harnesses de testes rigorosos</strong> que atacam exaustivamente a resiliência gramatical do modelo em ambientes controlados (sandboxing), forçando saídas sanitizadas de dados antes de sua integração física com APIs de decisão operacional ou faturamento comercial.</p>
+            <p>Agents that consume untrusted pages or documents can encounter <strong>indirect prompt injection</strong>, where malicious content attempts to redirect the agent's behavior.</p>
+            <p>To reduce risk, engineering teams can use <strong>structured security tests</strong>, sandboxes, tool authorization and output validation before allowing agents to interact with business systems.</p>
           </div>
           <div class="mt-12 text-left">
             <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Back to home</a>
@@ -546,17 +546,17 @@ const routes = [
   },
   {
     path: "/automation",
-    title: "Automação Industrial de Processos & N8N — Leandro Calado Ferreira",
-    description: "Explore como otimizar workflows corporativos e monetizar tarefas online conectando faturamentos do Stripe e rotinas webhooks usando lógica de automação n8n sem código excessivo.",
+    title: "Workflow Automation with n8n — Leandro Calado Ferreira",
+    description: "Explore workflow automation using n8n, APIs, webhooks and transaction integrations such as Stripe.",
     canonical: "https://leandrocaladoferreira.com/automation",
     schemaType: "SemanticHub",
     htmlContent: `
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-3xl mx-auto">
-          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Hub de Otimização Operacional</span>
-          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">Automação de Processos Industriais</h1>
+          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Workflow Automation Resources</span>
+          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">Business Process Automation</h1>
           <div class="prose prose-invert text-gray-300 text-sm leading-relaxed space-y-6">
-            <p>Automações de fluxos corporativos robustos baseiam-se em designs escaláveis e tolerantes a falhas. Integrando <strong>n8n</strong>, APIs transacionais de billing como <strong>Stripe</strong> e robôs autônomos, liberamos gargalos operacionais e maximizamos margens operacionais de times de tecnologia.</p>
+            <p>Reliable business workflows benefit from fault-tolerant designs. Integrations among <strong>n8n</strong>, transaction APIs such as <strong>Stripe</strong>, and autonomous agents can reduce manual work when backed by clear contracts and observability.</p>
           </div>
           <div class="mt-12 text-left">
             <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Back to home</a>
