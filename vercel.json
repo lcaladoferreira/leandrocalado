@@ -5,6 +5,30 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/books/ai-agent-reliability-engineering",
+      "destination": "/books/ai-agent-reliability-engineering.html"
+    },
+    {
+      "source": "/books/ai-agent-reliability-engineering/sample",
+      "destination": "/books/ai-agent-reliability-engineering-sample.html"
+    },
+    {
+      "source": "/ai-agent-reliability/testing-ai-agent-tool-calls",
+      "destination": "/ai-agent-reliability/testing-ai-agent-tool-calls.html"
+    },
+    {
+      "source": "/ai-agent-reliability/retries-duplicate-agent-actions",
+      "destination": "/ai-agent-reliability/retries-duplicate-agent-actions.html"
+    },
+    {
+      "source": "/ai-agent-reliability/python-agent-evaluation-dataset",
+      "destination": "/ai-agent-reliability/python-agent-evaluation-dataset.html"
+    },
+    {
+      "source": "/ai-agent-reliability/recovering-agent-after-timeout",
+      "destination": "/ai-agent-reliability/recovering-agent-after-timeout.html"
+    },
+    {
       "source": "/images/harness-data-agents-databricks-cover.webp",
       "destination": "/images/harness-data-agents-databricks-cover.jpg"
     },

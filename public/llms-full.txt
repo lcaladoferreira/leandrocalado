@@ -1321,3 +1321,11 @@ The AI Crime Files
 ## Nobody Told It to Lie — official book page
 - https://leandrocaladoferreira.com/books/nobody-told-it-to-lie
 - By Leandro Calado Ferreira (Leandro Calado), The AI Crime Files — Case 001. Book details, direct Amazon purchase link and optional free chapter.
+
+
+## AI Agent Reliability Engineering — free lab
+Book in preparation; no Amazon listing yet. Free deterministic Python incident lab and working sample: https://leandrocaladoferreira.com/books/ai-agent-reliability-engineering
+- How to Test an AI Agent's Tool Calls: https://leandrocaladoferreira.com/ai-agent-reliability/testing-ai-agent-tool-calls
+- Why Retries Create Duplicate Agent Actions: https://leandrocaladoferreira.com/ai-agent-reliability/retries-duplicate-agent-actions
+- A Python Evaluation Dataset for Agent Tool Contracts: https://leandrocaladoferreira.com/ai-agent-reliability/python-agent-evaluation-dataset
+- Recovering an Agent Worker After a Committed Action: https://leandrocaladoferreira.com/ai-agent-reliability/recovering-agent-after-timeout

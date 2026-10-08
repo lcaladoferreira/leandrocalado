@@ -287,6 +287,7 @@ const routes = [
     canonical: "https://leandrocaladoferreira.com/",
     schemaType: "Home",
     htmlContent: `
+<section class="border-y border-[#F27D26]/30 bg-[#111] py-8 px-6"><div class="max-w-7xl mx-auto"><p class="text-[#F27D26] text-xs uppercase tracking-widest">New free Python incident lab</p><h2 class="text-2xl text-white mt-2">AI Agent Reliability Engineering</h2><p class="text-gray-400 mt-2">Reproduce duplicate actions after a timeout. Test contracts, restart recovery and concurrent delivery.</p><a href="/books/ai-agent-reliability-engineering" class="inline-block mt-4 text-[#F27D26] underline">Run the free lab and read the opening chapters →</a></div></section>
       <!-- Hero Section -->
       <section class="min-h-[85vh] flex flex-col justify-center py-20 px-6">
         <div class="max-w-7xl mx-auto w-full">

@@ -1,0 +1,96 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Agent Reliability Engineering — Opening Chapters | Leandro Calado Ferreira</title><meta name="description" content="Read the working opening chapters on verifiable agent execution, tool contracts and evaluation rules."><link rel="canonical" href="https://leandrocaladoferreira.com/books/ai-agent-reliability-engineering/sample"><meta property="og:title" content="AI Agent Reliability Engineering — Opening Chapters"><meta property="og:description" content="Read the working opening chapters on verifiable agent execution, tool contracts and evaluation rules."><meta property="og:url" content="https://leandrocaladoferreira.com/books/ai-agent-reliability-engineering/sample"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#0b0e12;color:#e9edf2;font:17px/1.7 system-ui,-apple-system,sans-serif}a{color:#ffad6a;text-underline-offset:4px}a:hover{color:#ffd4b2}header,main,footer{max-width:1120px;margin:auto;padding:28px 24px}header{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #28303b}header a{text-decoration:none;font-size:14px}main{padding-top:60px}h1,h2,h3{line-height:1.15;letter-spacing:-.035em}h1{font-size:clamp(42px,6.2vw,72px);max-width:950px;margin:16px 0 24px}h2{font-size:32px;margin-top:50px}h3{font-size:22px}.eyebrow{font:12px/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.15em;color:#ffad6a}.lead{font-size:21px;line-height:1.6;color:#b8c2d0;max-width:780px}.status{display:inline-block;padding:6px 12px;border:1px solid #5c4530;color:#ffc694;border-radius:99px;font-size:12px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0}.button{display:inline-block;padding:13px 20px;border:1px solid #ffad6a;border-radius:5px;text-decoration:none;font-weight:650}.primary{background:#ffad6a;color:#131619}.primary:hover{background:#ffd4b2;color:#131619}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:28px 0}.card{padding:26px;border:1px solid #29333f;border-radius:8px;background:#11161e}.card h3{margin-top:0}.muted,footer{color:#9eabba}pre{padding:22px;background:#161d27;border:1px solid #303c4b;border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.7 ui-monospace,monospace}code{font-family:ui-monospace,monospace;font-size:.88em}table{border-collapse:collapse;width:100%;margin:25px 0}th,td{padding:16px 12px;text-align:left;border-bottom:1px solid #29333f}th{color:#a6b8cc;font-size:12px;text-transform:uppercase;letter-spacing:.08em}.bad{color:#ffa09b}.good{color:#8bd5ad}.notice{border-left:3px solid #ffad6a;padding:14px 22px;background:#17191b;color:#c3ccd6}.reading{max-width:820px}.reading p,.reading li{color:#c3ccd6}.reading h1{font-size:clamp(36px,5vw,56px)}.reading h2{font-size:28px}footer{margin-top:60px;border-top:1px solid #29333f;font-size:13px}a:focus-visible{outline:3px solid #fff;outline-offset:5px}@media(max-width:680px){.grid{grid-template-columns:1fr}header{flex-direction:column;gap:8px}main{padding-top:36px}td,th{padding:10px 6px;font-size:13px}.lead{font-size:18px}}</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "AI Agent Reliability Engineering \u2014 Opening Chapters", "name": "AI Agent Reliability Engineering \u2014 Opening Chapters", "description": "Read the working opening chapters on verifiable agent execution, tool contracts and evaluation rules.", "url": "https://leandrocaladoferreira.com/books/ai-agent-reliability-engineering/sample", "inLanguage": "en", "author": {"@type": "Person", "name": "Leandro Calado Ferreira", "url": "https://leandrocaladoferreira.com"}, "dateModified": "2026-10-08"}</script></head><body><header><a href="/">LEANDRO CALADO FERREIRA</a><nav><a href="/books/ai-agent-reliability-engineering">Agent reliability</a> · <a href="/books">Books</a> · <a href="/books/ai-agent-reliability-engineering#articles">Articles</a></nav></header><main><article class="reading"><p class="eyebrow">Working sample · Chapters 1–3</p><h1>AI Agent Reliability Engineering</h1>
+<h2>A Hands-On Python Guide to Testing, Evaluating, Debugging, and Recovering Production Agents</h2>
+<p>Leandro Calado Ferreira</p>
+<p><strong>Working manuscript, version 0.1 — October 8, 2026. Not a publication-ready edition.</strong></p>
+<p>Copyright © 2026 Leandro Calado Ferreira. All rights reserved for editorial text.
+The companion Python lab is separately licensed under MIT.</p>
+<h3>How to use this manuscript</h3>
+<p>You need Python 3.11 or later, basic SQL and familiarity with API calls. Start with the free incident lab:
+https://github.com/lcaladoferreira/lcaladoferreira/tree/main/agent-reliability-lab</p>
+<p>Download the repository, enter <code>agent-reliability-lab</code>, and run:</p>
+<pre><code class="language-sh">python -m unittest -v
+python lab.py demo
+python lab.py evaluate
+</code></pre>
+<p>The lab deliberately uses a scripted planner. It proves properties of contracts, execution and recovery under controlled failures. It does not establish language-model accuracy. This manuscript distinguishes implemented exercises from proposed extensions; a proposed extension is not a tested feature.</p>
+<p>Twenty regression tests passed on Python 3.11, 3.12 and 3.13 in GitHub Actions on October 8, 2026:
+https://github.com/lcaladoferreira/lcaladoferreira/actions/runs/37814681218</p>
+<p>Those results describe one code revision and the fixture set. They are not a benchmark of production traffic.</p>
+<h3>Contents</h3>
+<ol>
+<li>From Demo Success to Production Reliability</li>
+<li>Build a Small Agent You Can Actually Test</li>
+<li>Define Success Before You Run an Evaluation</li>
+<li>Test Tools, Schemas, and Side Effects</li>
+<li>Evaluate Multi-Step Tasks and Agent Trajectories</li>
+<li>Use LLM Judges Without Treating Them as Ground Truth</li>
+<li>Debug Failures with Traces and Replay</li>
+<li>Handle Timeouts, Retries, and Duplicate Actions</li>
+<li>Recover State and Resume Interrupted Work</li>
+<li>Test Retrieval, Citations, and Access Boundaries</li>
+<li>Add MCP Tools Without Losing Control</li>
+<li>Measure Cost, Latency, and Reliability Together</li>
+<li>Build a CI Gate for Agent Changes</li>
+<li>Run the Incident Lab
+Appendices: failure matrix, release checklist and source notes.</li>
+</ol>
+<h1>1. From Demo Success to Production Reliability</h1>
+<p>A demonstration answers whether a system can complete a selected task once. An operational claim needs a task definition, a population, failure conditions and an acceptance rule. These are different measurements. A compelling demo may say little about what happens when a worker disappears after changing a database.</p>
+<p>Consider an assistant authorized to issue a ten-dollar credit to one synthetic customer. The tool applies the credit, but its response is lost. The caller sees a timeout. A second call applies another credit. The assistant may then report success, and a transcript reviewer may agree. The final account state is nevertheless wrong.</p>
+<p>This book starts with that failure because it separates three events often collapsed into one: a request was sent, a domain effect committed, and the caller observed a result. A timeout describes the caller's observation. It does not determine whether the effect occurred.</p>
+<h2>Define the boundary of each guarantee</h2>
+<p>Our laboratory keeps the synthetic credit and the operation receipt in the same SQLite transaction. Inside this boundary, an operation key identifies one authorized action. A second delivery with the same payload returns the prior receipt. A different payload using that key raises a conflict.</p>
+<p>This is a narrow, useful guarantee. It is not an exactly-once guarantee across a remote payment API and your local database. If a remote effect commits before your local receipt is written, a worker crash creates an unresolved gap. You need provider-side idempotency, reconciliation, or another explicit recovery protocol.</p>
+<p>An engineering claim should always name its boundary. “No duplicate credits for concurrent requests using this key in this ledger” is testable. “The agent is reliable” is incomplete.</p>
+<h2>Keep two scoreboards</h2>
+<p>The task scoreboard measures whether the requested outcome occurred. The invariant scoreboard checks constraints that must hold even when the task does not finish. For our incident, the desired outcome is one approved credit. The invariants include no unauthorized recipient, no changed amount and no duplicate effect for the same action.</p>
+<p>A task can fail without breaking an invariant. When the response is lost and the retry budget is exhausted, the runner raises a timeout while one credit exists. Reporting this as a clean failure would erase the committed action. The correct operational state is an uncertain observation requiring lookup or recovery.</p>
+<h2>Exercise</h2>
+<p>Run <code>python lab.py demo</code>. Inspect the broken and corrected effect counts. The deliberately unsafe baseline produces two effects; the corrected ledger produces one. Read the trace and identify the missing response between the first attempt and the second.</p>
+<p>Do not describe these numbers as production improvement percentages. The incident was constructed to exhibit a known failure. It demonstrates a mechanism, not its prevalence in a deployed system.</p>
+<h2>Before moving on</h2>
+<p>Write one sentence for your own application: “For task X, success means Y, and constraint Z must hold during every failure path.” If you cannot write it without vague words such as helpful, accurate or robust, you do not yet have an operational acceptance rule.</p>
+<h1>2. Build a Small Agent You Can Actually Test</h1>
+<p>Start with a smaller system than the one you eventually want. A broad autonomous assistant has too many degrees of freedom to explain a failure precisely. Our initial runner accepts a trusted task, receives a proposed tool call, validates it, executes one action and returns a receipt.</p>
+<p>The trusted task contains four fields: task identifier, tenant, customer and amount in cents. The proposal contains a tool name and arguments. The proposal may have the correct shape while still requesting an unauthorized customer. Structural validity and authorization therefore require separate checks.</p>
+<h2>The planner-executor seam</h2>
+<p>The function <code>scripted_proposal</code> produces a deterministic proposal. The runner accepts an explicit proposal, so a future model adapter can use the same seam. No model decides the tenant, approval state, task identifier or operation key.</p>
+<p>That design makes the test boundary concrete. You can inject a wrong customer without asking a model to misbehave. You can inject a lost response without causing a network outage. You can test concurrency without paying for model calls.</p>
+<p>A scripted planner is a fixture, not a realistic substitute for a probabilistic planner. It is useful because the execution contract should behave correctly regardless of which model, person or service proposed the action.</p>
+<h2>Inspect the smallest task</h2>
+<pre><code class="language-python">task = {
+    &quot;task_id&quot;: &quot;credit-001&quot;,
+    &quot;tenant&quot;: &quot;demo&quot;,
+    &quot;customer&quot;: &quot;synthetic-001&quot;,
+    &quot;amount_cents&quot;: 1000,
+}
+</code></pre>
+<p>Amounts use integer cents. The validator rejects booleans explicitly: in Python, a boolean can otherwise satisfy an integer type relationship. It also rejects zero, negative values, strings, floats and amounts beyond the laboratory's policy limit.</p>
+<p>The exact field set is intentional. An extra <code>approval=True</code> field in a model proposal is not treated as authorization. Trusted authorization belongs outside generated arguments.</p>
+<h2>An adapter should return a proposal, not execute it</h2>
+<p>For a real model adapter, record the model identifier, prompt revision, sampling settings, tool specification and raw response before normalization. Parse the response into the proposal contract. Pass the normalized proposal to the same validator.</p>
+<p>Do not silently fix an unauthorized customer or amount. That would blur model behavior and executor behavior. Record a contract or policy rejection, then apply an explicit repair policy if the application supports one.</p>
+<p>The adapter is an extension in this version. No live-model results are claimed. A reproducible implementation needs a selected provider, pinned client version, synthetic evaluation tasks and a recorded run.</p>
+<h2>Exercise</h2>
+<p>Run the <code>test_wrong_tenant_before_effect</code> and <code>test_unknown_tool</code> tests. Confirm that rejection occurs before the ledger changes. Then inspect <code>validate_proposal</code> and identify where trusted task data controls the action.</p>
+<p>The design goal is a replaceable planner and a stable execution boundary. You should be able to change the model without rewriting the authorization rules.</p>
+<h1>3. Define Success Before You Run an Evaluation</h1>
+<p>An evaluation dataset encodes a decision. It does not become authoritative because it is stored in JSON. First determine what evidence distinguishes a completed task from a plausible answer.</p>
+<p>For a synthetic credit task, inspect the ledger. A success message is supporting evidence, not the source of truth. For an information task, a relevant citation may support the answer, but the citation must resolve to a document the caller is allowed to access.</p>
+<h2>Separate outcomes from acceptance rules</h2>
+<p>Our contract evaluator includes six cases. One proposal should be accepted. Unknown tools, wrong customers, wrong tenants, inflated amounts and extra arguments should be rejected. The evaluator checks whether actual acceptance matches expected acceptance.</p>
+<p>A score of six out of six means the validator behaved as expected on six fixed proposals. It does not imply that a model chooses the right action six out of six times. There are no model calls in that evaluation.</p>
+<p>Give every dataset a name and revision. Preserve the input, expected outcome, acceptance rule and reason the case exists. A fixture such as wrong tenant should explain the boundary being tested. Otherwise, someone may remove it as redundant after a refactor.</p>
+<h2>Split development from holdout cases</h2>
+<p>Use development cases to explain failures and improve the implementation. Reserve separate holdout cases for release decisions. When you inspect and tune against a holdout, it becomes part of development evidence. Replace it deliberately rather than pretending it remains unseen.</p>
+<p>For a model-backed planner, vary wording while preserving authorized task facts. Include ambiguous requests, unavailable information and conflicting documents. Keep authorization labels in trusted fixture metadata. Never ask the model's own response to define the expected permission boundary.</p>
+<h2>Avoid convenient denominators</h2>
+<p>If an application excludes refused tasks from its success denominator, it may appear to improve by refusing difficult work. Report coverage, accepted-task success and whole-population success separately. Also report failures that violate invariants. A model that completes more tasks by taking unauthorized actions has not improved operationally.</p>
+<p>When a case is blocked because an external dependency is unavailable, record the block. Do not count it as a successful no-op, and do not silently delete it from the dataset.</p>
+<h2>Exercise</h2>
+<p>Run <code>python lab.py evaluate</code>. Read every case, not only the aggregate count. Change the valid proposal's customer and rerun. Restore the fixture after observing the failed acceptance expectation.</p>
+<p>This exercise changes a test input; it is not a benchmark run. The purpose is to prove that the evaluation can fail when expected behavior and observed behavior diverge.</p>
+<h2>A release decision</h2>
+<p>Choose thresholds before examining a candidate revision. For this small contract suite, every invariant test must pass. For stochastic tasks, specify repeated trials, aggregation and review rules. A threshold without a defined task population is a number without a decision.</p>
+<hr />
+<p>End of working sample. Full edition not yet released.</p><a class="button primary" href="/books/ai-agent-reliability-engineering#lab">Run the free lab</a></article></main><footer>© 2026 Leandro Calado Ferreira · Original technical lab and writing.<br><a href="/books/ai-agent-reliability-engineering">AI Agent Reliability Engineering</a> · <a href="https://github.com/lcaladoferreira/lcaladoferreira/tree/main/agent-reliability-lab">GitHub source</a></footer></body></html>
