@@ -282,8 +282,8 @@ const harnessChecklistRoutes = crimeLanguages.map((language) => {
 const routes = [
   {
     path: "/",
-    title: "Leandro Calado Ferreira — Engenheiro de Dados, IA Aplicada & Harness Engineering",
-    description: "Portfolio de Leandro Calado Ferreira: Engenheiro de Dados, AI Systems Architect e Autor Técnico Internacional com mais de 116 livros publicados, incluindo temas como Harness Engineering, IA e Data Engineering.",
+    title: "Leandro Calado Ferreira — Data Engineering, Applied AI & Harness Engineering",
+    description: "Professional portfolio of Leandro Calado Ferreira, data engineer and technical author covering applied AI, reliable agents, Harness Engineering and data systems.",
     canonical: "https://leandrocaladoferreira.com/",
     schemaType: "Home",
     htmlContent: `
@@ -291,17 +291,17 @@ const routes = [
       <!-- Hero Section -->
       <section class="min-h-[85vh] flex flex-col justify-center py-20 px-6">
         <div class="max-w-7xl mx-auto w-full">
-          <span class="text-[#F27D26] font-bold text-xs uppercase tracking-widest block mb-4">Engenheiro de Dados • Autor Técnico Internacional • Harness Engineering</span>
+          <span class="text-[#F27D26] font-bold text-xs uppercase tracking-widest block mb-4">Data Engineer • International Technical Author • Harness Engineering</span>
           <h1 class="text-4xl sm:text-6xl md:text-7xl font-light italic mb-6 leading-tight font-serif text-white">
-            Preenchendo a lacuna entre<br>
-            <span class="text-[#F27D26]">Engenharia de Dados</span> e <span class="text-gray-400">Harness Engineering</span>
+            Bridging the gap between<br>
+            <span class="text-[#F27D26]">Data Engineering</span> e <span class="text-gray-400">Harness Engineering</span>
           </h1>
           <p class="text-gray-400 text-lg max-w-2xl mb-12 leading-relaxed">
-            Especialista em Model Context Protocol (MCP), orquestrações de IA com n8n, segurança analítica de LLMs e robustez de decisões. Autor de 116 livros técnicos publicados na Amazon KDP em quatro idiomas.
+            Practical work across Model Context Protocol (MCP), AI workflow orchestration with n8n, LLM security and reliable agent execution. Technical books available on Amazon KDP.
           </p>
           <div class="flex flex-wrap gap-4">
-            <a href="/start-here" class="px-6 py-4 border border-[#F5F5F0] text-[#F5F5F0] hover:bg-white hover:text-black font-semibold uppercase tracking-widest text-xs transition-colors rounded-sm">Comece por aqui</a>
-            <a href="/books" class="px-6 py-4 border border-rose-500/20 text-[#F27D26] hover:border-[#F27D26]/40 font-semibold uppercase tracking-widest text-xs transition-colors rounded-sm">Ver Biblioteca</a>
+            <a href="/start-here" class="px-6 py-4 border border-[#F5F5F0] text-[#F5F5F0] hover:bg-white hover:text-black font-semibold uppercase tracking-widest text-xs transition-colors rounded-sm">Start here</a>
+            <a href="/books" class="px-6 py-4 border border-rose-500/20 text-[#F27D26] hover:border-[#F27D26]/40 font-semibold uppercase tracking-widest text-xs transition-colors rounded-sm">Browse books</a>
           </div>
           <a href="/harness-engineering/openai-wikimedia-rogue-agents" class="block mt-7 max-w-2xl border-l-2 border-amber-500 pl-4 py-1">
             <span class="block font-mono text-[9px] font-bold uppercase tracking-widest text-amber-400">Breaking analysis · Oct 5, 2026</span>
@@ -313,22 +313,22 @@ const routes = [
   },
   {
     path: "/about",
-    title: "Sobre Leandro Calado Ferreira — Trajetória Profissional & Acadêmica",
-    description: "Conheça Leandro Calado Ferreira, Engenheiro de Dados, AI Systems Architect e Autor Técnico Internacional. Pós-graduado pela USP, com foco em modelagem de dados distribuídos, Harness Engineering, regulamentações aeroespaciais e liderança em projetos analíticos.",
+    title: "About Leandro Calado Ferreira — Professional Background",
+    description: "Learn about Leandro Calado Ferreira's experience in data engineering, AI systems, technology governance and technical publishing.",
     canonical: "https://leandrocaladoferreira.com/about",
     schemaType: "About",
     htmlContent: `
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-3xl mx-auto">
-          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Trajetória e Propósito</span>
+          <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Background and Focus</span>
           <h1 class="text-4xl sm:text-5xl font-light italic mt-3 mb-8 font-serif">Leandro Calado Ferreira</h1>
           <div class="space-y-6 text-gray-400 text-sm leading-relaxed">
-            <p><strong>Liderança Interdisciplinar:</strong> Engenheiro de Dados, AI Systems Architect e pós-graduado de MBA de Data Science pela USP e Software Development pelo IGTI. Estudando no pós-graduado da Johns Hopkins em IA Agente e Model Context Protocol (MCP).</p>
-            <p>Especialista consagrado no tráfego de dados massivos, otimização de clusters Databricks, desenvolvimento de esteiras PySpark de altíssimo volume no Itaú Unibanco, automação integrada comercial usando IA e conformação estrita com Harness Engineering e a segurança contra Prompt Injections.</p>
-            <p>Como autor internacional de mais de 116 livros, consolidou resultados factuais na difusão de metodologias práticas de automação, cloud computing e governança de tecnologia.</p>
+            <p><strong>Interdisciplinary background:</strong> Data engineer and AI systems practitioner with postgraduate studies in data science at USP and software development at IGTI, and additional work on agentic AI and Model Context Protocol (MCP).</p>
+            <p>Professional experience in data pipelines, Databricks optimization, PySpark workloads and AI-enabled automation, with particular interest in reliable tool execution and prompt-injection defenses.</p>
+            <p>His technical writing discusses practical engineering methods for automation, cloud computing and technology governance.</p>
           </div>
           <div class="mt-12 text-left">
-            <a href="/" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Voltar para o Início</a>
+            <a href="/" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Back to home</a>
           </div>
         </div>
       </section>
@@ -336,28 +336,28 @@ const routes = [
   },
   {
     path: "/start-here",
-    title: "Comece Por Aqui — Hub de Navegação Semântica — Leandro Calado",
-    description: "Inicie sua jornada no ecossistema técnico e jurídico de Leandro Calado Ferreira. Explore os hubs voltados para engenharia de dados em nuvem, agentes de inteligência artificial aplicados e blindagem regulatória corporativa.",
+    title: "Start Here — Leandro Calado Ferreira",
+    description: "Explore resources covering cloud data engineering, applied AI agents, automation and regulatory governance.",
     canonical: "https://leandrocaladoferreira.com/start-here",
     schemaType: "Start",
     htmlContent: `
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-16">
-            <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Comece por Aqui</span>
-            <h1 class="text-3xl sm:text-4xl font-light italic mt-3 mb-4 font-serif">Ecossistema de Conhecimento</h1>
-            <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">Tome contato com os principais núcleos profissionais de pesquisa e implementações executivas desenvolvidas sob os padrões de excelência de Leandro Calado.</p>
+            <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Start Here</span>
+            <h1 class="text-3xl sm:text-4xl font-light italic mt-3 mb-4 font-serif">Knowledge Ecosystem</h1>
+            <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">Explore the technical subjects, original projects and research topics covered across this website.</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="p-8 bg-[#0F0F0F] border border-[#2A2A2A] rounded-sm hover:border-[#F27D26]/40 transition-colors">
-              <h3 class="text-lg italic font-serif text-white mb-2">IA Aplicada em Produção</h3>
-              <p class="text-gray-400 text-xs mb-4">Arquitetura de sistemas multi-agentes baseados em MCP (Model Context Protocol) e automações visuais inteligentes em fluxos integrados com n8n.</p>
-              <a href="/ai-agents" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">Acessar Hub Semântico &rarr;</a>
+              <h3 class="text-lg italic font-serif text-white mb-2">Applied AI in Production</h3>
+              <p class="text-gray-400 text-xs mb-4">Multi-agent architecture using Model Context Protocol (MCP), with workflow automation and integrations built with n8n.</p>
+              <a href="/ai-agents" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">Explore topic &rarr;</a>
             </div>
             <div class="p-8 bg-[#0F0F0F] border border-[#2A2A2A] rounded-sm hover:border-[#F27D26]/40 transition-colors">
-              <h3 class="text-lg italic font-serif text-white mb-2">Engenharia de Dados em Nuvem</h3>
-              <p class="text-gray-400 text-xs mb-4">Pipelines robustos com AWS Glue, PySpark, Athena e governança centralizada de Big Data no Databricks e Azure.</p>
-              <a href="/data-engineering" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">Acessar Hub Semântico &rarr;</a>
+              <h3 class="text-lg italic font-serif text-white mb-2">Data Engineering em Nuvem</h3>
+              <p class="text-gray-400 text-xs mb-4">Data pipelines using AWS Glue, PySpark and Athena, with governance practices across Databricks and Azure.</p>
+              <a href="/data-engineering" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">Explore topic &rarr;</a>
             </div>
           </div>
         </div>
@@ -366,8 +366,8 @@ const routes = [
   },
   {
     path: "/books",
-    title: "Biblioteca Técnica Internacional (116 Livros) — Leandro Calado Ferreira",
-    description: "Explore os manuais publicados por Leandro Calado Ferreira na Amazon KDP sobre IA Agente, Engenharia de Dados, AWS, Databricks, Big Data e Conformidade Legal de Negócios. Todos com links de compra direta.",
+    title: "International Technical Library — Leandro Calado Ferreira",
+    description: "Explore os manuais publicados por Leandro Calado Ferreira na Amazon KDP sobre IA Agente, Data Engineering, AWS, Databricks, Big Data e Conformidade Legal de Negócios. Todos com links de compra direta.",
     canonical: "https://leandrocaladoferreira.com/books",
     schemaType: "Books",
     htmlContent: `
@@ -375,8 +375,8 @@ const routes = [
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-16">
             <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Amazon Kindle KDP</span>
-            <h1 class="text-4xl font-light italic mt-3 mb-4 font-serif">Biblioteca Técnica Internacional</h1>
-            <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">Padrões de projeto pragmáticos e manuais em 4 idiomas que pavimentam o entendimento de Engenharia de Dados de Alto Performance e Automações de Tecnologia.</p>
+            <h1 class="text-4xl font-light italic mt-3 mb-4 font-serif">International Technical Library</h1>
+            <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">Padrões de projeto pragmáticos e manuais em 4 idiomas que pavimentam o entendimento de Data Engineering de Alto Performance e Automações de Tecnologia.</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             ${booksData.map((book, idx) => `
@@ -389,7 +389,7 @@ const routes = [
                   <h3 class="text-lg italic font-serif text-white mb-2 leading-snug">${book.title}</h3>
                   <p class="text-xs text-gray-400 mb-6 leading-relaxed">${book.description}</p>
                 </div>
-                <a href="${book.link}" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 bg-[#F27D26]/10 text-[#F27D26] text-[10px] font-mono uppercase font-bold tracking-widest border border-[#F27D26]/20 hover:bg-[#F27D26] hover:text-white transition-all rounded-sm block">Comprar na Amazon</a>
+                <a href="${book.link}" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 bg-[#F27D26]/10 text-[#F27D26] text-[10px] font-mono uppercase font-bold tracking-widest border border-[#F27D26]/20 hover:bg-[#F27D26] hover:text-white transition-all rounded-sm block">View on Amazon</a>
               </div>
             `).join("")}
           </div>
@@ -399,17 +399,17 @@ const routes = [
   },
   {
     path: "/articles",
-    title: "Artigos e Ensaios Publicados — Leandro Calado Ferreira — Jusbrasil & Medium",
-    description: "Dossiê de ensaios analíticos publicados por Leandro Calado Ferreira no Jusbrasil e na plataforma Medium. Mais de 100 mil visualizações em temas como fomento mercantil, evolução aéroespacial e inovações com algoritmos de IA.",
+    title: "Articles and Essays — Leandro Calado Ferreira",
+    description: "Selected analyses and essays published by Leandro Calado Ferreira on Jusbrasil and Medium, at the intersection of technology, law and institutions.",
     canonical: "https://leandrocaladoferreira.com/articles",
     schemaType: "Articles",
     htmlContent: `
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-16">
-            <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Publicações de Alto Tráfego</span>
-            <h1 class="text-4xl font-light italic mt-3 mb-4 font-serif">Ensaios & Artigos de Referência</h1>
-            <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">Unindo a visão minuciosa do Direito Digital com análises estatísticas para diagnosticar o panorama contemporâneo de sistemas protegidos e marcos institucionais.</p>
+            <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Published Articles</span>
+            <h1 class="text-4xl font-light italic mt-3 mb-4 font-serif">Selected Articles and Essays</h1>
+            <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">Essays combining digital law, data analysis and institutional questions around modern technology.</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             ${articlesData.map((art, idx) => `
@@ -424,7 +424,7 @@ const routes = [
                 </div>
                 <div class="flex justify-between items-center">
                   <span class="text-[10px] font-mono text-gray-500">${art.views ? `👁️ ${art.views} views` : `👏 ${art.claps || 0} claps`}</span>
-                  <a href="${art.link}" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">Ler Publicação &rarr;</a>
+                  <a href="${art.link}" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">Read article &rarr;</a>
                 </div>
               </div>
             `).join("")}
@@ -435,40 +435,40 @@ const routes = [
   },
   {
     path: "/consulting",
-    title: "Consultoria Arquitetônica & Blindagem Tecnológica — Leandro Calado",
-    description: "Contrate assessoria especializada de Leandro Calado Ferreira: implantação segura de engenharia de dados em nuvem, robôs e workflows automatizados integrando LLMs via n8n e auditorias regulatórias sob premissas estritas da LGPD.",
+    title: "Technology and Data Engineering Consulting — Leandro Calado",
+    description: "Consulting covering cloud data engineering, AI-enabled workflows, automation and regulatory data practices, with attention to Brazilian data protection law.",
     canonical: "https://leandrocaladoferreira.com/consulting",
     schemaType: "Consulting",
     htmlContent: `
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-3xl mx-auto">
           <div class="text-center mb-16">
-            <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Consultoria Estratégica</span>
+            <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Technology Consulting</span>
             <h1 class="text-4xl font-light italic mt-3 mb-4 font-serif">LCF Consulting</h1>
-            <p class="text-gray-400 text-sm max-w-xl mx-auto leading-relaxed">Orientando companhias no desenvolvimento seguro de engenharia analítica de dados e blindagem tecnológica.</p>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto leading-relaxed">Helping organizations design reliable data engineering and AI-enabled systems.</p>
           </div>
           <div class="grid grid-cols-1 gap-8 mb-16">
             <div class="p-8 bg-[#0F0F0F] border border-[#2A2A2A] rounded-sm">
-              <h3 class="text-xl italic font-serif text-[#F27D26] mb-3">Escopo de Atuação Profissional</h3>
+              <h3 class="text-xl italic font-serif text-[#F27D26] mb-3">Areas of Practice</h3>
               <ul class="space-y-4 text-xs text-gray-300">
                 <li class="flex items-start gap-2">
                   <span class="text-[#F27D26] font-bold">&bull;</span>
-                  <span><strong>Data Lakes & Data mesh:</strong> Otimização de queries financeiras massivas e modelagem Delta Lake em Azure Databricks e AWS Glue.</span>
+                  <span><strong>Data Lakes & Data mesh:</strong> Financial data processing, query optimization and Delta Lake modeling using Azure Databricks and AWS Glue.</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-[#F27D26] font-bold">&bull;</span>
-                  <span><strong>AI Systems Alignment:</strong> Projeto de agentes cognitivos baseados em Model Context Protocol (MCP) e barreiras defensivas contra Prompt Injections.</span>
+                  <span><strong>AI Systems Alignment:</strong> Agent architectures using Model Context Protocol (MCP), with controls against prompt-injection risks.</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-[#F27D26] font-bold">&bull;</span>
-                  <span><strong>Auditoria regulatória por Design:</strong> Mapeamento do ciclo de vida de dados corporativas sob premissas legais da LGPD.</span>
+                  <span><strong>Regulatory controls by design:</strong> Corporate data lifecycle mapping in alignment with applicable LGPD requirements.</span>
                 </li>
               </ul>
             </div>
           </div>
           <div class="text-center">
-            <p class="text-sm text-gray-400 mb-6 font-mono">Contato Direto para Arquiteturas Comerciais</p>
-            <a href="mailto:leandrocalado.api@gmail.com" class="px-8 py-4 bg-[#F27D26] text-white text-[11px] uppercase font-mono tracking-widest font-bold rounded-sm border border-[#F27D26] hover:bg-transparent hover:text-[#F27D26] transition-colors">Solicitar Orçamento Executivo</a>
+            <p class="text-sm text-gray-400 mb-6 font-mono">Discuss a Technical Project</p>
+            <a href="mailto:leandrocalado.api@gmail.com" class="px-8 py-4 bg-[#F27D26] text-white text-[11px] uppercase font-mono tracking-widest font-bold rounded-sm border border-[#F27D26] hover:bg-transparent hover:text-[#F27D26] transition-colors">Request a Proposal</a>
           </div>
         </div>
       </section>
@@ -476,7 +476,7 @@ const routes = [
   },
   {
     path: "/ai-agents",
-    title: "IA Aplicada em Produção — Hub Semântico — Leandro Calado Ferreira",
+    title: "Applied AI in Production — Hub Semântico — Leandro Calado Ferreira",
     description: "Análise analítica e implementações de Model Context Protocol (MCP), orquestrações avançadas com n8n, engenharia de prompts estruturada e governança de agentes autônomos sob controles rigorosos.",
     canonical: "https://leandrocaladoferreira.com/ai-agents",
     schemaType: "SemanticHub",
@@ -484,7 +484,7 @@ const routes = [
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-3xl mx-auto">
           <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Hub Semântico de Produção</span>
-          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">IA Aplicada em Produção</h1>
+          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">Applied AI in Production</h1>
           <div class="prose prose-invert text-gray-300 text-sm leading-relaxed space-y-6">
             <p>O <strong>Model Context Protocol (MCP)</strong> surge como o padrão tecnológico de maior relevância recente para descentralizar o processamento cognitivo de IA, conectando modelos generativos sofisticados de linguagem a bases locais e remotas sem complexidades.</p>
             <p>Ao integrar servidores de contexto em sandboxes restritas, evitamos vulnerabilidades graves inerentes ao tráfego de dados sensíveis e mitigamos as perdas operacionais.</p>
@@ -492,7 +492,7 @@ const routes = [
             <p>Por meio de orquestradores flexíveis como <strong>n8n</strong>, modelamos fluxos estruturados que dispensam o desenvolvimento exaustivo base de APIs em Python. A arquitetura multi-agente robusta requer testes exaustivos de engenharia preventiva de inputs e controle absoluto sobre transações delegadas.</p>
           </div>
           <div class="mt-12 text-left">
-            <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Voltar ao Começo</a>
+            <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Back to home</a>
           </div>
         </div>
       </section>
@@ -500,7 +500,7 @@ const routes = [
   },
   {
     path: "/data-engineering",
-    title: "Engenharia de Dados em Nuvem — Hub Semântico — Leandro Calado Ferreira",
+    title: "Data Engineering em Nuvem — Hub Semântico — Leandro Calado Ferreira",
     description: "Arquitetura distribuída de Big Data. Implementação de pipelines ETL/ELT otimizados usando Apache Spark, Databricks Lakehouses (Delta Lake), AWS Glue PySpark jobs e centralização estatística de dados.",
     canonical: "https://leandrocaladoferreira.com/data-engineering",
     schemaType: "SemanticHub",
@@ -508,7 +508,7 @@ const routes = [
       <section class="py-24 px-6 text-[#F5F5F0]">
         <div class="max-w-3xl mx-auto">
           <span class="text-[#F27D26] uppercase font-bold text-[10px] tracking-widest">Hub Semântico de Engenharia</span>
-          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">Engenharia de Dados em Nuvem</h1>
+          <h1 class="text-4xl font-light italic mt-3 mb-6 font-serif">Data Engineering em Nuvem</h1>
           <div class="prose prose-invert text-gray-300 text-sm leading-relaxed space-y-6">
             <p>A engenharia analítica em grande escala ampara-se no processamento paralelo sobre frameworks de altíssima eficiência operacional como o <strong>Apache Spark</strong> e nas arquiteturas robustas do <strong>Databricks</strong>.</p>
             <p>No desenvolvimento de pipelines empresariais, consolidamos o conceito de <strong>Lakehouse</strong>, organizando o ciclo de vida dos dados em partições estanques (Bronze, Silver e Gold) em buckets dedicados no Amazon S3 ou no ADLS Gen2 da Azure, estruturados com o formato Delta Lake.</p>
@@ -516,7 +516,7 @@ const routes = [
             <p>No Itaú Unibanco, a consolidação estrutural de Glue PySpark Jobs permitiu otimizações expressivas que reduziram os custos de instâncias Athena e clusters, provando que o redesenho preventivo possui maior impacto orçamentário do que o mero escalonamento vertical.</p>
           </div>
           <div class="mt-12 text-left">
-            <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Voltar ao Começo</a>
+            <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Back to home</a>
           </div>
         </div>
       </section>
@@ -538,7 +538,7 @@ const routes = [
             <p>Para mitigar riscos, a engenharia de segurança desenvolve <strong>harnesses de testes rigorosos</strong> que atacam exaustivamente a resiliência gramatical do modelo em ambientes controlados (sandboxing), forçando saídas sanitizadas de dados antes de sua integração física com APIs de decisão operacional ou faturamento comercial.</p>
           </div>
           <div class="mt-12 text-left">
-            <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Voltar ao Começo</a>
+            <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Back to home</a>
           </div>
         </div>
       </section>
@@ -559,7 +559,7 @@ const routes = [
             <p>Automações de fluxos corporativos robustos baseiam-se em designs escaláveis e tolerantes a falhas. Integrando <strong>n8n</strong>, APIs transacionais de billing como <strong>Stripe</strong> e robôs autônomos, liberamos gargalos operacionais e maximizamos margens operacionais de times de tecnologia.</p>
           </div>
           <div class="mt-12 text-left">
-            <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Voltar ao Começo</a>
+            <a href="/start-here" class="text-[10px] uppercase font-bold font-mono tracking-widest text-[#F27D26] hover:underline">&larr; Back to home</a>
           </div>
         </div>
       </section>
@@ -1163,15 +1163,15 @@ function run() {
             <span class="text-xs tracking-[0.25em] uppercase font-semibold text-white hidden sm:inline-block">Leandro Calado <span class="opacity-50 text-[10px] font-light">Ferreira</span></span>
           </a>
           <nav class="hidden md:flex items-center gap-8">
-            <a href="/about" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">SOBRE</a>
-            <a href="/start-here" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">ECOSSISTEMA</a>
-            <a href="/books" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">LIVROS</a>
+            <a href="/about" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">ABOUT</a>
+            <a href="/start-here" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">ECOSYSTEM</a>
+            <a href="/books" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">BOOKS</a>
             <a href="/ai-crime-files" class="text-[10px] tracking-[0.2em] uppercase text-red-400 hover:text-red-300 font-medium">AI CRIME FILES</a>
-            <a href="/articles" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">ARTIGOS</a>
-            <a href="/consulting" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">CONSULTORIA</a>
+            <a href="/articles" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">ARTICLES</a>
+            <a href="/consulting" class="text-[10px] tracking-[0.2em] uppercase text-gray-400 hover:text-white font-medium">CONSULTING</a>
           </nav>
           <div class="flex items-center gap-3">
-            <a href="/consulting" class="px-5 py-2.5 text-[10px] tracking-widest uppercase border border-[#F5F5F0] text-[#F5F5F0] rounded font-semibold hover:bg-white hover:text-black transition-all">Consultoria</a>
+            <a href="/consulting" class="px-5 py-2.5 text-[10px] tracking-widest uppercase border border-[#F5F5F0] text-[#F5F5F0] rounded font-semibold hover:bg-white hover:text-black transition-all">Consulting</a>
           </div>
         </div>
       </header>
@@ -1183,20 +1183,20 @@ function run() {
           <div class="flex flex-col md:flex-row justify-between items-start gap-6 pb-10 border-b border-white/5">
             <div>
               <p class="text-2xl font-light italic leading-none mb-1 text-[#F27D26] font-serif">Leandro Calado Ferreira</p>
-              <p class="text-[10px] uppercase tracking-wider opacity-60 mt-1 font-mono">Engenheiro de Dados • Autor Técnico Internacional • Harness Engineering</p>
+              <p class="text-[10px] uppercase tracking-wider opacity-60 mt-1 font-mono">Data Engineer • International Technical Author • Harness Engineering</p>
             </div>
             <nav class="flex flex-wrap gap-x-6 gap-y-2 text-[10px] uppercase tracking-widest font-mono font-bold text-gray-400">
-              <a href="/about" class="hover:text-white">SOBRE</a>
-              <a href="/start-here" class="hover:text-white">ECOSSISTEMA</a>
-              <a href="/books" class="hover:text-white">LIVROS</a>
+              <a href="/about" class="hover:text-white">ABOUT</a>
+              <a href="/start-here" class="hover:text-white">ECOSYSTEM</a>
+              <a href="/books" class="hover:text-white">BOOKS</a>
               <a href="/ai-crime-files" class="hover:text-red-400">AI CRIME FILES</a>
-              <a href="/articles" class="hover:text-white">ARTIGOS</a>
-              <a href="/consulting" class="hover:text-white">CONSULTORIA</a>
-              <a href="/start-here" class="hover:text-white">COMECE POR AQUI</a>
+              <a href="/articles" class="hover:text-white">ARTICLES</a>
+              <a href="/consulting" class="hover:text-white">CONSULTING</a>
+              <a href="/start-here" class="hover:text-white">START HERE</a>
             </nav>
           </div>
           <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 text-[11px] opacity-50 font-mono">
-            <span>© ${new Date().getFullYear()} Leandro Calado Ferreira. Todos os direitos reservados.</span>
+            <span>© ${new Date().getFullYear()} Leandro Calado Ferreira. All rights reserved.</span>
             <div class="flex flex-wrap items-center gap-4 text-[#F27D26] font-bold">
               <a href="https://github.com/lcaladoferreira" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href="https://www.linkedin.com/in/lcaladoferreira/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
