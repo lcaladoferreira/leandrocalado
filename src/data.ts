@@ -2,6 +2,56 @@ import { Book, Article, TimelineItem, ThemeDomain } from "./types";
 import { articlesData } from "./articlesData";
 
 export const booksData: Book[] = [
+  {
+    id: "build-ai-agents-n8n",
+    title: "Build AI Agents with N8N: Create Autonomous AI Workflows with N8N — No Experience Required",
+    category: "ia",
+    asin: "B0DY9VDK5X",
+    description: "A guide to creating autonomous AI workflows with n8n for readers getting started with agent automation.",
+    lang: "Inglês",
+    coverEmoji: "⚡",
+    link: "https://www.amazon.com/dp/B0DY9VDK5X"
+  },
+  {
+    id: "mastering-model-context-protocol",
+    title: "Mastering the Model Context Protocol (MCP): 19+ Practical Projects to Integrate LLMs with Data and Tools",
+    category: "ia",
+    asin: "B0F6569VCX",
+    description: "Practical projects for connecting language models to data and tools through the Model Context Protocol.",
+    lang: "Inglês",
+    coverEmoji: "🔌",
+    link: "https://www.amazon.com/dp/B0F6569VCX"
+  },
+  {
+    id: "python-ai-newbies",
+    title: "Python AI for Newbies",
+    category: "dados",
+    asin: "B0DZQXTPG5",
+    description: "An introduction to artificial intelligence with Python for beginners.",
+    lang: "Inglês",
+    coverEmoji: "🐍",
+    link: "https://www.amazon.com/dp/B0DZQXTPG5"
+  },
+  {
+    id: "domine-dax",
+    title: "Domine o DAX: Seu Guia Completo para a Sintaxe de Funções no Power BI",
+    category: "dados",
+    asin: "B0DB8G6BCZ",
+    description: "Guia em português para a sintaxe de funções DAX no Power BI.",
+    lang: "Português",
+    coverEmoji: "📊",
+    link: "https://www.amazon.com.br/dp/B0DB8G6BCZ"
+  },
+  {
+    id: "automate-anything-ai-agents",
+    title: "Automate Anything with AI Agents: 50 Powerful Workflows for Business Growth",
+    category: "automacao",
+    asin: "B0DYGH9YYR",
+    description: "A collection of 50 AI agent workflows for business automation.",
+    lang: "Inglês",
+    coverEmoji: "⚙️",
+    link: "https://www.amazon.com/dp/B0DYGH9YYR"
+  },
   // IA & Agentes
   {
     id: "harness-engineering-ai-coding-agents",
