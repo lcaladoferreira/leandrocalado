@@ -579,7 +579,7 @@ const routes = [
           Harness Engineering for AI Coding Agents is a practical harness engineering book by Leandro Calado for developers building reliable Claude Code, Cursor, Codex, and multi-agent coding workflows with guardrails, automated tests, CI gates, memory control, tool permissions, and production-ready software delivery.
         </p>
         <div class="flex gap-4">
-          <a href="https://www.amazon.com.br/dp/B0GYG3WG4Q" target="_blank" rel="noopener noreferrer" class="px-6 py-4 bg-[#F27D26] text-white text-xs font-mono uppercase tracking-widest font-bold hover:bg-[#d96613] transition-colors rounded-sm">Harness Engineering Book on Amazon Kindle</a>
+          <a href="https://www.amazon.com/dp/B0GYG3WG4Q" target="_blank" rel="noopener noreferrer" class="px-6 py-4 bg-[#F27D26] text-white text-xs font-mono uppercase tracking-widest font-bold hover:bg-[#d96613] transition-colors rounded-sm">Harness Engineering Book on Amazon Kindle</a>
           <a href="/harness-engineering/ai-agent-security-checklist" class="px-6 py-4 border border-[#F27D26]/50 text-[#F27D26] text-xs font-mono uppercase tracking-widest font-bold rounded-sm">Free AI Agent Security Checklist</a>
         </div>
       </section>
