@@ -85,10 +85,12 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
   const cardClass = isDark ? "bg-[#111827] border-gray-800" : "bg-white border-gray-200 shadow-sm";
   const subTitleClass = isDark ? "text-gray-400" : "text-gray-600";
 
-  const amazonUrl = "https://www.amazon.com.br/dp/B0GYG3WG4Q"; // Real Amazon link.
-
   // Multi-language translation catalog
   const isPt = language === "pt";
+  // Route English-language purchase traffic to the US storefront; keep BR for Portuguese.
+  const amazonUrl = isPt
+    ? "https://www.amazon.com.br/dp/B0GYG3WG4Q"
+    : "https://www.amazon.com/dp/B0GYG3WG4Q";
   const t = {
     badge: isPt ? "★ NOVO LANÇAMENTO: MANUAL TÉCNICO" : "★ NEW RELEASE TECHNICAL MANUAL",
     titleHarness: "Harness Engineering Book",
