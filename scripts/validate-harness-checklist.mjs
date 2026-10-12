@@ -68,7 +68,7 @@ for (const lang of langs) {
 
 const book = read('/books/harness-engineering-ai-coding-agents');
 assert(book.includes('href="/harness-engineering/ai-agent-security-checklist"'));
-assert(book.includes('https://www.amazon.com.br/dp/B0GYG3WG4Q'));
+assert(book.includes('https://www.amazon.com/dp/B0GYG3WG4Q'));
 assert(book.includes('<title>Harness Engineering Book for AI Agents | Leandro Calado</title>'));
 
 console.log(`Validated ${langs.length} AI agent security checklists, ten gates each, book cluster, hreflang, sitemap, schemas and WebP (${dimensions.join('x')}, ${bytes.length} bytes).`);
