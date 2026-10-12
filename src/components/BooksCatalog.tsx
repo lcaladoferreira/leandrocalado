@@ -40,6 +40,42 @@ const ENGLISH = {
 
 const CATEGORIES: Category[] = ["all", "ia", "dados", "automacao", "direito", "internacional"];
 
+type PurchaseBook = {
+  id: string;
+  title: string;
+  asin?: string;
+  lang: string;
+  link: string;
+};
+
+type AnalyticsWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>;
+  gtag?: (command: "event", eventName: string, parameters: Record<string, unknown>) => void;
+};
+
+function trackAmazonClick(book: PurchaseBook) {
+  if (!book.asin) return;
+
+  const marketplace = new URL(book.link).hostname;
+  const eventParameters = {
+    book_id: book.id,
+    book_title: book.title,
+    asin: book.asin,
+    book_language: book.lang,
+    marketplace,
+    link_url: book.link,
+    source_page: "/books",
+  };
+  const analyticsWindow = window as AnalyticsWindow;
+
+  if (typeof analyticsWindow.gtag === "function") {
+    analyticsWindow.gtag("event", "amazon_book_click", eventParameters);
+    return;
+  }
+
+  analyticsWindow.dataLayer?.push({ event: "amazon_book_click", ...eventParameters });
+}
+
 export default function BooksCatalog({ isDark, onNavigate }: BooksCatalogProps) {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
   const t = ENGLISH;
@@ -109,7 +145,7 @@ export default function BooksCatalog({ isDark, onNavigate }: BooksCatalogProps) 
                     {t.details} <ChevronRight className="w-3.5 h-3.5" />
                   </button>
                 ) : (
-                  <a href={book.link} target="_blank" rel="noopener noreferrer" className="w-full px-4 py-3 border border-[#F27D26] text-[#F27D26] hover:bg-[#F27D26] hover:text-white text-[10px] uppercase tracking-widest font-mono font-black flex items-center justify-center gap-2">
+                  <a href={book.link} target="_blank" rel="noopener noreferrer" onClick={() => trackAmazonClick(book)} data-amazon-asin={book.asin} data-amazon-marketplace={new URL(book.link).hostname} className="w-full px-4 py-3 border border-[#F27D26] text-[#F27D26] hover:bg-[#F27D26] hover:text-white text-[10px] uppercase tracking-widest font-mono font-black flex items-center justify-center gap-2">
                     {t.amazon} <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
