@@ -26,6 +26,11 @@ interface HarnessEngineeringBookProps {
   onNavigate: (path: string) => void;
 }
 
+type AnalyticsWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>;
+  gtag?: (command: "event", eventName: string, parameters: Record<string, unknown>) => void;
+};
+
 export default function HarnessEngineeringBook({ isDark, language, onNavigate }: HarnessEngineeringBookProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -91,6 +96,27 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
   const amazonUrl = isPt
     ? "https://www.amazon.com.br/dp/B0GYG3WG4Q"
     : "https://www.amazon.com/dp/B0GYG3WG4Q";
+
+  const trackAmazonClick = (ctaPlacement: string) => {
+    const eventParameters = {
+      book_id: "harness-engineering-ai-coding-agents",
+      book_title: "Harness Engineering for AI Coding Agents",
+      asin: "B0GYG3WG4Q",
+      book_language: language,
+      marketplace: new URL(amazonUrl).hostname,
+      link_url: amazonUrl,
+      source_page: "/books/harness-engineering-ai-coding-agents",
+      cta_placement: ctaPlacement,
+    };
+    const analyticsWindow = window as AnalyticsWindow;
+
+    if (typeof analyticsWindow.gtag === "function") {
+      analyticsWindow.gtag("event", "amazon_book_click", eventParameters);
+      return;
+    }
+
+    analyticsWindow.dataLayer?.push({ event: "amazon_book_click", ...eventParameters });
+  };
   const t = {
     badge: isPt ? "★ NOVO LANÇAMENTO: MANUAL TÉCNICO" : "★ NEW RELEASE TECHNICAL MANUAL",
     titleHarness: "Harness Engineering Book",
@@ -449,6 +475,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
               <a 
                 id="cta-hero-amazon"
                 href={amazonUrl}
+                onClick={() => trackAmazonClick("hero")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#F27D26] hover:bg-[#d96613] text-white font-bold uppercase tracking-widest text-xs transition-colors rounded-sm text-center font-mono shadow-md"
@@ -538,6 +565,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
                 <a 
                   id="cta-problem-buy"
                   href={amazonUrl}
+                  onClick={() => trackAmazonClick("problem")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-mono text-xs uppercase text-[#F27D26] font-bold hover:underline inline-flex items-center gap-2 group cursor-pointer"
@@ -674,6 +702,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
             <a 
               id="cta-build-amazon"
               href={amazonUrl}
+              onClick={() => trackAmazonClick("build")}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-4 bg-[#F27D26] hover:bg-[#d96613] text-white font-bold uppercase tracking-widest text-xs transition-colors rounded-sm inline-block font-mono"
@@ -957,6 +986,7 @@ export default function HarnessEngineeringBook({ isDark, language, onNavigate }:
             <a 
               id="cta-final-amazon-btn"
               href={amazonUrl}
+              onClick={() => trackAmazonClick("final")}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#F27D26] hover:bg-[#d96613] text-white font-bold uppercase tracking-widest text-xs transition-colors rounded-sm inline-block font-mono shadow-md"
