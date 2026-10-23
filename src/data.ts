@@ -319,6 +319,387 @@ export const booksData: Book[] = [
     lang: "Português",
     coverEmoji: "✈️",
     link: "https://www.amazon.com.br/dp/B0D9Q23HZX"
+  },
+  // Additional books already present in the author's existing published catalog.
+  {
+    id: "catalog-b0dy9vdk5x",
+    title: "Build AI Agents with n8n",
+    category: "ia",
+    asin: "B0DY9VDK5X",
+    description: "Autonomous workflows, no experience required.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0DY9VDK5X"
+  },
+  {
+    id: "catalog-b0dygh9yyr",
+    title: "Automate Anything with AI Agents",
+    category: "ia",
+    asin: "B0DYGH9YYR",
+    description: "50 workflows for business growth.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0DYGH9YYR"
+  },
+  {
+    id: "catalog-b0f1vblk6d",
+    title: "Crew AI",
+    category: "ia",
+    asin: "B0F1VBLK6D",
+    description: "Code, chaos, and the rise of autonomous agents.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F1VBLK6D"
+  },
+  {
+    id: "catalog-b0f5qs11n5",
+    title: "Master Manus AI",
+    category: "ia",
+    asin: "B0F5QS11N5",
+    description: "Build autonomous agents and automate workflows.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F5QS11N5"
+  },
+  {
+    id: "catalog-b0f6gb2b76",
+    title: "GPT-4o Agent Builder Playbook",
+    category: "ia",
+    asin: "B0F6GB2B76",
+    description: "Function calling 2.0, multimodal prompts, cloud deploy.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F6GB2B76"
+  },
+  {
+    id: "catalog-b0f2sn24cz",
+    title: "Building and Monetizing AI Agents in the U.S.",
+    category: "ia",
+    asin: "B0F2SN24CZ",
+    description: "A published technical book by Leandro Calado Ferreira.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F2SN24CZ"
+  },
+  {
+    id: "catalog-b0f4m2cj6l",
+    title: "The n8n Puzzle Challenge",
+    category: "automacao",
+    asin: "B0F4M2CJ6L",
+    description: "Gamified workflow automation in 30 days.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F4M2CJ6L"
+  },
+  {
+    id: "catalog-b0f7my48tp",
+    title: "Sales Automation with n8n, ChatGPT and Azure",
+    category: "automacao",
+    asin: "B0F7MY48TP",
+    description: "WhatsApp Business API + visual workflows.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F7MY48TP"
+  },
+  {
+    id: "catalog-b0dvc1ztsx",
+    title: "PySpark na Prática",
+    category: "dados",
+    asin: "B0DVC1ZTSX",
+    description: "500 comandos para engenharia de dados em escala.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com.br/dp/B0DVC1ZTSX"
+  },
+  {
+    id: "catalog-b0f2sy8wqg",
+    title: "Landing a Data Engineer Job in the USA",
+    category: "dados",
+    asin: "B0F2SY8WQG",
+    description: "Skills, resume, interviews.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F2SY8WQG"
+  },
+  {
+    id: "catalog-b0dcsrzfy9",
+    title: "Guia Completo para a Certificação AWS CLF-C02",
+    category: "dados",
+    asin: "B0DCSRZFY9",
+    description: "Livro de Leandro Calado Ferreira publicado na Amazon.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com.br/dp/B0DCSRZFY9"
+  },
+  {
+    id: "catalog-b0dctmyn9d",
+    title: "Azure AZ-900",
+    category: "dados",
+    asin: "B0DCTMYN9D",
+    description: "Guia completo e atualizado.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com.br/dp/B0DCTMYN9D"
+  },
+  {
+    id: "catalog-b0gyyw2br1",
+    title: "Google Cloud para Iniciantes",
+    category: "dados",
+    asin: "B0GYYW2BR1",
+    description: "Do primeiro acesso ao primeiro deploy.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0GYYW2BR1"
+  },
+  {
+    id: "catalog-b0dcsglttv",
+    title: "Dominando os Dados",
+    category: "dados",
+    asin: "B0DCSGLTTV",
+    description: "Engenheiro, analista e cientista na era da informação.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com.br/dp/B0DCSGLTTV"
+  },
+  {
+    id: "catalog-b0dy5cz37z",
+    title: "Mastering AI Engineering with Large Language Models",
+    category: "ia",
+    asin: "B0DY5CZ37Z",
+    description: "From scratch to production: PyTorch, RAG, RL.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0DY5CZ37Z"
+  },
+  {
+    id: "catalog-b0fh35dynj",
+    title: "Vector Databases for Generative AI",
+    category: "ia",
+    asin: "B0FH35DYNJ",
+    description: "Build RAG apps in 48 hours.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0FH35DYNJ"
+  },
+  {
+    id: "catalog-b0h1ps7q2l",
+    title: "Zero Trust AI",
+    category: "ia",
+    asin: "B0H1PS7Q2L",
+    description: "Securing autonomous agents, MCP servers, multi-agent systems.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0H1PS7Q2L"
+  },
+  {
+    id: "catalog-b0f7w8n781",
+    title: "Dataset Shift in Machine Learning",
+    category: "ia",
+    asin: "B0F7W8N781",
+    description: "Theory, detection, correction, deployment.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F7W8N781"
+  },
+  {
+    id: "catalog-b0f16lnkk9",
+    title: "LLM Course — Semantic Book Recommender",
+    category: "ia",
+    asin: "B0F16LNKK9",
+    description: "Python, OpenAI, LangChain, Gradio.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F16LNKK9"
+  },
+  {
+    id: "catalog-b0f699pbyj",
+    title: "Run Phi-3 Locally",
+    category: "ia",
+    asin: "B0F699PBYJ",
+    description: "Tiny LLM apps on laptop and edge.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F699PBYJ"
+  },
+  {
+    id: "catalog-b0f7gst8d1",
+    title: "ChatGPT vs. Google Gemini",
+    category: "ia",
+    asin: "B0F7GST8D1",
+    description: "Advanced, data-driven comparison for power users.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F7GST8D1"
+  },
+  {
+    id: "catalog-b0gx2yk8xb",
+    title: "Dominando la Ingeniería de IA con LLMs",
+    category: "ia",
+    asin: "B0GX2YK8XB",
+    description: "A published technical book by Leandro Calado Ferreira.",
+    lang: "Espanhol",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com.br/dp/B0GX2YK8XB"
+  },
+  {
+    id: "catalog-b0dxrs8v56",
+    title: "Dominando Estruturas de Dados e Algoritmos com Python",
+    category: "dados",
+    asin: "B0DXRS8V56",
+    description: "Livro de Leandro Calado Ferreira publicado na Amazon.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0DXRS8V56"
+  },
+  {
+    id: "catalog-b0dx8tdxwb",
+    title: "Domine Python em 30 Dias",
+    category: "dados",
+    asin: "B0DX8TDXWB",
+    description: "Do zero aos primeiros projetos.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0DX8TDXWB"
+  },
+  {
+    id: "catalog-b0gmyc73vy",
+    title: "Vibe Coding: Operational Protocols for the Cognitive Architect",
+    category: "dados",
+    asin: "B0GMYC73VY",
+    description: "A published technical book by Leandro Calado Ferreira.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0GMYC73VY"
+  },
+  {
+    id: "catalog-b0gmdtz36l",
+    title: "Vibe Coding Starter Kit",
+    category: "dados",
+    asin: "B0GMDTZ36L",
+    description: "Turn ideas into 3 real apps in one weekend.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0GMDTZ36L"
+  },
+  {
+    id: "catalog-b0flhbxz6n",
+    title: "Building Your First AI App with Google Opal",
+    category: "dados",
+    asin: "B0FLHBXZ6N",
+    description: "A non-technical guide.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0FLHBXZ6N"
+  },
+  {
+    id: "catalog-b0fnhkm75v",
+    title: "Generative AI Career Playbook 2025",
+    category: "automacao",
+    asin: "B0FNHKM75V",
+    description: "30/60/90-day path with projects and interview prep.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0FNHKM75V"
+  },
+  {
+    id: "catalog-b0dfhsgccd",
+    title: "AI Writing Mastery",
+    category: "automacao",
+    asin: "B0DFHSGCCD",
+    description: "Write faster, create bestsellers with ChatGPT.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0DFHSGCCD"
+  },
+  {
+    id: "catalog-b0f97l5p5q",
+    title: "Domine o LinkedIn com ChatGPT",
+    category: "automacao",
+    asin: "B0F97L5P5Q",
+    description: "Prompts poderosos para sua carreira.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com.br/dp/B0F97L5P5Q"
+  },
+  {
+    id: "catalog-b0dbcgw4cq",
+    title: "Domine a Arte dos Prompts",
+    category: "automacao",
+    asin: "B0DBCGW4CQ",
+    description: "Engenharia de prompt no ChatGPT-4.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com.br/dp/B0DBCGW4CQ"
+  },
+  {
+    id: "catalog-b0f3vj4cmn",
+    title: "AI Image Tools for Beginners",
+    category: "automacao",
+    asin: "B0F3VJ4CMN",
+    description: "Bing, Leonardo, Craiyon and more.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F3VJ4CMN"
+  },
+  {
+    id: "catalog-b0fmfz1kv7",
+    title: "Rank in AI Overviews Fast",
+    category: "automacao",
+    asin: "B0FMFZ1KV7",
+    description: "Get cited in Google, ChatGPT & Perplexity.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0FMFZ1KV7"
+  },
+  {
+    id: "catalog-b0db8g6bcz",
+    title: "Domine o DAX",
+    category: "dados",
+    asin: "B0DB8G6BCZ",
+    description: "Sintaxe de funções no Power BI.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0DB8G6BCZ"
+  },
+  {
+    id: "catalog-b0dyq4yk1r",
+    title: "AI-900: Microsoft Azure AI Fundamentals",
+    category: "dados",
+    asin: "B0DYQ4YK1R",
+    description: "Complete exam prep, 50 practice questions.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0DYQ4YK1R"
+  },
+  {
+    id: "catalog-b0gjm33bxm",
+    title: "Guia Prático do Desenvolvedor Remoto",
+    category: "automacao",
+    asin: "B0GJM33BXM",
+    description: "Fuja de golpes e mentorias caras.",
+    lang: "Português",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0GJM33BXM"
+  },
+  {
+    id: "catalog-b0flgkgbqv",
+    title: "Remote Salesforce Admin Launchpad",
+    category: "automacao",
+    asin: "B0FLGKGBQV",
+    description: "60-day path to land a tech role.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0FLGKGBQV"
+  },
+  {
+    id: "catalog-b0f1c27p7n",
+    title: "Python for Jurimetrics",
+    category: "direito",
+    asin: "B0F1C27P7N",
+    description: "Legal analytics, AI, and data science for lawyers.",
+    lang: "Inglês",
+    coverEmoji: "📚",
+    link: "https://www.amazon.com/dp/B0F1C27P7N"
   }
 ];
 
