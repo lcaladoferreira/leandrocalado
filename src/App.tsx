@@ -106,7 +106,19 @@ export default function App() {
         {currentPath === "/" || currentPath === "" ? (
           <>
             <Hero isDark={isDark} language={language} />
-            <section className="border-y border-[#F27D26]/30 bg-[#111] py-8 px-6"><div className="max-w-7xl mx-auto"><p className="text-[#F27D26] text-xs uppercase tracking-widest">New free Python incident lab</p><h2 className="text-2xl text-white mt-2">AI Agent Reliability Engineering</h2><p className="text-gray-400 mt-2">Reproduce duplicate actions after a timeout. Test contracts, restart recovery and concurrent delivery.</p><a href="/books/ai-agent-reliability-engineering" className="inline-block mt-4 text-[#F27D26] underline">Run the free lab and read the opening chapters →</a></div></section>
+            <section className="border-y border-[#F27D26]/30 bg-[#111] py-8 px-6" aria-label="Published books on Amazon">
+              <div className="max-w-7xl mx-auto">
+                <p className="text-[#F27D26] text-xs uppercase tracking-widest">Published on Amazon Kindle</p>
+                <h2 className="text-2xl text-white mt-2">Practical books for AI and data engineers</h2>
+                <p className="text-gray-400 mt-2">Choose the engineering problem you need to solve. Each link opens the published book's Amazon listing directly.</p>
+                <div className="flex flex-wrap gap-3 mt-5">
+                  <a href="https://www.amazon.com/dp/B0GYG3WG4Q" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-3 bg-[#F27D26] text-white text-xs font-bold tracking-wide hover:opacity-90">Harness Engineering for AI Coding Agents ↗</a>
+                  <a href="https://www.amazon.com/dp/B0HHZXPJV1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-3 border border-[#F27D26] text-[#F27D26] text-xs font-bold tracking-wide hover:bg-[#F27D26]/10">Harness Engineering for Data Agents on Databricks ↗</a>
+                  <a href="/books" className="inline-flex items-center px-4 py-3 border border-white/30 text-white text-xs font-bold tracking-wide">Browse all published books →</a>
+                </div>
+                <p className="text-gray-500 text-xs mt-4">Free developer lab: <a href="/books/ai-agent-reliability-engineering" className="underline hover:text-white">AI Agent Reliability Engineering</a></p>
+              </div>
+            </section>
             <About isDark={isDark} language={language} />
             <Ecosystem isDark={isDark} language={language} onNavigate={navigate} />
             <Books isDark={isDark} language={language} onNavigate={navigate} />
