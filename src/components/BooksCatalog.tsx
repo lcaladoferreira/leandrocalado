@@ -58,7 +58,14 @@ export default function BooksCatalog({ isDark, onNavigate }: BooksCatalogProps) 
     return [aiCrimeBook, ...booksData.filter((book) => book.id !== aiCrimeBook.id)];
   }, []);
 
-  const visible = activeCategory === "all" ? catalog : catalog.filter((book) => book.category === activeCategory);
+  // Published books appear first, with a direct Amazon route rather than an extra step.
+  const priorityIds = ["harness-engineering-ai-coding-agents", "harness-engineering-data-agents-databricks", "automate-n8n-mcp"];
+  const priority = catalog.filter((book) => priorityIds.includes(book.id))
+    .sort((a, b) => priorityIds.indexOf(a.id) - priorityIds.indexOf(b.id));
+  const orderedCatalog = [...priority, ...catalog.filter((book) => !priorityIds.includes(book.id))];
+  const visible = activeCategory === "all"
+    ? orderedCatalog
+    : orderedCatalog.filter((book) => book.category === activeCategory);
 
   return (
     <article className="max-w-7xl mx-auto px-6 py-12">
@@ -81,7 +88,7 @@ export default function BooksCatalog({ isDark, onNavigate }: BooksCatalogProps) 
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {visible.map((book) => {
           const aiCrime = book.id === "ai-crime-files-nobody-told-it-to-lie";
-          const featured = aiCrime || book.id === "harness-engineering-data-agents-databricks";
+          const featured = aiCrime || priorityIds.includes(book.id);
           const languageName = t.languages[book.lang] ?? book.lang;
           const categoryName = t.categories[(book.category as Category) || "all"] ?? book.category;
           return (
@@ -104,7 +111,16 @@ export default function BooksCatalog({ isDark, onNavigate }: BooksCatalogProps) 
                   <span className={`font-mono text-[8px] uppercase tracking-wider ${isDark ? "text-[#666]" : "text-[#999]"}`}>ASIN: {book.asin}</span>
                   <span className={`font-mono text-[8px] uppercase tracking-wider ${isDark ? "text-[#666]" : "text-[#999]"}`}>{categoryName}</span>
                 </div>
-                {book.link.startsWith("/") ? (
+                {book.link.startsWith("/") && book.asin ? (
+                  <div className="flex flex-col gap-2">
+                    <a href={`https://www.amazon.com/dp/${book.asin}`} target="_blank" rel="noopener noreferrer" className="w-full px-4 py-3 border border-[#F27D26] bg-[#F27D26] text-white hover:opacity-90 text-[10px] uppercase tracking-widest font-mono font-black flex items-center justify-center gap-2">
+                      {t.amazon} <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                    <button type="button" onClick={() => onNavigate(book.link)} className="w-full px-4 py-2 border border-[#F27D26]/50 text-[#F27D26] text-[10px] uppercase tracking-widest font-mono font-bold flex items-center justify-center gap-2 cursor-pointer">
+                      {t.details} <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                ) : book.link.startsWith("/") ? (
                   <button type="button" onClick={() => onNavigate(book.link)} className="w-full px-4 py-3 border border-[#F27D26] text-[#F27D26] hover:bg-[#F27D26] hover:text-white text-[10px] uppercase tracking-widest font-mono font-black flex items-center justify-center gap-2 cursor-pointer">
                     {t.details} <ChevronRight className="w-3.5 h-3.5" />
                   </button>
