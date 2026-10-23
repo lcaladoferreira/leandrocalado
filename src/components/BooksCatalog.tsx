@@ -42,6 +42,7 @@ const CATEGORIES: Category[] = ["all", "ia", "dados", "automacao", "direito", "i
 
 export default function BooksCatalog({ isDark, onNavigate }: BooksCatalogProps) {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
+  const [searchQuery, setSearchQuery] = useState("");
   const t = ENGLISH;
 
   const catalog = useMemo(() => {
@@ -63,9 +64,12 @@ export default function BooksCatalog({ isDark, onNavigate }: BooksCatalogProps) 
   const priority = catalog.filter((book) => priorityIds.includes(book.id))
     .sort((a, b) => priorityIds.indexOf(a.id) - priorityIds.indexOf(b.id));
   const orderedCatalog = [...priority, ...catalog.filter((book) => !priorityIds.includes(book.id))];
-  const visible = activeCategory === "all"
+  const query = searchQuery.trim().toLocaleLowerCase();
+  const visible = (activeCategory === "all"
     ? orderedCatalog
-    : orderedCatalog.filter((book) => book.category === activeCategory);
+    : orderedCatalog.filter((book) => book.category === activeCategory))
+    .filter((book) => !query || [book.title, book.description, book.asin ?? ""]
+      .some((field) => field.toLocaleLowerCase().includes(query)));
 
   return (
     <article className="max-w-7xl mx-auto px-6 py-12">
@@ -76,6 +80,13 @@ export default function BooksCatalog({ isDark, onNavigate }: BooksCatalogProps) 
         <div className={`mt-5 border-l-2 border-[#F27D26] px-4 py-3 text-xs leading-relaxed ${isDark ? "bg-[#111] text-[#A8A8A8]" : "bg-white text-[#555]"}`}>{t.note}</div>
       </header>
 
+      <div className="mb-6 max-w-xl">
+        <label htmlFor="book-search" className={`block mb-2 font-mono text-xs uppercase tracking-wider ${isDark ? "text-[#A8A8A8]" : "text-[#555]"}`}>Find a published book</label>
+        <input id="book-search" type="search" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)}
+          placeholder="Title, topic, or Amazon ASIN"
+          className={`w-full px-4 py-3 border border-[#F27D26]/60 rounded-none text-sm outline-none focus:border-[#F27D26] ${isDark ? "bg-[#111] text-white" : "bg-white text-[#111]"}`}
+        />
+      </div>
       <div className="flex flex-wrap gap-2 mb-3">
         {CATEGORIES.map((category) => (
           <button key={category} type="button" onClick={() => setActiveCategory(category)} className={`px-3 py-2 border text-[10px] uppercase tracking-widest font-mono font-bold cursor-pointer ${activeCategory === category ? "border-[#F27D26] bg-[#F27D26] text-white" : isDark ? "border-[#333] bg-[#111] text-[#999] hover:border-[#F27D26] hover:text-white" : "border-[#DDD] bg-white text-[#666] hover:border-[#F27D26]"}`}>
