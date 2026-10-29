@@ -5,6 +5,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/ads.txt",
+      "destination": "/ads.txt"
+    },
+    {
       "source": "/books/ai-agent-reliability-engineering",
       "destination": "/books/ai-agent-reliability-engineering.html"
     },
